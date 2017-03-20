@@ -1,23 +1,28 @@
-/**
- * Created by Dylan on 15/03/2017.
- */
+import processing.core.PApplet;
 
-public class Index
+public class Index extends PApplet
 {
-    //static header common throughout all pages with menu and back button
-    public static void Header()
+    //Constructor
+    Index()
     {
 
     }
 
+    //static header common throughout all pages with menu and back button
+    public void Header()
+    {
+        fill(255,0,0);
+        rect(0, height+20, width, 20);
+    }
+
     //static footer common throughout all pages
-    public static void Footer()
+    public void Footer()
     {
 
     }
 
     //Like a html page where the body is the main content
-    public static void Body()
+    public void Body()
     {
 
     }
