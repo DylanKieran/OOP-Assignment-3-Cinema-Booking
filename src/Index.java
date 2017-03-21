@@ -1,23 +1,44 @@
 import processing.core.PApplet;
 
-public class Index extends PApplet
+import static processing.core.PConstants.CENTER;
+import static processing.core.PConstants.LEFT;
+
+
+public class Index
 {
     //Constructor
-    Index()
-    {
+    PApplet parent;
 
+    Index(PApplet p)
+    {
+        parent = p;
     }
+
 
     //static header common throughout all pages with menu and back button
     public void Header()
     {
-        fill(255,0,0);
-        rect(0, height+20, width, 20);
+        parent.fill(255,35,111);
+        parent.rect(0,0,parent.width, 50);
+        parent.fill(0);
+        parent.stroke(0);
+        parent.textSize(20);
+        parent.textAlign(CENTER);
+        parent.text(" Header ", parent.width/2 , 30);
+
     }
+
 
     //static footer common throughout all pages
     public void Footer()
     {
+        parent.fill(255,35,111);
+        parent.rect(0,parent.height,parent.width, -50);
+        parent.fill(0);
+        parent.stroke(0);
+        parent.textSize(20);
+        parent.textAlign(CENTER);
+        parent.text(" Footer ", parent.width/2 , parent.height - 20);
 
     }
 

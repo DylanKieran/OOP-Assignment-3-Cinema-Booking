@@ -1,7 +1,7 @@
 /**
  * Created by Dylan on 15/03/2017.
  */
-public class MovieSelection extends Index
+public class MovieSelection
 {
 
 }
