@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="core" level="project" />
     <orderEntry type="library" name="core1" level="project" />
+    <orderEntry type="library" name="core2" level="project" />
   </component>
 </module>
