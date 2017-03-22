@@ -14,7 +14,6 @@ public class Index
         parent = p;
     }
 
-
     //static header common throughout all pages with menu and back button
     public void Header()
     {
