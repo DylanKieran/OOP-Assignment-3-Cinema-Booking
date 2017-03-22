@@ -7,6 +7,7 @@ public class Main extends PApplet{
 
     Index Index;
     Seat seat;
+    MovieSelection Movie;
 
 
     public void setup()
@@ -14,6 +15,8 @@ public class Main extends PApplet{
         background(255);
         Index = new Index(this);
         seat = new Seat(this, 100, 100, true, 1);
+        Movie = new MovieSelection();
+        Movie.loadMovies();
     }
 
     public void settings()
