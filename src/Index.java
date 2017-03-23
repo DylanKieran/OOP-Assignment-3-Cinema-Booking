@@ -28,7 +28,10 @@ public class Index
 
     public void Docket()
     {
-
+        parent.stroke(40,40,40);
+        parent.strokeWeight(2);
+        parent.fill(255,250,255);
+        parent.rect(parent.width - parent.width/5, parent.height/6, 300, parent.height - parent.height/3, 18, 18, 18, 18);
     }
 
     //A background to go behind images eg. Movie Image

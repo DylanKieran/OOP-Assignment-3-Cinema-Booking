@@ -27,6 +27,7 @@ public class Main extends PApplet{
     {
         Index.Header();
         Index.Footer();
+        //Index.Docket();
         seat.Render(); //Just testing the seat rendering code
     }
 
