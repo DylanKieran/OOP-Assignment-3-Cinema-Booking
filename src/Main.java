@@ -1,8 +1,7 @@
 import processing.core.PApplet;
-import processing.core.*;
+import processing.core.PImage;
 
 public class Main extends PApplet{
-
     //Create new Object
 
     Index Index;
@@ -12,7 +11,7 @@ public class Main extends PApplet{
 
     public void setup()
     {
-        background(255);
+        background(34,34,34);
         Index = new Index(this);
         seat = new Seat(this, 100, 100, true, 1);
         Movie = new MovieSelection();
@@ -21,7 +20,6 @@ public class Main extends PApplet{
 
     public void settings()
     {
-
         fullScreen();
     }
 

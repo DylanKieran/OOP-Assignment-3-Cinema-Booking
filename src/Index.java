@@ -1,14 +1,9 @@
 import processing.core.PApplet;
 
-import static processing.core.PConstants.CENTER;
-import static processing.core.PConstants.LEFT;
-
-
 public class Index
 {
     //Constructor
     PApplet parent;
-
     Index(PApplet p)
     {
         parent = p;
@@ -17,32 +12,21 @@ public class Index
     //static header common throughout all pages with menu and back button
     public void Header()
     {
-        parent.fill(255,35,111);
-        parent.rect(0,0,parent.width, 50);
-        parent.fill(0);
-        parent.stroke(0);
-        parent.textSize(20);
-        parent.textAlign(CENTER);
-        parent.text(" Header ", parent.width/2 , 30);
-
+        parent.noStroke();
+        parent.fill(219,84,97);
+        parent.rect(0, 0, parent.width, 40);
     }
 
 
     //static footer common throughout all pages
     public void Footer()
     {
-        parent.fill(255,35,111);
-        parent.rect(0,parent.height,parent.width, -50);
-        parent.fill(0);
-        parent.stroke(0);
-        parent.textSize(20);
-        parent.textAlign(CENTER);
-        parent.text(" Footer ", parent.width/2 , parent.height - 20);
-
+        parent.noStroke();
+        parent.fill(219,84,97);
+        parent.rect(0, parent.height-20, parent.width, parent.height);
     }
 
-    //Like a html page where the body is the main content
-    public void Body()
+    public void Docket()
     {
 
     }
