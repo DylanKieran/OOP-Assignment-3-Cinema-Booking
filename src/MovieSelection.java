@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by Dylan on 15/03/2017.
@@ -35,13 +36,18 @@ public class MovieSelection
 
     void loadMovies()
     {
+
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Enter a Movie or Catagory: ");
+        String user = reader.nextLine(); // Scans the next token of the input as an int.
+
         ResultSet rs;
         Movies.clear();
         try(Connection c = DriverManager.getConnection(url);
-            PreparedStatement ps = c.prepareStatement("select * from MovieIndex where category like 'Super Hero'"))
+            PreparedStatement ps = c.prepareStatement("select * from MovieIndex where category like ?"))
         {
 
-            //.setString(1, "%Kong%");
+            ps.setString(1, user);
 
             rs = ps.executeQuery();
             while(rs.next())

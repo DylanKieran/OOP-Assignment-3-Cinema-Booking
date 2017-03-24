@@ -56,7 +56,7 @@ public class Movie {
         return "" + title
                 + ", " + id
                 + ", " + category
-                + ", " + rating;
+                + ", " + rating + "/10 Rating";
     }
 }
 
