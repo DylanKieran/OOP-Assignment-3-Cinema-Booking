@@ -29,6 +29,7 @@ public class Main extends PApplet{
         Index.Footer();
         //Index.Docket();
         seat.Render(); //Just testing the seat rendering code
+        seat.Update();
     }
 
     public static void main(String[] args)

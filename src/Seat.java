@@ -19,6 +19,7 @@ public class Seat extends PApplet
     boolean available;
     int taken = color(155, 0, 0);
     int notTaken = color(0, 155, 0);
+    int hover = color(255,255,100);
 
     Seat(PApplet p,float x, float y, boolean available, int number)
     {
@@ -34,18 +35,36 @@ public class Seat extends PApplet
     {
         if (available)
         {
-            parent.fill(notTaken);
+            if(onHover())
+            {
+                parent.fill(hover);
+            }
+            else {
+                parent.fill(notTaken);
+            }
         }
         else
         {
             parent.fill(taken);
         }
-        parent.rect(xPos,yPos, 10, 10);
+        parent.rect(xPos,yPos, 20, 20);
     }
 
     public void Update()
     {
+        System.out.println(parent.mouseX + " + " + parent.mouseY);
+        onHover();
+    }
 
+    public boolean onHover()
+    {
+        if(Math.abs(parent.mouseX - xPos) <= 20 && Math.abs(parent.mouseY - yPos) <= 20 && available)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 }
