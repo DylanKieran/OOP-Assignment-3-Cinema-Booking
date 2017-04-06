@@ -38,9 +38,25 @@ public class Index
     //A background to go behind images eg. Movie Image
     public void MovieImagePlaceholder(PImage MoviePoster, int x, int y)
     {
-        //parent.image(MoviePoster, 0, 0);
-        MoviePoster.resize(x, y);
-        parent.image(MoviePoster, 0, 0);
+        int ImageHeight, ImageWidth;
+        ImageWidth = 140;
+        ImageHeight = 210;
+
+        //Stroke at the back of the movie poster
+        parent.stroke(219,84,97);
+        parent.strokeWeight(5);
+        parent.rect(x, y, ImageWidth, ImageHeight);
+
+        //Display Image
+        MoviePoster.resize(ImageWidth, ImageHeight);
+        parent.image(MoviePoster, x, y);
+
+        //Transparent Box
+        if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight )
+        {
+            parent.fill(0, 0, 0, 200);
+            parent.rect(x, y, ImageWidth, ImageHeight);
+        }
     }
 
     //A background to go behind text

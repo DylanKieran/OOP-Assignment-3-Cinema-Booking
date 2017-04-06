@@ -32,7 +32,7 @@ public class Main extends PApplet{
         //Index.Docket();
         //seat.Render(); //Just testing the seat rendering code
         //seat.Update();
-        Index.MovieImagePlaceholder(img, 240, 360 );
+        Index.MovieImagePlaceholder(img, 120, 220 );
     }
 
     public static void main(String[] args)
