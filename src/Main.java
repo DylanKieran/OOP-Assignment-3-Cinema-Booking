@@ -32,13 +32,19 @@ public class Main extends PApplet{
         //Index.Docket();
         //seat.Render(); //Just testing the seat rendering code
         //seat.Update();
-        Index.MovieImagePlaceholder(img, 0, 0 );
+        Index.MovieImagePlaceholder(img, 240, 360 );
     }
 
     public static void main(String[] args)
     {
         String[] a = {"MAIN"};
         PApplet.runSketch( a, new Main());
+
+
+        InsertData app = new InsertData();
+        // insert three new rows
+        //app.insert("IT", "Horror", 12, 4);
+        //app.insert("Alien", "Horror", 13, 9);
     }
 
 }
