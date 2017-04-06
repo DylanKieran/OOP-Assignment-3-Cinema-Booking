@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Index
 {
@@ -35,9 +36,11 @@ public class Index
     }
 
     //A background to go behind images eg. Movie Image
-    public void MovieImagePlaceholder(float ImageHeight, float ImageWidth, float x, float y)
+    public void MovieImagePlaceholder(PImage MoviePoster, int x, int y)
     {
-
+        //parent.image(MoviePoster, 0, 0);
+        MoviePoster.resize(x, y);
+        parent.image(MoviePoster, 0, 0);
     }
 
     //A background to go behind text
