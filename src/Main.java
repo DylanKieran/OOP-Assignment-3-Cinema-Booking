@@ -7,17 +7,18 @@ public class Main extends PApplet{
     Index Index;
     Seat seat;
     MovieSelection Movie;
-    PImage img;
+    PImage Avengers, Kong;
 
     public void setup()
     {
         background(34,34,34);
         Index = new Index(this);
         //seat = new Seat(this, 100, 100, true, 1);
-        Movie = new MovieSelection();
-        Movie.loadMovies();
+        //Movie = new MovieSelection();
+        //Movie.loadMovies();
 
-        img = loadImage("avengers.jpg");
+        Avengers = loadImage("avengers.jpg");
+        Kong = loadImage("Kong.jpg");
     }
 
     public void settings()
@@ -32,7 +33,8 @@ public class Main extends PApplet{
         //Index.Docket();
         //seat.Render(); //Just testing the seat rendering code
         //seat.Update();
-        Index.MovieImagePlaceholder(img, 120, 220 );
+        Index.MovieImagePlaceholder(Avengers, 120, 220 );
+        Index.MovieImagePlaceholder(Kong, 280, 220 );
     }
 
     public static void main(String[] args)
