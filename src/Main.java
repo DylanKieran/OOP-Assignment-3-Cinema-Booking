@@ -34,7 +34,7 @@ public class Main extends PApplet{
         //seat.Render(); //Just testing the seat rendering code
         //seat.Update();
         Index.MovieImagePlaceholder(Avengers, 120, 220 );
-        Index.MovieImagePlaceholder(Kong, 280, 220 );
+        Index.MovieImagePlaceholder(Kong, 400, 220 );
     }
 
     public static void main(String[] args)
