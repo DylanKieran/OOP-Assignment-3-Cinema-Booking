@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.core.PImage;
 
 public class Main extends PApplet{
@@ -8,6 +9,7 @@ public class Main extends PApplet{
     Seat seat;
     MovieSelection Movie;
     PImage Avengers, Kong;
+    PFont MovieFont;
 
     public void setup()
     {
@@ -17,6 +19,8 @@ public class Main extends PApplet{
         //Movie = new MovieSelection();
         //Movie.loadMovies();
 
+        MovieFont = createFont("arial.ttf", 32);
+        textFont(MovieFont, 18);
         Avengers = loadImage("avengers.jpg");
         Kong = loadImage("Kong.jpg");
     }
