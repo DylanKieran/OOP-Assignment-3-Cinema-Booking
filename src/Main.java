@@ -2,11 +2,11 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
-=======
+
 import java.io.IOException;
->>>>>>> ef403aea890814d43133edb686aeb8562ed1932a
+
 
 public class Main extends PApplet{
     //Create new Object
@@ -14,15 +14,16 @@ public class Main extends PApplet{
     Index Index;
     Seat seat;
     MovieSelection Movie;
-<<<<<<< HEAD
-=======
+
     PImage Avengers, Kong;
     PFont MovieFont;
     Movie Movie1;
->>>>>>> ef403aea890814d43133edb686aeb8562ed1932a
+    SeatSelection screenage;
+
 
     public void setup()
     {
+        screenage = new SeatSelection(this, 1);
         background(34,34,34);
         Index = new Index(this);
         //seat = new Seat(this, 100, 100, true, 1);
@@ -44,6 +45,7 @@ public class Main extends PApplet{
 
     public void draw()
     {
+        //screenage.screenRender(1); Comment out the screen rendering
         Index.Header();
         Index.Footer();
         //Index.Docket();
