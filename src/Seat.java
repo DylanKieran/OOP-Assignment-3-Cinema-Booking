@@ -9,7 +9,7 @@ import processing.core.PApplet;
  * The screen size will be used in the creation of the seat layout which
  * will be controlled  in the seatLayout class.
  */
-public class Seat extends PApplet
+public class Seat extends Main
 {
     PApplet parent;
 

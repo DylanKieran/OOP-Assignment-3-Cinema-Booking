@@ -1,6 +1,8 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import java.util.ArrayList;
+
 public class Main extends PApplet{
     //Create new Object
 
@@ -8,12 +10,11 @@ public class Main extends PApplet{
     Seat seat;
     MovieSelection Movie;
 
-
     public void setup()
     {
         background(34,34,34);
         Index = new Index(this);
-        seat = new Seat(this, 100, 100, true, 1);
+        //seat = new Seat(this, 100, 100, true, 1);
         Movie = new MovieSelection();
         Movie.loadMovies();
     }
