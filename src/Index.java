@@ -1,6 +1,9 @@
+import com.sun.org.apache.bcel.internal.generic.VariableLengthInstruction;
 import processing.core.PApplet;
+import processing.core.PImage;
+import processing.core.PShape;
 
-public class Index
+public class Index extends Main
 {
     //Constructor
     PApplet parent;
@@ -35,8 +38,61 @@ public class Index
     }
 
     //A background to go behind images eg. Movie Image
-    public void MovieImagePlaceholder(float ImageHeight, float ImageWidth, float x, float y)
+    public void MovieImagePlaceholder(PImage MoviePoster, int x, int y)
     {
+        int ImageHeight, ImageWidth;
+        ImageWidth = 210;
+        ImageHeight = 310;
+
+        //Change the colour of tha MoviePoster template if hovered on
+        if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight )
+        {
+            parent.fill(219,84,97);
+        }
+        else
+        {
+            parent.fill(255);
+        }
+
+        parent.rect(x - 4, y - 4, ImageWidth + 8, ImageHeight + 8, 6, 6, 6, 6);
+
+        //Display Image
+        MoviePoster.resize(ImageWidth, ImageHeight);
+        parent.image(MoviePoster, x, y);
+
+        //Transparent Box
+        if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight )
+        {
+            //Transparent Grey box
+            parent.fill(0, 0, 0, 200);
+            parent.rect(x, y, ImageWidth, ImageHeight);
+
+            //View Details Box
+            parent.fill(219,84,97);
+            parent.rect(x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , 4 , 4 ,4 ,4);
+
+            //View Details Text
+            parent.fill(255);
+            parent.text("View Details", x + ImageWidth/4 + 5, y + ImageHeight - 38);
+
+            parent.beginShape();
+            parent.pushMatrix();
+            parent.translate(x + ImageWidth/2, y + ImageHeight/4);
+            parent.scale((float) 0.5);
+            parent.fill(219,84,97);
+            parent.vertex(0, -50);
+            parent.vertex(14, -20);
+            parent.vertex(47, -15);
+            parent.vertex(23, 7);
+            parent.vertex(29, 40);
+            parent.vertex(0, 25);
+            parent.vertex(-29, 40);
+            parent.vertex(-23, 7);
+            parent.vertex(-47, -15);
+            parent.vertex(-14, -20);
+            parent.endShape(CLOSE);
+            parent.popMatrix();
+        }
 
     }
 
@@ -57,6 +113,5 @@ public class Index
     {
 
     }
-
 
 }//end Class Index
