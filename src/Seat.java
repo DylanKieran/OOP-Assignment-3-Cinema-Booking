@@ -8,6 +8,7 @@ import processing.core.PApplet;
  * which will be passed into the available boolean
  * The screen size will be used in the creation of the seat layout which
  * will be controlled  in the seatLayout class.
+lmao
  */
 public class Seat extends PApplet
 {
