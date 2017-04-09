@@ -2,6 +2,8 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+import java.io.IOException;
+
 public class Main extends PApplet{
     //Create new Object
 
@@ -10,14 +12,17 @@ public class Main extends PApplet{
     MovieSelection Movie;
     PImage Avengers, Kong;
     PFont MovieFont;
+    Movie Movie1;
 
     public void setup()
     {
         background(34,34,34);
         Index = new Index(this);
         //seat = new Seat(this, 100, 100, true, 1);
-        //Movie = new MovieSelection();
+        Movie = new MovieSelection();
+        // Movie1 = new Movie();
         //Movie.loadMovies();
+        Movie.getRating();
 
         MovieFont = createFont("arial.ttf", 32);
         textFont(MovieFont, 18);
