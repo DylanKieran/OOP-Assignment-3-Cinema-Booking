@@ -1,5 +1,6 @@
 import com.sun.org.apache.bcel.internal.generic.VariableLengthInstruction;
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.core.PImage;
 import processing.core.PShape;
 
@@ -16,7 +17,8 @@ public class Index extends Main
     public void Header()
     {
         parent.noStroke();
-        parent.fill(219,84,97);
+        //parent.fill(219,84,97);
+        parent.fill( 20, 20 , 20 , 240);
         parent.rect(0, 0, parent.width, 40);
     }
 
@@ -96,22 +98,37 @@ public class Index extends Main
 
     }
 
-    //A background to go behind text
-    public void TextPlaceholder(float TextBoxHeight, float TextBoxWidth, float x, float y)
+    public void BackgroundCircles()
     {
-
+        noLoop();
+        parent.noStroke();
+        parent.fill(30,144,255);
+        for(float x = 6; x < parent.width; x += 38)
+        {
+            for(float y = 6; y < parent.height; y += 38)
+            {
+                parent.ellipse(x, y, 2 , 2);
+            }
+        }
     }
 
-    //Create a shape that looks like a seat
-    public void SeatShape(float heigth, float width, float x, float y)
+    public void TitleText(PFont MovieFont, PFont Title)
     {
-
-    }
-
-    //To select screening times etc
-    public void SelectionBox(float heigth, float width, float x, float y)
-    {
-
+        parent.noLoop();
+        parent.noStroke();
+        parent.textAlign(CENTER);
+        parent.textFont(MovieFont);
+        parent.textSize(90);
+        parent.fill(169,169,169);
+        parent.text("Welcome to", parent.width/2, parent.height/3 + 30);
+        parent.textFont(Title);
+        parent.textSize(140);
+        parent.fill(255,20,147);
+        parent.text("Empire",parent.width/2, parent.height/2);
+        parent.textFont(MovieFont);
+        parent.textSize(60);
+        parent.fill(255);
+        parent.text("Cinemas",parent.width/2, parent.height/2 + 80);
     }
 
 }//end Class Index
