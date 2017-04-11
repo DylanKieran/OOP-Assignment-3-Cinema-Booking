@@ -15,6 +15,7 @@ public class Main extends PApplet{
     Index Index;
     Seat seat;
     MovieSelection Movie;
+    Button Button;
 
     PImage Avengers, Kong, SpiderMan;
     PFont MovieFont, Title;
@@ -28,7 +29,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = SeatSelection;
+    int ScreenState = WelcomeScreen;
 
 
     public void setup()
@@ -79,12 +80,12 @@ public class Main extends PApplet{
 
     public void WelcomeScreen()
     {
-        //Index.BackgroundCircles();
-        noLoop();
         SpiderMan.resize(width , height);
         image(SpiderMan,0,0);
         fill(0,0,0, 220);
         rect(0,0, width , height);
+
+        Index.BackgroundCircles();
 
         noStroke();
         beginShape();
@@ -106,13 +107,19 @@ public class Main extends PApplet{
         popMatrix();
 
         Index.TitleText(MovieFont, Title);
-        Index.Header();
+
+        Button TitleButton = new Button(this, MovieFont,"Book Now", width/2, height - 220, 48, width/3 + 130, height - 280, width/5, height/16, false, WelcomeScreen, MovieSelectScreen);
+        TitleButton.update();
+        TitleButton.fillRect();
+        TitleButton.overRect(width/3 + 130, height - 280, width/5, height/16);
+        TitleButton.rectClick();
     }
 
     public void MovieSelect()
     {
         Index.Header();
         Index.Footer();
+        //Change this shit not hard coded values
         Index.MovieImagePlaceholder(Avengers, 120, 220 );
         Index.MovieImagePlaceholder(Kong, 400, 220 );
         //Index.Docket();

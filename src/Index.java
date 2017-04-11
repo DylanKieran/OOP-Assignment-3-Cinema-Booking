@@ -100,21 +100,21 @@ public class Index extends Main
 
     public void BackgroundCircles()
     {
-        noLoop();
+        parent.noLoop();
         parent.noStroke();
-        parent.fill(30,144,255);
-        for(float x = 6; x < parent.width; x += 38)
+        parent.fill(30,144,255, 200);
+        for(float x = 4; x < parent.width; x += 50)
         {
-            for(float y = 6; y < parent.height; y += 38)
+            for(float y = 4; y < parent.height; y += 50)
             {
-                parent.ellipse(x, y, 2 , 2);
+                parent.ellipse(x, y, 1 , 1);
             }
         }
+        parent.loop();
     }
 
     public void TitleText(PFont MovieFont, PFont Title)
     {
-        parent.noLoop();
         parent.noStroke();
         parent.textAlign(CENTER);
         parent.textFont(MovieFont);
