@@ -7,9 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="core" level="project" />
-    <orderEntry type="library" name="core1" level="project" />
-    <orderEntry type="library" name="sqlite-jdbc-3.16.1" level="project" />
-    <orderEntry type="library" name="sqlite-jdbc-3.16.11" level="project" />
+    <orderEntry type="library" name="Libraries" level="project" />
   </component>
 </module>

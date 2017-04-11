@@ -40,12 +40,8 @@ public class Index extends Main
     }
 
     //A background to go behind images eg. Movie Image
-    public void MovieImagePlaceholder(PImage MoviePoster, int x, int y)
+    public void MovieImagePlaceholder(PImage MoviePoster, int x, int y, int ImageHeight,int ImageWidth)
     {
-        int ImageHeight, ImageWidth;
-        ImageWidth = 210;
-        ImageHeight = 310;
-
         //Change the colour of tha MoviePoster template if hovered on
         if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight )
         {

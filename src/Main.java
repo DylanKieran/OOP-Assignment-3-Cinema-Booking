@@ -29,7 +29,12 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = WelcomeScreen;
+    int ScreenState = MovieInfoScreen;
+
+    //Movie info Variables
+    final int AvengersMovie = 0;
+    final int KongMovie = 1;
+    int MoviePick = AvengersMovie;
 
 
     public void setup()
@@ -38,7 +43,7 @@ public class Main extends PApplet{
         background(34,34,34);
         Index = new Index(this);
         //seat = new Seat(this, 100, 100, true, 1);
-        Movie = new MovieSelection();
+        Movie = new MovieSelection(this);
         // Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
@@ -120,13 +125,45 @@ public class Main extends PApplet{
         Index.Header();
         Index.Footer();
         //Change this shit not hard coded values
-        Index.MovieImagePlaceholder(Avengers, 120, 220 );
-        Index.MovieImagePlaceholder(Kong, 400, 220 );
+        Index.MovieImagePlaceholder(Avengers, 120, 220, 310, 210 );
+        Index.MovieImagePlaceholder(Kong, 400, 220 , 310 , 210);
         //Index.Docket();
     }
 
     public void MovieInfo()
     {
+        Index.Header();
+        Index.Footer();
+
+        switch(MoviePick)
+        {
+            case AvengersMovie:
+                stroke(219,84,97);
+                strokeWeight(3);
+                Index.MovieImagePlaceholder(Avengers, width / 8, height /5, 520, 600 );
+                noLoop();
+                Movie.loadMovies("Avengers");
+                noFill();
+                rect(width/ 2 - 10, height / 7, 820, 110, 20);
+                fill(178);
+                rect( width / 2 - 10, height / 4 + 10 , 820, 500, 20);
+                fill(0);
+                text("Description :" , width/2, height / 4 + 50);
+                textSize(18);
+                text("Loki, the stepbrother of Thor, teams-up with the Chitauri " + "\n" +
+                        "Army and uses the Tesseract power to travel from Asgard to " + "\n" +
+                        "Earth to plot the invasion of Earth by the Chitauri and become the king of " + "\n" +
+                        "Earth. The director of the agency S.H.I.E.L.D., Nick Fury, sets in motion the project" + "\n" +
+                        "The Avengers, joining Tony Stark a.k.a. the Iron Man; " + "\n" +
+                        "Steve Rogers, a.k.a. Captain America; Bruce Banner, a.k.a. The Hulk; Thor; Natasha " + "\n" +
+                        "Romanoff, a.k.a. Black Widow; and Clint Barton, a.k.a. Hawkeye, to save the world " + "\n" +
+                        "from the powerful Loki and the alien invasion", width/2 , height /3);
+                break;
+
+            case KongMovie:
+                Index.MovieImagePlaceholder(Kong, width / 8, height /5, 520, 600 );
+                break;
+        }
 
     }
 
