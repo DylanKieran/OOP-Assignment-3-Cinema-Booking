@@ -59,7 +59,7 @@ public class Seat extends Main
 
     public boolean onHover()
     {
-        if(Math.abs(parent.mouseX - xPos) <= 20 && Math.abs(parent.mouseY - yPos) <= 20 && available)
+        if(parent.mouseX > xPos && parent.mouseX < xPos + 20 && parent.mouseY > yPos && parent.mouseY < yPos + 20 && available)
         {
             return true;
         }

@@ -12,6 +12,9 @@ public class SeatSelection extends Main
     PApplet parent;
     ArrayList<Seat> seats = new ArrayList<>();
     boolean created = false;
+    int rowCounter;
+    int colCounter;
+    int seatIndex = 0;
     SeatSelection(PApplet p, int screenNumber)
     {
         parent = p;
@@ -44,13 +47,26 @@ public class SeatSelection extends Main
         {
             for(int i = 0; i < 34; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < 20; j++)
                 {
-                    seat = new Seat(parent, parent.width / 40 * i + 3 * parent.width/40, parent.height/25 * j + parent.height/13, true, i);
-                    seats.add(seat);
+                    if(j != 10 && j != 11 && i != 8 && i != 9 && i != 24 && i != 25) {
+                        seatIndex++;
+                        rowCounter = j;
+                        colCounter = i;
+                        seat = new Seat(parent, parent.width / 40 * i + 3 * parent.width / 40, parent.height / 25 * j + parent.height / 13, true, seatIndex);
+                        System.out.println(seatIndex);
+                        seats.add(seat);
+                        parent.text(toChar(rowCounter), 2 * parent.width / 33, parent.height/25 * j +  parent.height / 10);
+                        parent.text(colCounter, parent.width / 40 * i + 3 * parent.width / 39, parent.height/15);
+                    }
                 }
             }
         }
+    }
+
+    private char toChar(int u)
+    {
+        return (char)(u + 65);
     }
 
     public void drawSeats(int screen)
@@ -68,5 +84,8 @@ public class SeatSelection extends Main
         parent.line(parent.width/5, parent.height, parent.width/5 * 2, parent.height - parent.height/20);
         parent.line(parent.width/5 * 4, parent.height, parent.width/5 * 3, parent.height - parent.height/20);
         parent.line(parent.width/5 * 2, parent.height - parent.height/20, parent.width/5 * 3, parent.height - parent.height/20);
+        parent.textSize(32);
+        parent.fill(255);
+        parent.text("SCREEN",parent.width/11 * 5, parent.height - height/20 * 2);
     }
 }

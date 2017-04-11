@@ -28,7 +28,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = WelcomeScreen;
+    int ScreenState = SeatSelection;
 
 
     public void setup()
@@ -125,9 +125,7 @@ public class Main extends PApplet{
 
     public void SeatSelection()
     {
-        //screenage.screenRender(1); Comment out the screen rendering
-        //seat.Render(); //Just testing the seat rendering code
-        //seat.Update();
+        screenage.screenRender(1);
     }
 
     public static void main(String[] args)
