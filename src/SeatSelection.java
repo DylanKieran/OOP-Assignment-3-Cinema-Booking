@@ -15,10 +15,12 @@ public class SeatSelection extends Main
     int rowCounter;
     int colCounter;
     int seatIndex = 0;
+    Docket docket;
     SeatSelection(PApplet p, int screenNumber)
     {
         parent = p;
         screen = screenNumber;
+        docket = new Docket(parent, parent.width / 40 * 32, parent.height/13);
     }
 
     public void screenRender(int screen)
@@ -29,6 +31,7 @@ public class SeatSelection extends Main
             createSeat(created, 1);
             drawLayout();
             drawSeats(1);
+            docket.Render();
             created = true;
         }
         else if (screen == 2)
@@ -45,7 +48,7 @@ public class SeatSelection extends Main
     {
         if (screen == 1 && check == false)
         {
-            for(int i = 0; i < 34; i++)
+            for(int i = 0; i < 29; i++)
             {
                 for (int j = 0; j < 20; j++)
                 {

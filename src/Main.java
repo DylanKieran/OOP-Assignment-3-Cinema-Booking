@@ -29,7 +29,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = MovieInfoScreen;
+    int ScreenState = SeatSelection;
 
     //Movie info Variables
     final int AvengersMovie = 0;

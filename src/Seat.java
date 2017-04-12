@@ -21,6 +21,7 @@ public class Seat extends Main
     int taken = color(155, 0, 0);
     int notTaken = color(0, 155, 0);
     int hover = color(255,255,100);
+    boolean selected;
 
     Seat(PApplet p,float x, float y, boolean available, int number)
     {
@@ -37,6 +38,10 @@ public class Seat extends Main
         if (available)
         {
             if(onHover())
+            {
+                parent.fill(hover);
+            }
+            else if (selected)
             {
                 parent.fill(hover);
             }
@@ -61,6 +66,10 @@ public class Seat extends Main
     {
         if(parent.mouseX > xPos && parent.mouseX < xPos + 20 && parent.mouseY > yPos && parent.mouseY < yPos + 20 && available)
         {
+            if(parent.mousePressed == true)
+            {
+                selected = true;
+            }
             return true;
         }
         else {
