@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 /**
  * Created by garym on 13/04/2017.
@@ -6,16 +7,15 @@ import processing.core.PApplet;
 public class MovieInformation extends Main{
 
     PApplet parent;
-    Index Index;
-    MovieInformation(PApplet p)
-    {
+
+    MovieInformation(PApplet p) {
         parent = p;
-        Index = new Index(this);
     }
 
-    void MovieInfo()
-    {
-        switch(MoviePick)
+
+    void MovieInfo() {
+
+        /*switch(MoviePick)
         {
             case AvengersMovie:
                 parent.stroke(219,84,97);
@@ -63,7 +63,7 @@ public class MovieInformation extends Main{
                         "to tell their story? Will beauty win the heart of the beast? ", width/2 , height /3);
 
                 break;
-        }
+        }*/
 
     }
 }

@@ -73,17 +73,21 @@ public class Button extends Main
         }
     }
 
-    void rectClick()
+    int rectClick()
     {
         if (parent.mouseX >= rectX && parent.mouseX <= rectX+rectWidth && parent.mouseY >= rectY &&  parent.mouseY <= rectY+rectHeight)
         {
-            System.out.println(ScreenState);
-            ScreenState = NextScreen;
+            if(parent.mousePressed == true)
+            {
+                ScreenState = NextScreen;
+                return ScreenState;
+            }
+            return ScreenState;
         }
         else
         {
-            System.out.println(ScreenState);
             ScreenState = CurrentScreen;
+            return ScreenState;
         }
     }
 

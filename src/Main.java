@@ -15,10 +15,10 @@ public class Main extends PApplet{
     Index Index;
     Seat seat;
     MovieSelection Movie;
-    Button Button;
     MovieInformation MovieInfo;
 
-    PImage Avengers, Kong, SpiderMan;
+    PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
+    PImage SpidermanBackground, MovieSelectBackground;
     PFont MovieFont, Title;
     Movie Movie1;
     SeatSelection screenage;
@@ -30,7 +30,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = MovieInfoScreen;
+    int ScreenState = WelcomeScreen;
 
     //Movie info Variables
     final int AvengersMovie = 0;
@@ -46,16 +46,28 @@ public class Main extends PApplet{
         //seat = new Seat(this, 100, 100, true, 1);
         Movie = new MovieSelection(this);
         MovieInfo = new MovieInformation(this);
-        // Movie1 = new Movie();
+        //Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
 
         Title = createFont("Title.ttf", 42);
         MovieFont = createFont("arial.ttf", 32);
         //textFont(MovieFont, 18);
-        Avengers = loadImage("avengers.jpg");
+
+        //Movie Poster Images
+        Guardians = loadImage("Guardians.jpg");
         Kong = loadImage("Kong.jpg");
-        SpiderMan = loadImage("Background.jpg");
+        GetOut = loadImage("GetOut.jpg");
+        IT = loadImage("IT.jpg");
+        LegoBatman = loadImage("LegoBatman.jpg");
+        Shooter = loadImage("Shooter.jpg");
+        StepBrothers = loadImage("StepBrothers.jpg");
+        Spiderman = loadImage("Spiderman.jpg");
+
+        //Background Images
+        SpidermanBackground = loadImage("SpidermanBackground.jpg");
+        MovieSelectBackground = loadImage("MovieSelectBackground.jpg");
+
     }
 
     public void settings()
@@ -78,9 +90,9 @@ public class Main extends PApplet{
             case MovieInfoScreen:
                 Index.Header();
                 Index.Footer();
-                //MovieInfo.MovieInfo();
+                MovieInfo.MovieInfo();
 
-                switch(MoviePick)
+                /*switch(MoviePick)
                 {
 
                     case AvengersMovie:
@@ -129,7 +141,8 @@ public class Main extends PApplet{
                                 "to tell their story? Will beauty win the heart of the beast? ", width/2 , height /3);
 
                         break;
-                }
+                }*/
+
                 break;
 
 
@@ -141,8 +154,8 @@ public class Main extends PApplet{
 
     public void WelcomeScreen()
     {
-        SpiderMan.resize(width , height);
-        image(SpiderMan,0,0);
+        SpidermanBackground.resize(width , height);
+        image(SpidermanBackground,0,0);
         fill(0,0,0, 220);
         rect(0,0, width , height);
 
@@ -169,21 +182,29 @@ public class Main extends PApplet{
 
         Index.TitleText(MovieFont, Title);
 
-        Button TitleButton = new Button(this, MovieFont,"Book Now", width/2, height - 220, 48, width/3 + 130, height - 280, width/5, height/16, false, WelcomeScreen, MovieSelectScreen);
+        Button TitleButton = new Button(this, Title,"Book Now", width/2, height - 225, 48, width/3 + 130, height - 280, width/5, height/16, false, WelcomeScreen, MovieSelectScreen);
         TitleButton.update();
         TitleButton.fillRect();
         TitleButton.overRect(width/3 + 130, height - 280, width/5, height/16);
-        TitleButton.rectClick();
+        ScreenState = TitleButton.rectClick();
     }
 
     public void MovieSelect()
     {
-        Index.Header();
-        Index.Footer();
+        MovieSelectBackground.resize(width , height);
+        image(MovieSelectBackground,0,0);
+        fill(0,0,0, 220);
+        rect(0,0, width , height);
+
         //Change this shit not hard coded values
-        Index.MovieImagePlaceholder(Avengers, 120, 220, 310, 210 );
-        Index.MovieImagePlaceholder(Kong, 400, 220 , 310 , 210);
-        //Index.Docket();
+        Index.MovieImagePlaceholder(Guardians, width/8, height/8, 310, 210 );
+        Index.MovieImagePlaceholder(Kong, width/3, height/8, 310, 210);
+        Index.MovieImagePlaceholder(GetOut, width/2 + 100, height/8, 310, 210);
+        Index.MovieImagePlaceholder(IT, width - width/4, height/8, 310, 210);
+        Index.MovieImagePlaceholder(LegoBatman, width/8, height/2 + 20, 310, 210);
+        Index.MovieImagePlaceholder(Shooter, width/3, height/2 + 20, 310, 210);
+        Index.MovieImagePlaceholder(StepBrothers, width/2 + 100, height/2 + 20, 310, 210);
+        Index.MovieImagePlaceholder(Spiderman, width - width/4, height/2 + 20, 310, 210);
     }
 
     public void SeatSelection()

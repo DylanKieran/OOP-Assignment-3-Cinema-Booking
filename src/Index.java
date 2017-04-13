@@ -12,6 +12,8 @@ public class Index extends Main
         parent = p;
     }
 
+    int SecondaryColour = color(255,20,147);
+
     //static header common throughout all pages with menu and back button
     public void Header()
     {
@@ -26,7 +28,7 @@ public class Index extends Main
     public void Footer()
     {
         parent.noStroke();
-        parent.fill(219,84,97);
+        parent.fill(SecondaryColour);
         parent.rect(0, parent.height-20, parent.width, parent.height);
     }
 
@@ -43,10 +45,10 @@ public class Index extends Main
     {
         //Change the colour of tha MoviePoster template if hovered on
         if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight ) {
-            parent.fill(219, 84, 97);
+            parent.fill(SecondaryColour);
         }
         else {
-            parent.fill(255, 0, 0);
+            parent.fill(255);
         }
 
         parent.rect(x - 4, y - 4, ImageWidth + 8, ImageHeight + 8, 6, 6, 6, 6);
@@ -62,19 +64,24 @@ public class Index extends Main
             parent.fill(0, 0, 0, 200);
             parent.rect(x, y, ImageWidth, ImageHeight);
 
+            /*
+            CHANGE TO A BUTTON
+
             //View Details Box
-            parent.fill(219,84,97);
-            parent.rect(x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , 4 , 4 ,4 ,4);
+            //parent.fill(SecondaryColour);
+            //parent.rect(x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , 4 , 4 ,4 ,4);
 
             //View Details Text
-            parent.fill(255);
-            parent.text("View Details", x + ImageWidth/4 + 5, y + ImageHeight - 38);
+            //parent.fill(255);
+            //parent.textSize(16);
+            //parent.text("View Details", x + 60, y + ImageHeight - 38);
+            */
 
             parent.beginShape();
             parent.pushMatrix();
             parent.translate(x + ImageWidth/2, y + ImageHeight/4);
             parent.scale((float) 0.5);
-            parent.fill(219,84,97);
+            parent.fill(SecondaryColour);
             parent.vertex(0, -50);
             parent.vertex(14, -20);
             parent.vertex(47, -15);
