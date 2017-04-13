@@ -8,8 +8,7 @@ public class Index extends Main
 {
     //Constructor
     PApplet parent;
-    Index(PApplet p)
-    {
+    Index(PApplet p) {
         parent = p;
     }
 
@@ -43,13 +42,11 @@ public class Index extends Main
     public void MovieImagePlaceholder(PImage MoviePoster, int x, int y, int ImageHeight,int ImageWidth)
     {
         //Change the colour of tha MoviePoster template if hovered on
-        if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight )
-        {
-            parent.fill(219,84,97);
+        if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight ) {
+            parent.fill(219, 84, 97);
         }
-        else
-        {
-            parent.fill(255);
+        else {
+            parent.fill(255, 0, 0);
         }
 
         parent.rect(x - 4, y - 4, ImageWidth + 8, ImageHeight + 8, 6, 6, 6, 6);

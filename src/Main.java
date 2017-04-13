@@ -16,6 +16,7 @@ public class Main extends PApplet{
     Seat seat;
     MovieSelection Movie;
     Button Button;
+    MovieInformation MovieInfo;
 
     PImage Avengers, Kong, SpiderMan;
     PFont MovieFont, Title;
@@ -29,12 +30,12 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = SeatSelection;
+    int ScreenState = MovieInfoScreen;
 
     //Movie info Variables
     final int AvengersMovie = 0;
     final int KongMovie = 1;
-    int MoviePick = AvengersMovie;
+    int MoviePick = KongMovie;
 
 
     public void setup()
@@ -44,6 +45,7 @@ public class Main extends PApplet{
         Index = new Index(this);
         //seat = new Seat(this, 100, 100, true, 1);
         Movie = new MovieSelection(this);
+        MovieInfo = new MovieInformation(this);
         // Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
@@ -74,8 +76,62 @@ public class Main extends PApplet{
                 break;
 
             case MovieInfoScreen:
-                MovieInfo();
+                Index.Header();
+                Index.Footer();
+                //MovieInfo.MovieInfo();
+
+                switch(MoviePick)
+                {
+
+                    case AvengersMovie:
+                        stroke(219,84,97);
+                        strokeWeight(3);
+                        Index.MovieImagePlaceholder(Avengers, width / 8, height /5, 520, 600 );
+                        noLoop();
+                        Movie.loadMovies("Avengers");
+                        noFill();
+                        rect(width/ 2 - 10, height / 7, 820, 110, 20);
+                        fill(178);
+                        rect( width / 2 - 10, height / 4 + 10 , 820, 500, 20);
+                        fill(0);
+                        text("Description :" , width/2, height / 4 + 50);
+                        textSize(18);
+                        text("Loki, the stepbrother of Thor, teams-up with the Chitauri " + "\n" +
+                                "Army and uses the Tesseract power to travel from Asgard to " + "\n" +
+                                "Earth to plot the invasion of Earth by the Chitauri and become the king of " + "\n" +
+                                "Earth. The director of the agency S.H.I.E.L.D., Nick Fury, sets in motion the project" + "\n" +
+                                "The Avengers, joining Tony Stark a.k.a. the Iron Man; " + "\n" +
+                                "Steve Rogers, a.k.a. Captain America; Bruce Banner, a.k.a. The Hulk; Thor; Natasha " + "\n" +
+                                "Romanoff, a.k.a. Black Widow; and Clint Barton, a.k.a. Hawkeye, to save the world " + "\n" +
+                                "from the powerful Loki and the alien invasion", width/2 , height /3);
+                        break;
+
+                    case KongMovie:
+
+                        stroke(219,84,97);
+                        strokeWeight(3);
+                        Index.MovieImagePlaceholder(Kong, width / 8, height /5, 520, 600 );
+                        noLoop();
+                        Movie.loadMovies("Kong");
+                        noFill();
+                        rect(width/ 2 - 10, height / 7, 820, 110, 20);
+                        fill(178);
+                        rect( width / 2 - 10, height / 4 + 10 , 820, 500, 20);
+                        fill(0);
+                        text("Description :" , width/2, height / 4 + 50);
+                        textSize(18);
+                        text("It's 1971, a team of explorers with a company of soldiers are following myth" +  "\n" +
+                                "and legend in the Pacific amidst rumors of an island where creatures both " + "\n" +
+                                "prehistoric and monstrous are supposed to live. Soon they come across Skull Island," + "\n" +
+                                "the very island of lore and legend. The creatures they soon come across make the " + "\n" +
+                                "soldiers and explorers running for their very lives. Soon Kong shows up to let all " + "\n" +
+                                "know that he is the King of Skull Island and top of the food chain. Will they survive " + "\n" +
+                                "to tell their story? Will beauty win the heart of the beast? ", width/2 , height /3);
+
+                        break;
+                }
                 break;
+
 
             case SeatSelection:
                 SeatSelection();
@@ -128,43 +184,6 @@ public class Main extends PApplet{
         Index.MovieImagePlaceholder(Avengers, 120, 220, 310, 210 );
         Index.MovieImagePlaceholder(Kong, 400, 220 , 310 , 210);
         //Index.Docket();
-    }
-
-    public void MovieInfo()
-    {
-        Index.Header();
-        Index.Footer();
-
-        switch(MoviePick)
-        {
-            case AvengersMovie:
-                stroke(219,84,97);
-                strokeWeight(3);
-                Index.MovieImagePlaceholder(Avengers, width / 8, height /5, 520, 600 );
-                noLoop();
-                Movie.loadMovies("Avengers");
-                noFill();
-                rect(width/ 2 - 10, height / 7, 820, 110, 20);
-                fill(178);
-                rect( width / 2 - 10, height / 4 + 10 , 820, 500, 20);
-                fill(0);
-                text("Description :" , width/2, height / 4 + 50);
-                textSize(18);
-                text("Loki, the stepbrother of Thor, teams-up with the Chitauri " + "\n" +
-                        "Army and uses the Tesseract power to travel from Asgard to " + "\n" +
-                        "Earth to plot the invasion of Earth by the Chitauri and become the king of " + "\n" +
-                        "Earth. The director of the agency S.H.I.E.L.D., Nick Fury, sets in motion the project" + "\n" +
-                        "The Avengers, joining Tony Stark a.k.a. the Iron Man; " + "\n" +
-                        "Steve Rogers, a.k.a. Captain America; Bruce Banner, a.k.a. The Hulk; Thor; Natasha " + "\n" +
-                        "Romanoff, a.k.a. Black Widow; and Clint Barton, a.k.a. Hawkeye, to save the world " + "\n" +
-                        "from the powerful Loki and the alien invasion", width/2 , height /3);
-                break;
-
-            case KongMovie:
-                Index.MovieImagePlaceholder(Kong, width / 8, height /5, 520, 600 );
-                break;
-        }
-
     }
 
     public void SeatSelection()
