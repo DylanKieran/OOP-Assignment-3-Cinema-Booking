@@ -42,9 +42,9 @@ public class Main extends PApplet{
     private final int StepBrothersMovie = 6;
     private final int SpidermanMovie = 7;
 
+    //////////////////////////////////////////////////////////////////////////////////////
     PImage img;
     int imgIndex = 0;
-    int imgNext = 0;
 
     String img_list[] =
             {
@@ -58,7 +58,7 @@ public class Main extends PApplet{
                     "LegoBatmanBackground.jpg",
                     "GetOutBackground.jpg"
             };
-
+    /////////////////////////////////////////////////////////////////////////////////////////
 
     public void setup()
     {
@@ -91,9 +91,10 @@ public class Main extends PApplet{
         ///////////////////////////////////////////////////////////////////////////////////////
         img = loadImage(img_list[imgIndex]);
         img.resize(width,height);
+        //////////////////////////////////////////////////////////////////////////////////////
 
         //Background Images
-        /*SpidermanBackground = loadImage("SpidermanBackground.jpg");
+        SpidermanBackground = loadImage("SpidermanBackground.jpg");
         GuardiansBackground = loadImage("GuardiansBackground.jpg");
         KongBackground = loadImage("KongBackground.jpg");
         MovieSelectBackground = loadImage("MovieSelectBackground.jpg");
@@ -101,7 +102,7 @@ public class Main extends PApplet{
         ITBackground = loadImage("ITBackground.jpg");
         ShooterBackground = loadImage("ShooterBackground.jpg");
         LegoBatmanBackground = loadImage("LegoBatmanBackground.jpg");
-        GetOutBackground = loadImage("GetOutBackground.jpg");*/
+        GetOutBackground = loadImage("GetOutBackground.jpg");
     }
 
     public void settings()
@@ -115,7 +116,6 @@ public class Main extends PApplet{
         {
             case WelcomeScreen:
                 Timer();
-                //println(remainingTime);
                 image(img, 0, 0);
                 fill(0,0,0, 220);
                 rect(0,0, width , height);
@@ -123,6 +123,10 @@ public class Main extends PApplet{
                 break;
 
             case MovieSelectScreen:
+                Timer();
+                image(img, 0, 0);
+                fill(0,0,0, 220);
+                rect(0,0, width , height);
                 MovieSelect();
                 break;
 
@@ -135,7 +139,7 @@ public class Main extends PApplet{
 
     public void MovieInfo()
     {
-       /* switch(MoviePick)
+        switch(MoviePick)
         {
             case GuardiansMovie:
                 GuardiansBackground.resize(width , height);
@@ -321,11 +325,10 @@ public class Main extends PApplet{
                         break;
 
 
-        }*/
-
-
+        }
     }
 
+    ///////////////////////////////////////////////////////////////////////
     public void Timer()
     {
         //10 seconds per Image
@@ -343,6 +346,7 @@ public class Main extends PApplet{
         img.resize(width,height);
 
     }
+    ////////////////////////////////////////////////////////////////////////
 
     public void WelcomeScreen()
     {
@@ -383,20 +387,21 @@ public class Main extends PApplet{
 
     public void MovieSelect()
     {
-        MovieSelectBackground.resize(width , height);
+        /*MovieSelectBackground.resize(width , height);
         image(MovieSelectBackground,0,0);
         fill(0,0,0, 220);
         rect(0,0, width , height);
+        */
 
         //Change this shit not hard coded values
-        MoviePick = Index.MovieImagePlaceholder(Guardians, width/8, height/8, 310, 210, MovieSelectScreen, GuardiansMovie);
-        MoviePick = Index.MovieImagePlaceholder(Kong, width/3, height/8, 310, 210, MovieSelectScreen, KongMovie);
-        //Index.MovieImagePlaceholder(GetOut, width/2 + 100, height/8, 310, 210, MovieSelectScreen, );
-        //Index.MovieImagePlaceholder(IT, width - width/4, height/8, 310, 210, MovieSelectScreen, );
-        //Index.MovieImagePlaceholder(LegoBatman, width/8, height/2 + 20, 310, 210, MovieSelectScreen, );
-        //Index.MovieImagePlaceholder(Shooter, width/3, height/2 + 20, 310, 210, MovieSelectScreen, );
-        //Index.MovieImagePlaceholder(StepBrothers, width/2 + 100, height/2 + 20, 310, 210, MovieSelectScreen, );
-        //Index.MovieImagePlaceholder(Spiderman, width - width/4, height/2 + 20, 310, 210, MovieSelectScreen, );
+        Index.MovieImagePlaceholder(Guardians, width/8, height/8, 310, 210);
+        Index.MovieImagePlaceholder(Kong, width/3, height/8, 310, 210);
+        Index.MovieImagePlaceholder(GetOut, width/2 + 100, height/8, 310, 210);
+        Index.MovieImagePlaceholder(IT, width - width/4, height/8, 310, 210);
+        Index.MovieImagePlaceholder(LegoBatman, width/8, height/2 + 20, 310, 210);
+        Index.MovieImagePlaceholder(Shooter, width/3, height/2 + 20, 310, 210);
+        Index.MovieImagePlaceholder(StepBrothers, width/2 + 100, height/2 + 20, 310, 210);
+        Index.MovieImagePlaceholder(Spiderman, width - width/4, height/2 + 20, 310, 210);
     }
 
     public void SeatSelection()

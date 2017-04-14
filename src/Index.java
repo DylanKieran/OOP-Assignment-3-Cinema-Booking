@@ -42,7 +42,7 @@ public class Index extends Main
     }
 
     //A background to go behind images eg. Movie Image
-    public int MovieImagePlaceholder(PImage MoviePoster, int x, int y, int ImageHeight,int ImageWidth,int CurrentScreen,int NextScreen)
+    public void MovieImagePlaceholder(PImage MoviePoster, int x, int y, int ImageHeight,int ImageWidth/*,int CurrentScreen,int NextScreen*/)
     {
         //Change the colour of tha MoviePoster template if hovered on
         if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight ) {
@@ -103,7 +103,6 @@ public class Index extends Main
             parent.popMatrix();
         }
 
-        return MovieChoice;
     }
 
     public void BackgroundCircles()
