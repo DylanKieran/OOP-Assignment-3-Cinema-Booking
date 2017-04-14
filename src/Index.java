@@ -13,6 +13,7 @@ public class Index extends Main
     }
 
     int SecondaryColour = color(255,20,147);
+    int MovieChoice = 0;
 
     //static header common throughout all pages with menu and back button
     public void Header()
@@ -41,7 +42,7 @@ public class Index extends Main
     }
 
     //A background to go behind images eg. Movie Image
-    public void MovieImagePlaceholder(PImage MoviePoster, int x, int y, int ImageHeight,int ImageWidth)
+    public int MovieImagePlaceholder(PImage MoviePoster, int x, int y, int ImageHeight,int ImageWidth,int CurrentScreen,int NextScreen)
     {
         //Change the colour of tha MoviePoster template if hovered on
         if(parent.mouseX > x && parent.mouseX < x + ImageWidth && parent.mouseY > y && parent.mouseY < y + ImageHeight ) {
@@ -77,6 +78,12 @@ public class Index extends Main
             //parent.text("View Details", x + 60, y + ImageHeight - 38);
             */
 
+            /*Button ViewDetails = new Button(this, MovieFont,"View Details", x + 60, y + ImageHeight - 38, 16, x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , false, CurrentScreen, NextScreen);
+            ViewDetails.update();
+            ViewDetails.fillRect();
+            ViewDetails.overRect(x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35);
+            MovieChoice = ViewDetails.rectClick();*/
+
             parent.beginShape();
             parent.pushMatrix();
             parent.translate(x + ImageWidth/2, y + ImageHeight/4);
@@ -96,6 +103,7 @@ public class Index extends Main
             parent.popMatrix();
         }
 
+        return MovieChoice;
     }
 
     public void BackgroundCircles()
