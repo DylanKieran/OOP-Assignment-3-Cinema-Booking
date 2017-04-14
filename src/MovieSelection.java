@@ -1,5 +1,6 @@
 import processing.core.PApplet;
 import processing.data.StringList;
+import processing.core.PFont;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class MovieSelection extends Main
     static String driver = "org.sqlite.JDBC";
     String url = "jdbc:sqlite:Movies.sqlite";
     StringList info;
+
 
     MovieSelection(PApplet p)
     {
@@ -47,7 +49,7 @@ public class MovieSelection extends Main
         }
     }
 
-    void loadMovies(String ReturnMovie)
+    void loadMovies(String ReturnMovie, PFont MovieInfo)
     {
 
         //Scanner reader = new Scanner(System.in);  // Reading from System.in
@@ -63,19 +65,18 @@ public class MovieSelection extends Main
 
             rs = ps.executeQuery();
 
-
             int gap =0;
             String[] arr = new String[5];
-            parent.textSize(26);
+            parent.textFont(MovieInfo);
             parent.fill(255);
-            parent.textAlign(LEFT);
-            parent.text("Rating :", parent.width/2 + 680, parent.height / 5 );
+            parent.textAlign(CENTER);
+            parent.text("           Rating :" + "     /10", parent.width/2 - 100, parent.height / 10 + 150 );
             while (rs.next())
             {
                 for(int i = 1; i< 5 ; i++) {
                     arr[i] = rs.getString(i);
-                    parent.text(arr[i] , parent.width/2 + gap, parent.height / 5 );
-                    gap +=260;
+                    parent.text(arr[i] , parent.width/2, parent.height / 10 + gap );
+                    gap +=50;
                 }
 
                 Movie movie = new Movie(rs);
