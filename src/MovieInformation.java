@@ -12,10 +12,10 @@ public class MovieInformation extends Main{
         parent = p;
     }
 
-
+    /*
     void MovieInfo() {
 
-        /*switch(MoviePick)
+        switch(MoviePick)
         {
             case AvengersMovie:
                 parent.stroke(219,84,97);
@@ -63,7 +63,8 @@ public class MovieInformation extends Main{
                         "to tell their story? Will beauty win the heart of the beast? ", width/2 , height /3);
 
                 break;
-        }*/
+        }
 
     }
+    */
 }
