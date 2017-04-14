@@ -18,7 +18,7 @@ public class Main extends PApplet{
     MovieInformation MovieInfo;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
-    PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground;
+    PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground, LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground;
     PFont MovieFont, Title;
     Movie Movie1;
     SeatSelection screenage;
@@ -74,7 +74,11 @@ public class Main extends PApplet{
         GuardiansBackground = loadImage("GuardiansBackground.jpg");
         KongBackground = loadImage("KongBackground.jpg");
         MovieSelectBackground = loadImage("MovieSelectBackground.jpg");
-
+        StepBrothersBackground = loadImage("StepBrothersBackground.jpg");
+        ITBackground = loadImage("ITBackground.jpg");
+        ShooterBackground = loadImage("ShooterBackground.jpg");
+        LegoBatmanBackground = loadImage("LegoBatmanBackground.jpg");
+        GetOutBackground = loadImage("GetOutBackground.jpg");
     }
 
     public void settings()
@@ -106,6 +110,9 @@ public class Main extends PApplet{
         switch(MoviePick)
         {
             case GuardiansMovie:
+                GuardiansBackground.resize(width , height);
+                image(GuardiansBackground,0,0);
+
                 stroke(219,84,97);
                 strokeWeight(3);
                 //Index.MovieImagePlaceholder(Guardians, width / 8, height /5, 520, 600 );
@@ -136,7 +143,8 @@ public class Main extends PApplet{
                 break;
 
             case KongMovie:
-
+                KongBackground.resize(width , height);
+                image(KongBackground,0,0);
                 stroke(219,84,97);
                 strokeWeight(3);
                 //Index.MovieImagePlaceholder(Kong, width / 8, height /5, 520, 600 );
@@ -160,10 +168,11 @@ public class Main extends PApplet{
                 break;
 
                     case GetOutMovie:
-
+                        GetOutBackground.resize(width , height);
+                        image(GetOutBackground,0,0);
                         stroke(219,84,97);
                         strokeWeight(3);
-                       // Index.MovieImagePlaceholder(GetOut, width / 8, height /5, 520, 600 );
+                        //Index.MovieImagePlaceholder(GetOut, width / 8, height /5, 520, 600 );
                         noLoop();
                         Movie.loadMovies("GetOut");
                         noFill();
@@ -181,7 +190,8 @@ public class Main extends PApplet{
                         break;
 
                     case ShooterMovie:
-
+                        ShooterBackground.resize(width , height);
+                        image(ShooterBackground,0,0);
                         stroke(219,84,97);
                         strokeWeight(3);
                         //Index.MovieImagePlaceholder(Shooter, width / 8, height /5, 520, 600 );
@@ -207,6 +217,8 @@ public class Main extends PApplet{
                         break;
 
                     case ITMovie:
+                        ITBackground.resize(width , height);
+                        image(ITBackground,0,0);
                         stroke(219,84,97);
                         strokeWeight(3);
                         //Index.MovieImagePlaceholder(IT, width / 8, height /5, 520, 600 );
@@ -227,6 +239,8 @@ public class Main extends PApplet{
                         break;
 
                     case LegoBatmanMovie:
+                        LegoBatmanBackground.resize(width , height);
+                        image(LegoBatmanBackground,0,0);
                         stroke(219,84,97);
                         strokeWeight(3);
                        // Index.MovieImagePlaceholder(IT, width / 8, height /5, 520, 600 );
@@ -247,6 +261,8 @@ public class Main extends PApplet{
                         break;
 
                     case StepBrothersMovie:
+                        StepBrothersBackground.resize(width , height);
+                        image(StepBrothersBackground,0,0);
                         stroke(219,84,97);
                         strokeWeight(3);
                         //Index.MovieImagePlaceholder(StepBrothers, width / 8, height /5, 520, 600 );
@@ -274,6 +290,8 @@ public class Main extends PApplet{
                         break;
 
                     case SpidermanMovie:
+                        SpidermanBackground.resize(width , height);
+                        image(SpidermanBackground,0,0);
                         stroke(219,84,97);
                         strokeWeight(3);
                         //Index.MovieImagePlaceholder(Spiderman, width / 8, height /5, 520, 600 );
