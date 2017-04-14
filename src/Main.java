@@ -30,9 +30,9 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     //final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = MovieInfoScreen;
+    int ScreenState = WelcomeScreen;
 
-    private int MoviePick = 4;
+    private int MoviePick =3;
     private final int GuardiansMovie = 0;
     private final int KongMovie = 1;
     private final int GetOutMovie =2;
@@ -41,6 +41,23 @@ public class Main extends PApplet{
     private final int ShooterMovie = 5;
     private final int StepBrothersMovie = 6;
     private final int SpidermanMovie = 7;
+
+    PImage img;
+    int imgIndex = 0;
+    int imgNext = 0;
+
+    String img_list[] =
+            {
+                    "SpidermanBackground.jpg",
+                    "GuardiansBackground.jpg",
+                    "KongBackground.jpg",
+                    "MovieSelectBackground.jpg",
+                    "StepBrothersBackground.jpg",
+                    "ITBackground.jpg",
+                    "ShooterBackground.jpg",
+                    "LegoBatmanBackground.jpg",
+                    "GetOutBackground.jpg"
+            };
 
 
     public void setup()
@@ -71,8 +88,12 @@ public class Main extends PApplet{
         StepBrothers = loadImage("StepBrothers.jpg");
         Spiderman = loadImage("Spiderman.jpg");
 
+        ///////////////////////////////////////////////////////////////////////////////////////
+        img = loadImage(img_list[imgIndex]);
+        img.resize(width,height);
+
         //Background Images
-        SpidermanBackground = loadImage("SpidermanBackground.jpg");
+        /*SpidermanBackground = loadImage("SpidermanBackground.jpg");
         GuardiansBackground = loadImage("GuardiansBackground.jpg");
         KongBackground = loadImage("KongBackground.jpg");
         MovieSelectBackground = loadImage("MovieSelectBackground.jpg");
@@ -80,7 +101,7 @@ public class Main extends PApplet{
         ITBackground = loadImage("ITBackground.jpg");
         ShooterBackground = loadImage("ShooterBackground.jpg");
         LegoBatmanBackground = loadImage("LegoBatmanBackground.jpg");
-        GetOutBackground = loadImage("GetOutBackground.jpg");
+        GetOutBackground = loadImage("GetOutBackground.jpg");*/
     }
 
     public void settings()
@@ -93,6 +114,11 @@ public class Main extends PApplet{
         switch (ScreenState)
         {
             case WelcomeScreen:
+                Timer();
+                //println(remainingTime);
+                image(img, 0, 0);
+                fill(0,0,0, 220);
+                rect(0,0, width , height);
                 WelcomeScreen();
                 break;
 
@@ -109,7 +135,7 @@ public class Main extends PApplet{
 
     public void MovieInfo()
     {
-        switch(MoviePick)
+       /* switch(MoviePick)
         {
             case GuardiansMovie:
                 GuardiansBackground.resize(width , height);
@@ -295,17 +321,35 @@ public class Main extends PApplet{
                         break;
 
 
+        }*/
+
+
+    }
+
+    public void Timer()
+    {
+        //10 seconds per Image
+        if(frameCount % 18 == 0)
+        {
+            imgIndex++;
         }
 
+        if(imgIndex == 8)
+        {
+            imgIndex = 0;
+        }
+
+        img = loadImage(img_list[imgIndex]);
+        img.resize(width,height);
 
     }
 
     public void WelcomeScreen()
     {
-        SpidermanBackground.resize(width , height);
+        /*SpidermanBackground.resize(width , height);
         image(SpidermanBackground,0,0);
         fill(0,0,0, 220);
-        rect(0,0, width , height);
+        rect(0,0, width , height);*/
 
         Index.BackgroundCircles();
 
