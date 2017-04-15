@@ -42,7 +42,7 @@ public class Main extends PApplet{
     private final int StepBrothersMovie = 6;
     private final int SpidermanMovie = 7;
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /*/////////////////////////////////////////////////////////////////////////////////////
     PImage img;
     int imgIndex = 0;
 
@@ -58,7 +58,7 @@ public class Main extends PApplet{
                     "LegoBatmanBackground.jpg",
                     "GetOutBackground.jpg"
             };
-    /////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////*/
 
     public void setup()
     {
@@ -88,10 +88,10 @@ public class Main extends PApplet{
         StepBrothers = loadImage("StepBrothers.jpg");
         Spiderman = loadImage("Spiderman.jpg");
 
-        ///////////////////////////////////////////////////////////////////////////////////////
+        /*//////////////////////////////////////////////////////////////////////////////////////
         img = loadImage(img_list[imgIndex]);
         img.resize(width,height);
-        //////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////*/
 
         //Background Images
         SpidermanBackground = loadImage("SpidermanBackground.jpg");
@@ -115,18 +115,18 @@ public class Main extends PApplet{
         switch (ScreenState)
         {
             case WelcomeScreen:
-                Timer();
+                /*Timer();
                 image(img, 0, 0);
                 fill(0,0,0, 220);
-                rect(0,0, width , height);
+                rect(0,0, width , height);*/
                 WelcomeScreen();
                 break;
 
             case MovieSelectScreen:
-                Timer();
+                /*Timer();
                 image(img, 0, 0);
                 fill(0,0,0, 220);
-                rect(0,0, width , height);
+                rect(0,0, width , height);*/
                 MovieSelect();
                 break;
 
@@ -328,11 +328,11 @@ public class Main extends PApplet{
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////
+    /*//////////////////////////////////////////////////////////////////////
     public void Timer()
     {
-        //10 seconds per Image
-        if(frameCount % 18 == 0)
+        //20 seconds per Image
+        if(frameCount % 20 == 0)
         {
             imgIndex++;
         }
@@ -346,14 +346,14 @@ public class Main extends PApplet{
         img.resize(width,height);
 
     }
-    ////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////*/
 
     public void WelcomeScreen()
     {
-        /*SpidermanBackground.resize(width , height);
+        SpidermanBackground.resize(width , height);
         image(SpidermanBackground,0,0);
         fill(0,0,0, 220);
-        rect(0,0, width , height);*/
+        rect(0,0, width , height);
 
         Index.BackgroundCircles();
 
@@ -378,20 +378,20 @@ public class Main extends PApplet{
 
         Index.TitleText(MovieFont, Title);
 
-        Button TitleButton = new Button(this, Title,"Book Now", width/2, height - 225, 48, width/3 + 130, height - 280, width/5, height/16, false, WelcomeScreen, MovieSelectScreen);
-        TitleButton.update();
-        TitleButton.fillRect();
-        TitleButton.overRect(width/3 + 130, height - 280, width/5, height/16);
-        ScreenState = TitleButton.rectClick();
+        Button TitleButton = new Button(this, width/3 + width/12 , height - height/4, width/6, 50, WelcomeScreen, MovieSelectScreen);
+        ScreenState = TitleButton.onHover();
+        TitleButton.Render();
+        TitleButton.renderText(Title, 32, "Book Now", width/2, height - height/5 - 15);
+
+
     }
 
     public void MovieSelect()
     {
-        /*MovieSelectBackground.resize(width , height);
+        MovieSelectBackground.resize(width , height);
         image(MovieSelectBackground,0,0);
         fill(0,0,0, 220);
         rect(0,0, width , height);
-        */
 
         //Change this shit not hard coded values
         Index.MovieImagePlaceholder(Guardians, width/8, height/8, 310, 210);

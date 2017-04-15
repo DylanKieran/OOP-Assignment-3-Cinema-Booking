@@ -3,104 +3,67 @@ import processing.core.PFont;
 
 public class Button extends Main
 {
-    //Constructor
     PApplet parent;
 
-    //Fields
-    String buttonText;
-    float textX;
-    float textY;
-    float rectX;
-    float rectY;
-    float rectWidth;
-    float rectHeight;
-    int rectColour = color(255,20,147);
-    boolean rectOver;
-    int CurrentScreen;
-    int NextScreen;
-    int fontSize;
+    float xPos;
+    float yPos;
+    float rectWidth, rectHeight;
+    boolean Hover = false;
+    int PrimaryColour = color(255,20,147);
+    int SecondaryColour = color(255, 35, 180);
+    int CurrentScreen, NextScreen;
 
-    //Constructor
-    Button(PApplet p,PFont MovieFont, String buttonText,float textX, float textY,int fontSize, float rectX, float rectY, float rectWidth, float rectHeight, boolean rectOver, int CurrentScreen ,int NextScreen)
+    Button(PApplet p, float x, float y, float rectWidth, float rectHeight, int CurrentScreen, int NextScreen)
     {
         parent = p;
-        this.MovieFont = MovieFont;
-        this.buttonText = buttonText;
-        this.textX = textX;
-        this.textY = textY;
-        this.fontSize = fontSize;
-        this.rectX = rectX;
-        this.rectY = rectY;
+        this.xPos = x;
+        this.yPos = y;
         this.rectWidth = rectWidth;
         this.rectHeight = rectHeight;
-        this.rectOver = rectOver;
         this.CurrentScreen = CurrentScreen;
         this.NextScreen = NextScreen;
+        this.Hover = false;
     }
 
-    void fillRect()
+    public void Render()
     {
-        int rectHighlight = color(255,30,160);
-
-        if (rectOver)
+        if(Hover == true)
         {
-            parent.fill(rectHighlight);
+            parent.fill(SecondaryColour);
         }
         else
         {
-            parent.fill(rectColour);
+            parent.fill(PrimaryColour);
         }
-
-        parent.noStroke();
-        parent.rect(rectX, rectY, rectWidth, rectHeight, 5, 5, 5, 5);
-
-        parent.textAlign(CENTER);
-        parent.fill(255);
-        parent.textFont(MovieFont);
-        parent.textSize(fontSize);
-        parent.text(buttonText,textX,textY);
+        parent.rect(xPos, yPos, rectWidth, rectHeight);
     }
 
-    void update()
+    public int onHover()
     {
-        if ( overRect(rectX, rectY, rectWidth, rectHeight) )
+        if(parent.mouseX >= xPos && parent.mouseX <= xPos + rectWidth && parent.mouseY >= yPos && parent.mouseY <= yPos + rectHeight)
         {
-            rectOver = true;
-        }
-        else
-        {
-            rectOver = false;
-        }
-    }
+            Hover = true;
 
-    int rectClick()
-    {
-        if (parent.mouseX >= rectX && parent.mouseX <= rectX+rectWidth && parent.mouseY >= rectY &&  parent.mouseY <= rectY+rectHeight)
-        {
             if(parent.mousePressed == true)
             {
-                ScreenState = NextScreen;
-                return ScreenState;
+                return NextScreen;
             }
-            return ScreenState;
+            else
+            {
+                return CurrentScreen;
+            }
         }
         else
         {
-            ScreenState = CurrentScreen;
-            return ScreenState;
+            return CurrentScreen;
         }
     }
 
-    boolean overRect(float x, float y, float rectWidth, float rectHeight)
+    public void renderText(PFont TextFont, int TextSize, String Text, float TextX, float TextY)
     {
-        if (parent.mouseX >= x && parent.mouseX <= x +rectWidth &&
-                parent.mouseY >= y && parent.mouseY <= y +rectHeight)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        parent.fill(255);
+        parent.textFont(TextFont);
+        parent.textSize(TextSize);
+        parent.text(Text, TextX, TextY);
     }
 }

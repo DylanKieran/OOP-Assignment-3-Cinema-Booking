@@ -78,11 +78,7 @@ public class Index extends Main
             //parent.text("View Details", x + 60, y + ImageHeight - 38);
             */
 
-            /*Button ViewDetails = new Button(this, MovieFont,"View Details", x + 60, y + ImageHeight - 38, 16, x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , false, CurrentScreen, NextScreen);
-            ViewDetails.update();
-            ViewDetails.fillRect();
-            ViewDetails.overRect(x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35);
-            MovieChoice = ViewDetails.rectClick();*/
+            //Button ViewDetails = new Button(this, /*MovieFont,"View Details",*/ x + 60, y + ImageHeight - 38, 16, x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , false, CurrentScreen, NextScreen)
 
             parent.beginShape();
             parent.pushMatrix();
