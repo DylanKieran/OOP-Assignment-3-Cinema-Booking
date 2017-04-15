@@ -16,9 +16,11 @@ public class Main extends PApplet{
     Seat seat;
     MovieSelection Movie;
     MovieInformation MovieInfo;
+    Food Food;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground, LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground;
+    PImage Popcorn, Drink;
     PFont MovieFont, Title, MovieText;
     Movie Movie1;
     SeatSelection screenage;
@@ -28,9 +30,9 @@ public class Main extends PApplet{
     final int MovieSelectScreen = 1;
     final int MovieInfoScreen = 2;
     final int SeatSelection = 3;
-    //final int FoodDrinkSelection = 4;
+    final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = WelcomeScreen;
+    int ScreenState = FoodDrinkSelection;
 
     private int MoviePick =3;
     private final int GuardiansMovie = 0;
@@ -103,6 +105,10 @@ public class Main extends PApplet{
         ShooterBackground = loadImage("ShooterBackground.jpg");
         LegoBatmanBackground = loadImage("LegoBatmanBackground.jpg");
         GetOutBackground = loadImage("GetOutBackground.jpg");
+
+        //Food Images
+        Drink = loadImage("Drink.png");
+        Popcorn = loadImage("Popcorn.png");
     }
 
     public void settings()
@@ -134,6 +140,15 @@ public class Main extends PApplet{
                 Index.Header();
                 Index.Footer();
                 MovieInfo();
+                break;
+
+            case FoodDrinkSelection:
+                Food RenderPopcorn = new Food(this, Popcorn, GuardiansBackground, width/5, height/6, 160, 160);
+                RenderPopcorn.renderBackground();
+                RenderPopcorn.renderImages();
+                RenderPopcorn.ImageBackground();
+
+                break;
         }
     }
 
