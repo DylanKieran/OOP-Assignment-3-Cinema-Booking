@@ -21,6 +21,7 @@ public class Main extends PApplet{
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground, LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground;
     PImage Popcorn, Drink;
+    double price;
     PFont MovieFont, Title, MovieText;
     Movie Movie1;
     SeatSelection screenage;
@@ -34,7 +35,7 @@ public class Main extends PApplet{
     //final int EndScreen = 5; //Maybe Payment Screen
     int ScreenState = FoodDrinkSelection;
 
-    private int MoviePick =3;
+    int MoviePick;
     private final int GuardiansMovie = 0;
     private final int KongMovie = 1;
     private final int GetOutMovie =2;
@@ -147,7 +148,9 @@ public class Main extends PApplet{
                 RenderPopcorn.renderBackground();
                 RenderPopcorn.renderImages();
                 RenderPopcorn.ImageBackground();
-
+                price = RenderPopcorn.size("Large" , 2);
+                noLoop();
+                System.out.print(price);
                 break;
         }
     }
@@ -417,6 +420,13 @@ public class Main extends PApplet{
         Index.MovieImagePlaceholder(Shooter, width/3, height/2 + 20, 310, 210);
         Index.MovieImagePlaceholder(StepBrothers, width/2 + 100, height/2 + 20, 310, 210);
         Index.MovieImagePlaceholder(Spiderman, width - width/4, height/2 + 20, 310, 210);
+
+        /*
+        Button GuardiansButton = new Button(this, width/8 , height/8, 210, 210, MovieSelectScreen, MovieInfoScreen);
+        MoviePick = GuardiansButton.onHoverMovie(MoviePick);
+        GuardiansButton.Render();
+        //GuardiansButton.renderText(Title, 32, "Book Now", width/8, height/8);
+        */
     }
 
     public void SeatSelection()

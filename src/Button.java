@@ -59,6 +59,27 @@ public class Button extends Main
         }
     }
 
+    public int onHoverMovie(int MoviePick)
+    {
+        if(parent.mouseX >= xPos && parent.mouseX <= xPos + rectWidth && parent.mouseY >= yPos && parent.mouseY <= yPos + rectHeight)
+        {
+            Hover = true;
+
+            if(parent.mousePressed == true)
+            {
+                return NextScreen = MoviePick;
+            }
+            else
+            {
+                return CurrentScreen;
+            }
+        }
+        else
+        {
+            return CurrentScreen;
+        }
+    }
+
     public void renderText(PFont TextFont, int TextSize, String Text, float TextX, float TextY)
     {
         parent.fill(255);
