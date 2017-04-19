@@ -1,5 +1,6 @@
 import processing.core.PApplet;
 
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +17,10 @@ public class SeatSelection extends Main
     int colCounter;
     int seatIndex = 0;
     Docket docket;
+
+    static String driver = "org.sqlite.JDBC";
+    String url = "jdbc:sqlite:Movies.sqlite";
+
     SeatSelection(PApplet p, int screenNumber)
     {
         parent = p;
@@ -57,7 +62,8 @@ public class SeatSelection extends Main
                         rowCounter = j;
                         colCounter = i;
                         seat = new Seat(parent, parent.width / 40 * i + 3 * parent.width / 40, parent.height / 25 * j + parent.height / 13, true, seatIndex);
-                        System.out.println(seatIndex);
+                        //System.out.println(seatIndex);
+                        seat.available = QueryDB(seatIndex);
                         seats.add(seat);
                         parent.text(toChar(rowCounter), 2 * parent.width / 33, parent.height/25 * j +  parent.height / 10);
                         parent.text(colCounter, parent.width / 40 * i + 3 * parent.width / 39, parent.height/15);
@@ -66,7 +72,48 @@ public class SeatSelection extends Main
             }
         }
     }
+    static
+    {
+        try
+        {
+            Class.forName(driver);
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
+    public boolean QueryDB(int seatID)
+    {
+        ResultSet rs;
+        try(Connection c = DriverManager.getConnection(url);
+            PreparedStatement ps = c.prepareStatement("select * from Screen where Seat like ?"))
+        {
+            ps.setInt(1, seatID);
+
+            rs = ps.executeQuery();
+            while(rs.next())
+            {
+                int booked = rs.getInt("Booked");
+                System.out.println(booked);
+                if(booked == 1)
+                {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+
+        }
+        catch(SQLException e)
+        {
+            System.out.println("SQL Exception");
+            e.printStackTrace();
+        }
+        return true;
+    }
     private char toChar(int u)
     {
         return (char)(u + 65);
@@ -76,6 +123,7 @@ public class SeatSelection extends Main
     {
         for(Seat seat : seats)
         {
+            seat.Update();
             seat.Render();
         }
     }

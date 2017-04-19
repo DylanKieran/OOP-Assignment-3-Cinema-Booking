@@ -1,5 +1,8 @@
 import processing.core.PApplet;
 
+import java.sql.*;
+import java.util.ArrayList;
+
 /**
  * Created by steve on 22/03/2017.
  * Class for the seats, This will control the rendering of the seats
@@ -13,6 +16,7 @@ lmao
 public class Seat extends Main
 {
     PApplet parent;
+
 
     float xPos;
     float yPos;
@@ -32,6 +36,7 @@ public class Seat extends Main
         this.available = available;
 
     }
+
 
     public void Render()
     {
@@ -58,9 +63,23 @@ public class Seat extends Main
 
     public void Update()
     {
-        System.out.println(parent.mouseX + " + " + parent.mouseY);
-        onHover();
+        //System.out.println(parent.mouseX + " + " + parent.mouseY);
+        noLoop();
+        //onHover();
     }
+
+    public ArrayList<Movie> Movies = new ArrayList<>();
+
+    public void printSeats(ArrayList<Movie> movies)
+    {
+        for(Movie t:movies)
+        {
+            System.out.println(t);
+        }
+    }
+
+
+
 
     public boolean onHover()
     {

@@ -33,7 +33,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = WelcomeScreen;
+    int ScreenState = SeatSelection;
 
     int MoviePick = 0;
     private final int GuardiansMovie = 6;
@@ -135,6 +135,10 @@ public class Main extends PApplet{
                 fill(0,0,0, 220);
                 rect(0,0, width , height);*/
                 MovieSelect();
+                break;
+
+            case SeatSelection:
+                screenage.screenRender(1);
                 break;
 
             case FoodDrinkSelection:
