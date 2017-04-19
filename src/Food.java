@@ -12,17 +12,18 @@ import java.util.Scanner;
 
 public class Food extends Main
 {
-    static String driver = "org.sqlite.JDBC";
+    /*static String driver = "org.sqlite.JDBC";
     String url = "jdbc:sqlite:Movies.sqlite";
+    PImage Item, Background;
+    float Coke, Fanta, Sprite = 2;
+    float Maltesers, Twizzlers, MandMs , BoostBites, Popcorn = 2;*/
 
     PApplet parent;
-    PImage Item, Background;
-    int PrimaryColour = color(255,20,147);
-    float Xpos, Ypos;
-    int ImageWidth, ImageHeight;
-    float Coke, Fanta, Sprite = 2;
-    float Maltesers, Twizzlers, MandMs , BoostBites, Popcorn = 2;
+    Food(PApplet p) {parent = p;}
 
+    int PrimaryColour = color(255,20,147);
+
+    /*
     static
     {
         try
@@ -33,34 +34,21 @@ public class Food extends Main
         {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    Food(PApplet p, PImage Item, PImage Background, float Xpos, float Ypos, int ImageWidth, int ImageHeight)
-    {
-        parent = p;
-        this.Item = Item;
-        this.Background = Background;
-        this.Xpos = Xpos;
-        this.Ypos = Ypos;
-        this.ImageWidth = ImageWidth;
-        this.ImageHeight = ImageHeight;
-    }
-
-    void renderBackground()
-    {
-        Background.resize(parent.width , parent.height);
-        parent.image(Background,0,0);
-        parent.fill(0,0,0, 220);
-        parent.rect(0,0, parent.width , parent.height);
-    }
-
-    void renderImages()
+    void render(PImage Item, int ImageWidth, int ImageHeight, int Xpos, int Ypos)
     {
         Item.resize(ImageWidth, ImageHeight);
         parent.image(Item, Xpos, Ypos);
+
+        parent.stroke(PrimaryColour);
+        parent.strokeWeight(2);
+        parent.fill(PrimaryColour, 80);
+        parent.rect(Xpos - 20,Ypos - 20,200, 200, 5, 5, 5, 5);
+        parent.noStroke();
     }
 
-    double size(String size, double price)
+    /*double size(String size, double price)
     {
 
         if ( size == "Large")
@@ -74,15 +62,6 @@ public class Food extends Main
         }
 
         return price;
-    }
-
-    void ImageBackground()
-    {
-        parent.stroke(PrimaryColour);
-        parent.strokeWeight(2);
-        parent.fill(PrimaryColour, 80);
-        parent.rect(Xpos - 20,Ypos - 20,200, 200, 5, 5, 5, 5);
-        parent.noStroke();
     }
 
     public void printTunes(ArrayList<Food> food)
@@ -125,5 +104,4 @@ public class Food extends Main
         //return rating;
     }
     */
-
 }

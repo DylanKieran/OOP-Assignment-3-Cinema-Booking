@@ -20,7 +20,7 @@ public class Main extends PApplet{
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground, LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground;
-    PImage Popcorn, Drink;
+    PImage PopcornLarge, PopcornMedium, PopcornSmall, DrinkLarge, DrinkMedium, DrinkSmall, Twizzlers, MandM, Maltesers;
     double price;
     PFont MovieFont, Title, MovieText;
     Movie Movie1;
@@ -108,8 +108,15 @@ public class Main extends PApplet{
         GetOutBackground = loadImage("GetOutBackground.jpg");
 
         //Food Images
-        Drink = loadImage("Drink.png");
-        Popcorn = loadImage("Popcorn.png");
+        DrinkLarge = loadImage("Drink.png");
+        DrinkMedium = loadImage("Drink.png");
+        DrinkSmall = loadImage("Drink.png");
+        PopcornLarge = loadImage("Popcorn.png");
+        PopcornMedium = loadImage("Popcorn.png");
+        PopcornSmall = loadImage("Popcorn.png");
+        Twizzlers = loadImage("Twizzlers.png");
+        MandM = loadImage("MandM.png");
+        Maltesers = loadImage("Maltesers.png");
     }
 
     public void settings()
@@ -143,13 +150,7 @@ public class Main extends PApplet{
                 break;
 
             case FoodDrinkSelection:
-                Food RenderPopcorn = new Food(this, Popcorn, GuardiansBackground, width/5, height/6, 160, 160);
-                RenderPopcorn.renderBackground();
-                RenderPopcorn.renderImages();
-                RenderPopcorn.ImageBackground();
-                price = RenderPopcorn.size("Large" , 2);
-                noLoop();
-                System.out.print(price);
+                FoodDrinkSelection();
                 break;
 
             case GuardiansMovie:
@@ -590,6 +591,26 @@ public class Main extends PApplet{
                 "stone to make lots of money. Who will keep the powerful orb?", width/4 + 30 , height /3);
 
 
+    }
+
+    public void FoodDrinkSelection()
+    {
+        Guardians.resize(width , height);
+        image(Guardians,0,0);
+        fill(0,0,0, 220);
+        rect(0,0, width , height);
+
+        Food.render(PopcornLarge, 160, 160,width/8, height/6);
+        Food.render(PopcornMedium, 120, 120, width/3, height/6);
+        Food.render(PopcornSmall, 80, 80, width/2 + 100, height/6);
+
+        Food.render(DrinkLarge,200, 200, width/8, height/2 + 100);
+        Food.render(DrinkMedium, 150, 150, width/3, height/2 + 100);
+        Food.render(DrinkSmall, 100, 100, width/2 + 100, height/2 + 100);
+
+        Food.render(Twizzlers, 200, 200, width/8, height - 200);
+        Food.render(Maltesers,  200, 200, width/3, height - 200);
+        Food.render(MandM,  200, 200, width/2 + 100, height - 200);
     }
 
     public void SeatSelection()
