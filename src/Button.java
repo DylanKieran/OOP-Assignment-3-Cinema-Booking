@@ -61,6 +61,7 @@ public class Button extends Main
 
     public int onHoverMovie(int MoviePick)
     {
+
         if(parent.mouseX >= xPos && parent.mouseX <= xPos + rectWidth && parent.mouseY >= yPos && parent.mouseY <= yPos + rectHeight)
         {
             Hover = true;

@@ -33,19 +33,19 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = FoodDrinkSelection;
+    int ScreenState = WelcomeScreen;
 
-    int MoviePick;
-    private final int GuardiansMovie = 0;
-    private final int KongMovie = 1;
-    private final int GetOutMovie =2;
-    private final int ITMovie = 3;
-    private final int LegoBatmanMovie =4;
-    private final int ShooterMovie = 5;
-    private final int StepBrothersMovie = 6;
-    private final int SpidermanMovie = 7;
+    int MoviePick = 0;
+    private final int GuardiansMovie = 6;
+    private final int KongMovie = 7;
+    private final int GetOutMovie =8;
+    private final int ITMovie = 9;
+    private final int LegoBatmanMovie =10;
+    private final int ShooterMovie =11;
+    private final int StepBrothersMovie = 12;
+    private final int SpidermanMovie = 13;
 
-    /*/////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////
     PImage img;
     int imgIndex = 0;
 
@@ -61,7 +61,7 @@ public class Main extends PApplet{
                     "LegoBatmanBackground.jpg",
                     "GetOutBackground.jpg"
             };
-    ////////////////////////////////////////////////////////////////////////////////////////*/
+    /////////////////////////////////////////////////////////////////////////////////////////
 
     public void setup()
     {
@@ -91,10 +91,10 @@ public class Main extends PApplet{
         StepBrothers = loadImage("StepBrothers.jpg");
         Spiderman = loadImage("Spiderman.jpg");
 
-        /*//////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////
         img = loadImage(img_list[imgIndex]);
         img.resize(width,height);
-        /////////////////////////////////////////////////////////////////////////////////////*/
+        //////////////////////////////////////////////////////////////////////////////////////
 
         //Background Images
         SpidermanBackground = loadImage("SpidermanBackground.jpg");
@@ -122,10 +122,10 @@ public class Main extends PApplet{
         switch (ScreenState)
         {
             case WelcomeScreen:
-                /*Timer();
+                //Timer();
                 image(img, 0, 0);
                 fill(0,0,0, 220);
-                rect(0,0, width , height);*/
+                rect(0,0, width , height);
                 WelcomeScreen();
                 break;
 
@@ -137,12 +137,6 @@ public class Main extends PApplet{
                 MovieSelect();
                 break;
 
-            case MovieInfoScreen:
-                Index.Header();
-                Index.Footer();
-                MovieInfo();
-                break;
-
             case FoodDrinkSelection:
                 Food RenderPopcorn = new Food(this, Popcorn, GuardiansBackground, width/5, height/6, 160, 160);
                 RenderPopcorn.renderBackground();
@@ -152,13 +146,7 @@ public class Main extends PApplet{
                 noLoop();
                 System.out.print(price);
                 break;
-        }
-    }
 
-    public void MovieInfo()
-    {
-        switch(MoviePick)
-        {
             case GuardiansMovie:
                 GuardiansBackground.resize(width , height);
                 image(GuardiansBackground,0,0);
@@ -212,139 +200,139 @@ public class Main extends PApplet{
 
                 break;
 
-                    case GetOutMovie:
-                        GetOutBackground.resize(width , height);
-                        image(GetOutBackground,0,0);
-                        fill(0,0,0, 190);
-                        rect(width /4,0,  width / 2 , height);
+            case GetOutMovie:
+                GetOutBackground.resize(width , height);
+                image(GetOutBackground,0,0);
+                fill(0,0,0, 190);
+                rect(width /4,0,  width / 2 , height);
 
-                        noLoop();
-                        Movie.loadMovies("Get Out", MovieText);
-                        fill(255);
-                        textAlign(LEFT);
-                        textFont(MovieFont);
-                        text("Description :" , width/4 + 30, height / 4 + 50);
-                        textSize(18);
-                        text("A young black man visits his white girlfriend's family estate where he learns" + "\n" +
-                                " that many of its residents, who are black, have gone missing, and " + "\n" +
-                                "he soon learns the horrible truth when a fellow black man on the estate warns" + "\n" +
-                                " him to \"get out\". He soon learns this is easier said than done.", width/4 + 30  , height /3);
+                noLoop();
+                Movie.loadMovies("Get Out", MovieText);
+                fill(255);
+                textAlign(LEFT);
+                textFont(MovieFont);
+                text("Description :" , width/4 + 30, height / 4 + 50);
+                textSize(18);
+                text("A young black man visits his white girlfriend's family estate where he learns" + "\n" +
+                        " that many of its residents, who are black, have gone missing, and " + "\n" +
+                        "he soon learns the horrible truth when a fellow black man on the estate warns" + "\n" +
+                        " him to \"get out\". He soon learns this is easier said than done.", width/4 + 30  , height /3);
 
-                        break;
+                break;
 
-                    case ShooterMovie:
-                        ShooterBackground.resize(width , height);
-                        image(ShooterBackground,0,0);
-                        fill(0,0,0, 190);
-                        rect(width /4,0,  width / 2 , height);
+            case ShooterMovie:
+                ShooterBackground.resize(width , height);
+                image(ShooterBackground,0,0);
+                fill(0,0,0, 190);
+                rect(width /4,0,  width / 2 , height);
 
-                        noLoop();
-                        Movie.loadMovies("Shooter", MovieText);
-                        fill(255);
-                        textAlign(LEFT);
-                        textFont(MovieFont);
-                        text("Description :" , width/4 + 30, height / 4 + 50);
-                        textSize(18);
-                        text("Bob Lee Swagger, one of the world's great marksmen and the son of a " + "\n" +
-                                "Congressional Medal of Honoree, is a loner living in the Rockies. He's left the " + "\n" +
-                                "military, having been hung out to dry in a secret Ethiopian mission a few years " + "\n" +
-                                "before, when he's recruited by a colonel to help find a way that the President of " + "\n" +
-                                "the US might be assassinated in one of three cities in the next two weeks. " + "\n" +
-                                "He does his work, but the shot is fired notwithstanding and Bob Lee is quickly " + "\n" +
-                                "the fall guy: wounded and hunted by thousands, he goes to ground and, aided by " + "\n" +
-                                "two unlikely allies, searches for the truth and for those who double-crossed " + "\n" +
-                                "him. All roads lead back to Ethiopia.", width/4 + 30  , height /3);
+                noLoop();
+                Movie.loadMovies("Shooter", MovieText);
+                fill(255);
+                textAlign(LEFT);
+                textFont(MovieFont);
+                text("Description :" , width/4 + 30, height / 4 + 50);
+                textSize(18);
+                text("Bob Lee Swagger, one of the world's great marksmen and the son of a " + "\n" +
+                        "Congressional Medal of Honoree, is a loner living in the Rockies. He's left the " + "\n" +
+                        "military, having been hung out to dry in a secret Ethiopian mission a few years " + "\n" +
+                        "before, when he's recruited by a colonel to help find a way that the President of " + "\n" +
+                        "the US might be assassinated in one of three cities in the next two weeks. " + "\n" +
+                        "He does his work, but the shot is fired notwithstanding and Bob Lee is quickly " + "\n" +
+                        "the fall guy: wounded and hunted by thousands, he goes to ground and, aided by " + "\n" +
+                        "two unlikely allies, searches for the truth and for those who double-crossed " + "\n" +
+                        "him. All roads lead back to Ethiopia.", width/4 + 30  , height /3);
 
-                        break;
+                break;
 
-                    case ITMovie:
-                        ITBackground.resize(width , height);
-                        image(ITBackground,0,0);
-                        fill(0,0,0, 190);
-                        rect(width /4,0,  width / 2 , height);
+            case ITMovie:
+                ITBackground.resize(width , height);
+                image(ITBackground,0,0);
+                fill(0,0,0, 190);
+                rect(width /4,0,  width / 2 , height);
 
-                        noLoop();
-                        Movie.loadMovies("IT", MovieText);
-                        fill(255);
-                        textAlign(LEFT);
-                        textFont(MovieFont);
-                        text("Description :" , width/4 + 30, height / 4 + 50);
-                        textSize(18);
-                        text("Mike Regan has everything he could ever want, a beautiful family and a top of " + "\n" +
-                                "the line smart house. The company he owns is on the verge of changing flight " + "\n" +
-                                "leasing forever. That is, until the relationship with his I.T. advisor turns nasty, " + "\n" +
-                                "to the point where his teenage daughter is being stalked and his family is under " + "\n" +
-                                "attack through every technological facet of their lives.", width/4 + 30  , height /3);
-                        break;
+                noLoop();
+                Movie.loadMovies("IT", MovieText);
+                fill(255);
+                textAlign(LEFT);
+                textFont(MovieFont);
+                text("Description :" , width/4 + 30, height / 4 + 50);
+                textSize(18);
+                text("Mike Regan has everything he could ever want, a beautiful family and a top of " + "\n" +
+                        "the line smart house. The company he owns is on the verge of changing flight " + "\n" +
+                        "leasing forever. That is, until the relationship with his I.T. advisor turns nasty, " + "\n" +
+                        "to the point where his teenage daughter is being stalked and his family is under " + "\n" +
+                        "attack through every technological facet of their lives.", width/4 + 30  , height /3);
+                break;
 
-                    case LegoBatmanMovie:
-                        LegoBatmanBackground.resize(width , height);
-                        image(LegoBatmanBackground,0,0);
-                        fill(0,0,0, 190);
-                        rect(width /4,0,  width / 2 , height);
+            case LegoBatmanMovie:
+                LegoBatmanBackground.resize(width , height);
+                image(LegoBatmanBackground,0,0);
+                fill(0,0,0, 190);
+                rect(width /4,0,  width / 2 , height);
 
-                        noLoop();
-                        Movie.loadMovies("Lego Batman", MovieText);
-                        fill(255);
-                        textAlign(LEFT);
-                        textFont(MovieFont);
-                        text("Description :" , width/4 + 30, height / 4 + 50);
-                        textSize(18);
-                        text("Bruce Wayne(Batman) is scared of having a family and he has to deal with " + "\n" +
-                                "it when he accidentally adopted Dick Grayson (Robin). After The Joker " + "\n" +
-                                "gets sent to the Phantom Zone, Batman soon finds out it was The Joker's plan " + "\n" +
-                                "to get sent there and get all the villains in there out. It is Batman and his " + "\n" +
-                                "friend's job to stop The Joker.", width/4 + 30  , height /3);
-                        break;
+                noLoop();
+                Movie.loadMovies("Lego Batman", MovieText);
+                fill(255);
+                textAlign(LEFT);
+                textFont(MovieFont);
+                text("Description :" , width/4 + 30, height / 4 + 50);
+                textSize(18);
+                text("Bruce Wayne(Batman) is scared of having a family and he has to deal with " + "\n" +
+                        "it when he accidentally adopted Dick Grayson (Robin). After The Joker " + "\n" +
+                        "gets sent to the Phantom Zone, Batman soon finds out it was The Joker's plan " + "\n" +
+                        "to get sent there and get all the villains in there out. It is Batman and his " + "\n" +
+                        "friend's job to stop The Joker.", width/4 + 30  , height /3);
+                break;
 
-                    case StepBrothersMovie:
-                        StepBrothersBackground.resize(width , height);
-                        image(StepBrothersBackground,0,0);
-                        fill(0,0,0, 190);
-                        rect(width /4,0,  width / 2 , height);
+            case StepBrothersMovie:
+                StepBrothersBackground.resize(width , height);
+                image(StepBrothersBackground,0,0);
+                fill(0,0,0, 190);
+                rect(width /4,0,  width / 2 , height);
 
-                        noLoop();
-                        Movie.loadMovies("Step Brothers", MovieText);
-                        fill(255);
-                        textAlign(LEFT);
-                        textFont(MovieFont);
-                        text("Description :" , width/4 + 30, height / 4 + 50);
-                        textSize(18);
-                        text("Two unemployed, 40 year old Los Angeles area slackers - Brennen Huff and Dale Doback - " + "\n" +
-                                "are brought together when Brennen's mom falls for and marries Dale's dad. As the two " + "\n" +
-                                "get used to living together, tensions between Brennen and Dale grow incredibly " + "\n" +
-                                "intense. However, at family gatherings, Brennen is always overshadowed by his " + "\n" +
-                                "wealthy, successful, and obnoxious brother Derek - who drives a luxury car, has a " + "\n" +
-                                "beautiful (but lonely) wife and two kids. As Brennan and Dale both quickly learn " + "\n" +
-                                "they share the same hatred for Derek, they quickly find out they both have more in " + "\n" +
-                                "common than once thought. They soon decide that they both have the ultimate business " + "\n" +
-                                "idea, combine Brennan's singing abilities with Dale's drumming abilities to form a " + "\n" +
-                                "rock and roll karaoke company. However, Dale's father's dream of sailing around the " + "\n" +
-                                "world hinders their plans, along with a series of incidents that constantly shoot " + "\n" +
-                                "themselves in the foot. Can they pull it off without driving each other completely crazy?", width/4 + 30  , height /3);
-                        break;
+                noLoop();
+                Movie.loadMovies("Step Brothers", MovieText);
+                fill(255);
+                textAlign(LEFT);
+                textFont(MovieFont);
+                text("Description :" , width/4 + 30, height / 4 + 50);
+                textSize(18);
+                text("Two unemployed, 40 year old Los Angeles area slackers - Brennen Huff and Dale Doback - " + "\n" +
+                        "are brought together when Brennen's mom falls for and marries Dale's dad. As the two " + "\n" +
+                        "get used to living together, tensions between Brennen and Dale grow incredibly " + "\n" +
+                        "intense. However, at family gatherings, Brennen is always overshadowed by his " + "\n" +
+                        "wealthy, successful, and obnoxious brother Derek - who drives a luxury car, has a " + "\n" +
+                        "beautiful (but lonely) wife and two kids. As Brennan and Dale both quickly learn " + "\n" +
+                        "they share the same hatred for Derek, they quickly find out they both have more in " + "\n" +
+                        "common than once thought. They soon decide that they both have the ultimate business " + "\n" +
+                        "idea, combine Brennan's singing abilities with Dale's drumming abilities to form a " + "\n" +
+                        "rock and roll karaoke company. However, Dale's father's dream of sailing around the " + "\n" +
+                        "world hinders their plans, along with a series of incidents that constantly shoot " + "\n" +
+                        "themselves in the foot. Can they pull it off without driving each other completely crazy?", width/4 + 30  , height /3);
+                break;
 
-                    case SpidermanMovie:
-                        SpidermanBackground.resize(width , height);
-                        image(SpidermanBackground,0,0);
-                        fill(0,0,0, 190);
-                        rect(width /4,0,  width / 2 , height);
+            case SpidermanMovie:
+                SpidermanBackground.resize(width , height);
+                image(SpidermanBackground,0,0);
+                fill(0,0,0, 190);
+                rect(width /4,0,  width / 2 , height);
 
-                        noLoop();
-                        Movie.loadMovies("Spiderman", MovieText);
-                        fill(255);
-                        textAlign(LEFT);
-                        textFont(MovieFont);
-                        text("Description :" , width/4 + 30, height / 4 + 50);
-                        textSize(18);
-                        text("It was announced by Marvel that a new ongoing series titled Peter Parker, " + "\n" +
-                                "The Spectacular Spider-Man will begin publication in June 2017. The series is being " + "\n" +
-                                "written by Chip Zdarsky with Adam Kubert providing the artwork.", width/4 + 30 , height /3);
-                        break;
-
-
+                noLoop();
+                Movie.loadMovies("Spiderman", MovieText);
+                fill(255);
+                textAlign(LEFT);
+                textFont(MovieFont);
+                text("Description :" , width/4 + 30, height / 4 + 50);
+                textSize(18);
+                text("It was announced by Marvel that a new ongoing series titled Peter Parker, " + "\n" +
+                        "The Spectacular Spider-Man will begin publication in June 2017. The series is being " + "\n" +
+                        "written by Chip Zdarsky with Adam Kubert providing the artwork.", width/4 + 30 , height /3);
+                break;
         }
     }
+
+
 
     /*//////////////////////////////////////////////////////////////////////
     public void Timer()
@@ -368,6 +356,7 @@ public class Main extends PApplet{
 
     public void WelcomeScreen()
     {
+
         SpidermanBackground.resize(width , height);
         image(SpidermanBackground,0,0);
         fill(0,0,0, 220);
@@ -421,12 +410,20 @@ public class Main extends PApplet{
         Index.MovieImagePlaceholder(StepBrothers, width/2 + 100, height/2 + 20, 310, 210);
         Index.MovieImagePlaceholder(Spiderman, width - width/4, height/2 + 20, 310, 210);
 
-        /*
-        Button GuardiansButton = new Button(this, width/8 , height/8, 210, 210, MovieSelectScreen, MovieInfoScreen);
-        MoviePick = GuardiansButton.onHoverMovie(MoviePick);
-        GuardiansButton.Render();
+
+        Button GuardiansButton = new Button(this, width/8 , height/8, 210, 310, MovieSelectScreen, GuardiansMovie);
+        ScreenState = GuardiansButton.onHoverMovie(GuardiansMovie);
+        //GuardiansButton.Render();
         //GuardiansButton.renderText(Title, 32, "Book Now", width/8, height/8);
-        */
+
+        Button KongButton = new Button(this, width/3 , height/8, 210, 310, MovieSelectScreen, KongMovie);
+        ScreenState = KongButton.onHoverMovie(KongMovie);
+        //KongButton.Render();
+
+        Button GetOutButton = new Button(this, width/2 + 100 , height/8, 210, 310, MovieSelectScreen, GetOutMovie);
+        ScreenState = GetOutButton.onHoverMovie(GetOutMovie);
+        //GetOutButton.Render();
+
     }
 
     public void SeatSelection()
