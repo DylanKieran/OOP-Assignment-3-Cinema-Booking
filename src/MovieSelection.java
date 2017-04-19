@@ -41,13 +41,13 @@ public class MovieSelection extends Main
 
     public ArrayList<Movie> Movies = new ArrayList<>();
 
-    public void printTunes(ArrayList<Movie> movies)
+    /*public void printTunes(ArrayList<Movie> movies)
     {
         for(Movie t:movies)
         {
             System.out.println(t);
         }
-    }
+    }*/
 
     void loadMovies(String ReturnMovie, PFont MovieInfo)
     {
@@ -82,7 +82,7 @@ public class MovieSelection extends Main
                 Movie movie = new Movie(rs);
                 Movies.add(movie);
             }
-            printTunes(Movies);
+            //printTunes(Movies);
         }
         catch(SQLException e)
         {
@@ -110,7 +110,7 @@ public class MovieSelection extends Main
                 Movie movie = new Movie(rs);
                 Movies.add(movie);
             }
-            printTunes(Movies);
+            //printTunes(Movies);
         }
         catch(SQLException e)
         {

@@ -185,15 +185,7 @@ public class Main extends PApplet{
                 SpidermanMovie();
                 break;
         }
-        if(ScreenState == GuardiansMovie)
-        {
-            Button cunt = new Button(this, 150,50, 20, 20, GuardiansMovie, WelcomeScreen);
-            cunt.Render();
-            if (cunt.onHoverMovie(WelcomeScreen) == WelcomeScreen)
-            {
-                ScreenState = WelcomeScreen;
-            }
-        }
+
     }
 
 
@@ -339,6 +331,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("Lego Batman", MovieText);
+        loop();
+        if(ScreenState == LegoBatmanMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, LegoBatmanMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -360,6 +362,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("Shooter", MovieText);
+        loop();
+        if(ScreenState == ShooterMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, ShooterMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -385,6 +397,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("Get Out", MovieText);
+        loop();
+        if(ScreenState == GetOutMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, GetOutMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -405,6 +427,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("Step Brothers", MovieText);
+        loop();
+        if(ScreenState == StepBrothersMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, StepBrothersMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -433,6 +465,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("IT", MovieText);
+        loop();
+        if(ScreenState == ITMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, ITMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -454,6 +496,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("Spiderman", MovieText);
+        loop();
+        if(ScreenState == SpidermanMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, SpidermanMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -473,6 +525,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("Kong", MovieText);
+        loop();
+        if(ScreenState == KongMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, KongMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -496,6 +558,16 @@ public class Main extends PApplet{
 
         noLoop();
         Movie.loadMovies("Guardians of the Galaxy", MovieText);
+        loop();
+        if(ScreenState == GuardiansMovie)
+        {
+            Button back = new Button(this, 150,50, 20, 20, GuardiansMovie, MovieSelectScreen);
+            back.Render();
+            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+            {
+                ScreenState = MovieSelectScreen;
+            }
+        }
         fill(255);
         textAlign(LEFT);
         textFont(MovieFont);
@@ -516,6 +588,8 @@ public class Main extends PApplet{
                 "it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want " + "\n" +
                 "to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity " + "\n" +
                 "stone to make lots of money. Who will keep the powerful orb?", width/4 + 30 , height /3);
+
+
     }
 
     public void SeatSelection()
