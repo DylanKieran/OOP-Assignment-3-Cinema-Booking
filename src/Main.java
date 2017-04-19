@@ -412,18 +412,56 @@ public class Main extends PApplet{
 
 
         Button GuardiansButton = new Button(this, width/8 , height/8, 210, 310, MovieSelectScreen, GuardiansMovie);
-        ScreenState = GuardiansButton.onHoverMovie(GuardiansMovie);
+        if (GuardiansButton.onHoverMovie(GuardiansMovie) == GuardiansMovie)
+        {
+            ScreenState = GuardiansMovie;
+        }
         //GuardiansButton.Render();
         //GuardiansButton.renderText(Title, 32, "Book Now", width/8, height/8);
 
         Button KongButton = new Button(this, width/3 , height/8, 210, 310, MovieSelectScreen, KongMovie);
-        ScreenState = KongButton.onHoverMovie(KongMovie);
+        if (KongButton.onHoverMovie(KongMovie) == KongMovie)
+        {
+            ScreenState = KongMovie;
+        }
         //KongButton.Render();
 
         Button GetOutButton = new Button(this, width/2 + 100 , height/8, 210, 310, MovieSelectScreen, GetOutMovie);
-        ScreenState = GetOutButton.onHoverMovie(GetOutMovie);
-        //GetOutButton.Render();
+        if (GetOutButton.onHoverMovie(GetOutMovie) == GetOutMovie)
+        {
+            ScreenState = GetOutMovie;
+        }
 
+        Button ITButton = new Button(this, width - width/4 , height/8, 210, 310, MovieSelectScreen, GetOutMovie);
+        if (ITButton.onHoverMovie(ITMovie) == ITMovie)
+        {
+            ScreenState = ITMovie;
+        }
+        //ITButton.Render();
+
+        Button ShooterButton = new Button(this, width/3 , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        if (ShooterButton.onHoverMovie(ShooterMovie) == ShooterMovie)
+        {
+            ScreenState = ShooterMovie;
+        }
+
+        Button LegoBatmanButton = new Button(this, width/8 , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        if (LegoBatmanButton.onHoverMovie(LegoBatmanMovie) == LegoBatmanMovie)
+        {
+            ScreenState = LegoBatmanMovie;
+        }
+
+        Button StepBrothersButton = new Button(this, width/2 + 100 , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        if (StepBrothersButton.onHoverMovie(StepBrothersMovie) == StepBrothersMovie)
+        {
+            ScreenState = StepBrothersMovie;
+        }
+
+        Button SpidermanButton = new Button(this, width - width/4  , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        if (SpidermanButton.onHoverMovie(SpidermanMovie) == SpidermanMovie)
+        {
+            ScreenState = SpidermanMovie;
+        }
     }
 
     public void SeatSelection()
