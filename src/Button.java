@@ -36,9 +36,10 @@ public class Button extends Main
             parent.fill(PrimaryColour);
         }
         parent.rect(xPos, yPos, rectWidth, rectHeight);
+
     }
 
-    public int onHover()
+    /*public int onHover()
     {
         if(parent.mouseX >= xPos && parent.mouseX <= xPos + rectWidth && parent.mouseY >= yPos && parent.mouseY <= yPos + rectHeight)
         {
@@ -57,9 +58,9 @@ public class Button extends Main
         {
             return CurrentScreen;
         }
-    }
+    }*/
 
-    public int onHoverMovie(int MoviePick)
+    public int onHoverMovie(int nextScreen)
     {
 
         if(parent.mouseX >= xPos && parent.mouseX <= xPos + rectWidth && parent.mouseY >= yPos && parent.mouseY <= yPos + rectHeight)
@@ -68,7 +69,7 @@ public class Button extends Main
 
             if(parent.mousePressed == true)
             {
-                return NextScreen = MoviePick;
+                return  nextScreen;
             }
             else
             {
