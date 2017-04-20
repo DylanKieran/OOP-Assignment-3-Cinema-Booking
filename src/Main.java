@@ -19,7 +19,8 @@ public class Main extends PApplet{
     Food Food;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
-    PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground, LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground;
+    PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
+            LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground, FoodBackground;
     PImage PopcornLarge, PopcornMedium, PopcornSmall, DrinkLarge, DrinkMedium, DrinkSmall, Twizzlers, MandM, Maltesers;
     double price;
     PFont MovieFont, Title, MovieText;
@@ -33,7 +34,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = WelcomeScreen;
+    int ScreenState = FoodDrinkSelection;
 
     int MoviePick = 0;
     private final int GuardiansMovie = 6;
@@ -71,6 +72,7 @@ public class Main extends PApplet{
         //seat = new Seat(this, 100, 100, true, 1);
         Movie = new MovieSelection(this);
         MovieInfo = new MovieInformation(this);
+        Food = new Food(this);
         //Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
@@ -106,6 +108,7 @@ public class Main extends PApplet{
         ShooterBackground = loadImage("ShooterBackground.jpg");
         LegoBatmanBackground = loadImage("LegoBatmanBackground.jpg");
         GetOutBackground = loadImage("GetOutBackground.jpg");
+        FoodBackground = loadImage("FoodBackground.jpg");
 
         //Food Images
         DrinkLarge = loadImage("Drink.png");
@@ -595,22 +598,36 @@ public class Main extends PApplet{
 
     public void FoodDrinkSelection()
     {
-        Guardians.resize(width , height);
-        image(Guardians,0,0);
-        fill(0,0,0, 220);
-        rect(0,0, width , height);
+        FoodBackground.resize(width , height);
+        image(FoodBackground,0,0);
 
-        Food.render(PopcornLarge, 160, 160,width/8, height/6);
-        Food.render(PopcornMedium, 120, 120, width/3, height/6);
-        Food.render(PopcornSmall, 80, 80, width/2 + 100, height/6);
+        fill(0, 180);
+        rect(0, height/5, width, height - height/3);
 
-        Food.render(DrinkLarge,200, 200, width/8, height/2 + 100);
-        Food.render(DrinkMedium, 150, 150, width/3, height/2 + 100);
-        Food.render(DrinkSmall, 100, 100, width/2 + 100, height/2 + 100);
+        Food.drawCircle(width/8, height/4 + 60);
+        Food.drawCircle(width/3, height/4 + 60);
+        Food.drawCircle(width/2 + 100, height/4 + 60);
 
-        Food.render(Twizzlers, 200, 200, width/8, height - 200);
-        Food.render(Maltesers,  200, 200, width/3, height - 200);
-        Food.render(MandM,  200, 200, width/2 + 100, height - 200);
+        Food.drawCircle(width/8, height/3 + 210);
+        Food.drawCircle(width/3, height/3 + 210);
+        Food.drawCircle(width/2 + 100, height/3 + 210);
+
+        Food.drawCircle(width/8, height/2 + 280);
+        Food.drawCircle(width/3, height/2 + 280);
+        Food.drawCircle(width/2 + 100, height/2 + 280);
+
+        Food.render(PopcornLarge, 160, 160,width/8, height/4 + 60);
+        Food.render(PopcornMedium, 120, 120, width/3, height/4 + 60);
+        Food.render(PopcornSmall, 80, 80, width/2 + 100, height/4 + 60);
+
+        Food.render(DrinkLarge,200, 200, width/8, height/3 + 210);
+        Food.render(DrinkMedium, 150, 150, width/3, height/3 + 210);
+        Food.render(DrinkSmall, 100, 100, width/2 + 100, height/3 + 210);
+
+        Food.render(Twizzlers, 200, 200, width/8, height/2 + 280);
+        Food.render(Maltesers,  200, 200, width/3, height/2 + 280);
+        Food.render(MandM,  200, 200, width/2 + 100, height/2 + 280);
+
     }
 
     public void SeatSelection()

@@ -38,14 +38,18 @@ public class Food extends Main
 
     void render(PImage Item, int ImageWidth, int ImageHeight, int Xpos, int Ypos)
     {
-        Item.resize(ImageWidth, ImageHeight);
-        parent.image(Item, Xpos, Ypos);
-
-        parent.stroke(PrimaryColour);
-        parent.strokeWeight(2);
-        parent.fill(PrimaryColour, 80);
-        parent.rect(Xpos - 20,Ypos - 20,200, 200, 5, 5, 5, 5);
         parent.noStroke();
+    }
+
+    void drawCircle(int Xpos, int Ypos)
+    {
+        parent.fill(PrimaryColour, 100);
+        parent.ellipse(Xpos, Ypos, 180, 180);
+    }
+
+    void drawLabel(int Xpos, int Ypos)
+    {
+
     }
 
     /*double size(String size, double price)
