@@ -34,7 +34,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = FoodDrinkSelection;
+    int ScreenState = WelcomeScreen;
 
     private final int GuardiansMovie = 6;
     private final int KongMovie = 7;
@@ -337,8 +337,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == LegoBatmanMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, LegoBatmanMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, LegoBatmanMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
@@ -368,8 +370,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == ShooterMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, ShooterMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, ShooterMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
@@ -403,8 +407,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == GetOutMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, GetOutMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, GetOutMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
@@ -433,8 +439,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == StepBrothersMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, StepBrothersMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, StepBrothersMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
@@ -471,8 +479,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == ITMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, ITMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, ITMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
@@ -502,8 +512,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == SpidermanMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, SpidermanMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, SpidermanMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
@@ -531,8 +543,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == KongMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, KongMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, KongMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
@@ -564,8 +578,10 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == GuardiansMovie)
         {
-            Button back = new Button(this, 150,50, 20, 20, GuardiansMovie, MovieSelectScreen);
+            Button back = new Button(this, 150,height - 185, 150, 50, GuardiansMovie, MovieSelectScreen);
             back.Render();
+            fill(255);
+            text("Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;

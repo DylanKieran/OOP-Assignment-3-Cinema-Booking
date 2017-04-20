@@ -36,7 +36,6 @@ public class Button extends Main
             parent.fill(PrimaryColour);
         }
         parent.rect(xPos, yPos, rectWidth, rectHeight);
-
     }
 
     /*public int onHover()
