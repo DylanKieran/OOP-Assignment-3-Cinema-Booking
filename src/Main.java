@@ -340,10 +340,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, LegoBatmanMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -373,10 +382,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, ShooterMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -410,10 +428,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, GetOutMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -442,10 +469,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, StepBrothersMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -482,10 +518,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, ITMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -515,10 +560,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, SpidermanMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -546,10 +600,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, KongMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back" , 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -581,10 +644,19 @@ public class Main extends PApplet{
             Button back = new Button(this, 150,height - 185, 150, 50, GuardiansMovie, MovieSelectScreen);
             back.Render();
             fill(255);
-            text("Back", 220,  height - 150);
+            text(" < Back", 220,  height - 150);
             if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
             {
                 ScreenState = MovieSelectScreen;
+            }
+
+            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
+            food.Render();
+            fill(255);
+            text(" Food >", width - 235,  height - 150);
+            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+            {
+                ScreenState = FoodDrinkSelection;
             }
         }
         fill(255);
@@ -646,7 +718,7 @@ public class Main extends PApplet{
         Food.drawLabel("Popcorn", 0 + width/50, height/4 + 40, Title);
         Food.drawLabel("Drinks", 0 + width/50, height/3 + 190, Title);
         Food.drawLabel("Snacks", 0 + width/50, height/2 + 260, Title);
-
+        
     }
 
     public void SeatSelection()
