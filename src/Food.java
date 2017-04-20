@@ -22,6 +22,7 @@ public class Food extends Main
     Food(PApplet p) {parent = p;}
 
     int PrimaryColour = color(255,20,147);
+    int SecondaryColour = color(0,191,255);
 
     /*
     static
@@ -39,6 +40,10 @@ public class Food extends Main
     void render(PImage Item, int ImageWidth, int ImageHeight, int Xpos, int Ypos)
     {
         parent.noStroke();
+
+        Item.resize(ImageWidth,ImageHeight);
+
+        parent.image(Item, Xpos, Ypos);
     }
 
     void drawCircle(int Xpos, int Ypos)
@@ -47,10 +52,18 @@ public class Food extends Main
         parent.ellipse(Xpos, Ypos, 180, 180);
     }
 
-    void drawLabel(int Xpos, int Ypos)
+    void drawLabel(String text, int Xpos, int Ypos, PFont Title)
     {
+        parent.noStroke();
 
+        parent.fill(PrimaryColour);
+        parent.rect(Xpos, Ypos, 120, 35, 5, 5, 5, 5);
+
+        parent.fill(255);
+        parent.textFont(Title, 24);
+        parent.text(text, Xpos + 15, Ypos + 25);
     }
+
 
     /*double size(String size, double price)
     {

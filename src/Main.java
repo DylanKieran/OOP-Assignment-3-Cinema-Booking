@@ -21,7 +21,7 @@ public class Main extends PApplet{
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
             LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground, FoodBackground;
-    PImage PopcornLarge, PopcornMedium, PopcornSmall, DrinkLarge, DrinkMedium, DrinkSmall, Twizzlers, MandM, Maltesers;
+    PImage PopcornLarge, PopcornMedium, PopcornSmall, DrinkLarge, DrinkMedium, DrinkSmall, Haribo, MandM, Maltesers;
     double price;
     PFont MovieFont, Title, MovieText;
     Movie Movie1;
@@ -36,7 +36,6 @@ public class Main extends PApplet{
     //final int EndScreen = 5; //Maybe Payment Screen
     int ScreenState = FoodDrinkSelection;
 
-    int MoviePick = 0;
     private final int GuardiansMovie = 6;
     private final int KongMovie = 7;
     private final int GetOutMovie =8;
@@ -46,7 +45,7 @@ public class Main extends PApplet{
     private final int StepBrothersMovie = 12;
     private final int SpidermanMovie = 13;
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /*/////////////////////////////////////////////////////////////////////////////////////
     PImage img;
     int imgIndex = 0;
 
@@ -62,7 +61,7 @@ public class Main extends PApplet{
                     "LegoBatmanBackground.jpg",
                     "GetOutBackground.jpg"
             };
-    /////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////*/
 
     public void setup()
     {
@@ -93,10 +92,10 @@ public class Main extends PApplet{
         StepBrothers = loadImage("StepBrothers.jpg");
         Spiderman = loadImage("Spiderman.jpg");
 
-        ///////////////////////////////////////////////////////////////////////////////////////
+        /*//////////////////////////////////////////////////////////////////////////////////////
         img = loadImage(img_list[imgIndex]);
         img.resize(width,height);
-        //////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////*/
 
         //Background Images
         SpidermanBackground = loadImage("SpidermanBackground.jpg");
@@ -117,7 +116,7 @@ public class Main extends PApplet{
         PopcornLarge = loadImage("Popcorn.png");
         PopcornMedium = loadImage("Popcorn.png");
         PopcornSmall = loadImage("Popcorn.png");
-        Twizzlers = loadImage("Twizzlers.png");
+        Haribo = loadImage("Haribo.png");
         MandM = loadImage("MandM.png");
         Maltesers = loadImage("Maltesers.png");
     }
@@ -133,10 +132,10 @@ public class Main extends PApplet{
         switch (ScreenState)
         {
             case WelcomeScreen:
-                //Timer();
+                /*/Timer();
                 image(img, 0, 0);
                 fill(0,0,0, 220);
-                rect(0,0, width , height);
+                rect(0,0, width , height);*/
                 WelcomeScreen();
                 break;
 
@@ -604,29 +603,33 @@ public class Main extends PApplet{
         fill(0, 180);
         rect(0, height/5, width, height - height/3);
 
-        Food.drawCircle(width/8, height/4 + 60);
-        Food.drawCircle(width/3, height/4 + 60);
-        Food.drawCircle(width/2 + 100, height/4 + 60);
+        Food.drawCircle(width/8 + 70, height/4 + 60);
+        Food.drawCircle(width/3 + 70, height/4 + 60);
+        Food.drawCircle(width/2 + 150, height/4 + 60);
 
-        Food.drawCircle(width/8, height/3 + 210);
-        Food.drawCircle(width/3, height/3 + 210);
-        Food.drawCircle(width/2 + 100, height/3 + 210);
+        Food.drawCircle(width/8 + 70, height/3 + 210);
+        Food.drawCircle(width/3 + 70, height/3 + 210);
+        Food.drawCircle(width/2 + 150, height/3 + 210);
 
-        Food.drawCircle(width/8, height/2 + 280);
-        Food.drawCircle(width/3, height/2 + 280);
-        Food.drawCircle(width/2 + 100, height/2 + 280);
+        Food.drawCircle(width/8 + 70, height/2 + 280);
+        Food.drawCircle(width/3 + 70, height/2 + 280);
+        Food.drawCircle(width/2 + 150, height/2 + 280);
 
-        Food.render(PopcornLarge, 160, 160,width/8, height/4 + 60);
-        Food.render(PopcornMedium, 120, 120, width/3, height/4 + 60);
-        Food.render(PopcornSmall, 80, 80, width/2 + 100, height/4 + 60);
+        Food.render(PopcornLarge, 130, 130,width/8 + 5, height/4);
+        Food.render(PopcornMedium, 110, 110, width/3 + 15, height/4 + 10);
+        Food.render(PopcornSmall, 90, 90, width/2 + 105, height/4 + 18);
 
-        Food.render(DrinkLarge,200, 200, width/8, height/3 + 210);
-        Food.render(DrinkMedium, 150, 150, width/3, height/3 + 210);
-        Food.render(DrinkSmall, 100, 100, width/2 + 100, height/3 + 210);
+        Food.render(DrinkLarge,160, 160, width/8 - 10, height/2 - 50);
+        Food.render(DrinkMedium, 140, 140, width/3, height/2 - 40);
+        Food.render(DrinkSmall, 120, 120, width/2 + 90, height/2 - 30);
 
-        Food.render(Twizzlers, 200, 200, width/8, height/2 + 280);
-        Food.render(Maltesers,  200, 200, width/3, height/2 + 280);
-        Food.render(MandM,  200, 200, width/2 + 100, height/2 + 280);
+        Food.render(Haribo, 140, 40, width/8, height/2 + 260);
+        Food.render(Maltesers,  180, 130, width/3 - 20, height/2 + 230);
+        Food.render(MandM,  180, 180, width/2 + 60, height/2 + 190);
+
+        Food.drawLabel("Popcorn", 0 + width/50, height/4 + 40, Title);
+        Food.drawLabel("Drinks", 0 + width/50, height/3 + 190, Title);
+        Food.drawLabel("Snacks", 0 + width/50, height/2 + 260, Title);
 
     }
 
