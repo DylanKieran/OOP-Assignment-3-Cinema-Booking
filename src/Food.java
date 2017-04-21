@@ -23,6 +23,7 @@ public class Food extends Main
 
     int PrimaryColour = color(255,20,147);
     int SecondaryColour = color(0,191,255);
+    boolean circleOver = false;
 
     /*
     static
@@ -37,6 +38,7 @@ public class Food extends Main
         }
     }*/
 
+
     void render(PImage Item, int ImageWidth, int ImageHeight, int Xpos, int Ypos)
     {
         parent.noStroke();
@@ -48,7 +50,14 @@ public class Food extends Main
 
     void drawCircle(int Xpos, int Ypos)
     {
-        parent.fill(PrimaryColour, 100);
+        if(circleOver)
+        {
+            parent.fill(PrimaryColour, 220);
+        }
+        else
+        {
+            parent.fill(PrimaryColour, 120);
+        }
         parent.ellipse(Xpos, Ypos, 180, 180);
     }
 
@@ -62,6 +71,28 @@ public class Food extends Main
         parent.fill(255);
         parent.textFont(Title, 24);
         parent.text(text, Xpos + 15, Ypos + 25);
+    }
+
+    boolean overCircle(int x, int y, int diameter) {
+        float disX = x - parent.mouseX;
+        float disY = y - parent.mouseY;
+        if(sqrt(sq(disX) + sq(disY)) < diameter/2 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    void update(int Xpos, int Ypos)
+    {
+        if(overCircle(Xpos, Ypos, 180))
+        {
+            circleOver = true;
+        }
+        else
+        {
+            circleOver = false;
+        }
     }
 
 

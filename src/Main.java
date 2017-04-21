@@ -37,7 +37,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = SeatSelection;
+    int ScreenState = FoodDrinkSelection;
 
     private final int GuardiansMovie = 6;
     private final int KongMovie = 7;
@@ -696,16 +696,25 @@ public class Main extends PApplet{
         fill(0, 180);
         rect(0, height/5, width, height - height/3);
 
+        Food.update(width/8 + 70, height/4 + 60);
         Food.drawCircle(width/8 + 70, height/4 + 60);
+        Food.update(width/3 + 70, height/4 + 60);
         Food.drawCircle(width/3 + 70, height/4 + 60);
+        Food.update(width/2 + 150, height/4 + 60);
         Food.drawCircle(width/2 + 150, height/4 + 60);
 
+        Food.update(width/8 + 70, height/3 + 210);
         Food.drawCircle(width/8 + 70, height/3 + 210);
+        Food.update(width/3 + 70, height/3 + 210);
         Food.drawCircle(width/3 + 70, height/3 + 210);
+        Food.update(width/2 + 150, height/3 + 210);
         Food.drawCircle(width/2 + 150, height/3 + 210);
 
+        Food.update(width/8 + 70, height/2 + 280);
         Food.drawCircle(width/8 + 70, height/2 + 280);
+        Food.update(width/3 + 70, height/2 + 280);
         Food.drawCircle(width/3 + 70, height/2 + 280);
+        Food.update(width/2 + 150, height/2 + 280);
         Food.drawCircle(width/2 + 150, height/2 + 280);
 
         Food.render(PopcornLarge, 130, 130,width/8 + 5, height/4);
