@@ -13,33 +13,7 @@ public class Index extends Main
     }
 
     int SecondaryColour = color(255,20,147);
-    int MovieChoice = 0;
 
-    //static header common throughout all pages with menu and back button
-    public void Header()
-    {
-        parent.noStroke();
-        //parent.fill(219,84,97);
-        parent.fill( 20, 20 , 20 , 240);
-        parent.rect(0, 0, parent.width, 40);
-    }
-
-
-    //static footer common throughout all pages
-    public void Footer()
-    {
-        parent.noStroke();
-        parent.fill(SecondaryColour);
-        parent.rect(0, parent.height-20, parent.width, parent.height);
-    }
-
-    public void Docket()
-    {
-        parent.stroke(40,40,40);
-        parent.strokeWeight(2);
-        parent.fill(255,250,255);
-        parent.rect(parent.width - parent.width/5, parent.height/6, 300, parent.height - parent.height/3, 18, 18, 18, 18);
-    }
 
     //A background to go behind images eg. Movie Image
     public void MovieImagePlaceholder(PImage MoviePoster, int x, int y, int ImageHeight,int ImageWidth/*,int CurrentScreen,int NextScreen*/)
@@ -64,21 +38,6 @@ public class Index extends Main
             //Transparent Grey box
             parent.fill(0, 0, 0, 200);
             parent.rect(x, y, ImageWidth, ImageHeight);
-
-            /*
-            CHANGE TO A BUTTON
-
-            //View Details Box
-            //parent.fill(SecondaryColour);
-            //parent.rect(x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , 4 , 4 ,4 ,4);
-
-            //View Details Text
-            //parent.fill(255);
-            //parent.textSize(16);
-            //parent.text("View Details", x + 60, y + ImageHeight - 38);
-            */
-
-            //Button ViewDetails = new Button(this, /*MovieFont,"View Details",*/ x + 60, y + ImageHeight - 38, 16, x + ImageWidth/4 - 20, y + ImageHeight - 60 ,ImageWidth/2 + 40, 35 , false, CurrentScreen, NextScreen)
 
             parent.beginShape();
             parent.pushMatrix();
@@ -132,6 +91,28 @@ public class Index extends Main
         parent.textSize(60);
         parent.fill(255);
         parent.text("Cinemas",parent.width/2, parent.height/2 + 80);
+    }
+
+    public void Star(int StarWidth, int StarHeight, int Scale)
+    {
+        parent.noStroke();
+        parent.beginShape();
+        parent.pushMatrix();
+        parent.translate(StarWidth, StarHeight);
+        parent.scale((float) Scale);
+        parent.fill(0, 0, 0, 150);
+        parent.vertex(0, -50);
+        parent.vertex(14, -20);
+        parent.vertex(47, -15);
+        parent.vertex(23, 7);
+        parent.vertex(29, 40);
+        parent.vertex(0, 25);
+        parent.vertex(-29, 40);
+        parent.vertex(-23, 7);
+        parent.vertex(-47, -15);
+        parent.vertex(-14, -20);
+        parent.endShape(CLOSE);
+        parent.popMatrix();
     }
 
 }//end Class Index

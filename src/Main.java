@@ -22,7 +22,7 @@ public class Main extends PApplet{
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
-            LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground, FoodBackground;
+            LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground, FoodBackground, EndScreenBackground;
     PImage PopcornLarge, PopcornMedium, PopcornSmall, DrinkLarge, DrinkMedium, DrinkSmall, Haribo, MandM, Maltesers;
     double price;
     PFont MovieFont, Title, MovieText;
@@ -30,41 +30,22 @@ public class Main extends PApplet{
     SeatSelection screenage;
 
     public  static int ticketCount;
+
     //Screen State Variables
     final int WelcomeScreen = 0;
     final int MovieSelectScreen = 1;
-    final int MovieInfoScreen = 2;
-    final int SeatSelection = 3;
-    final int FoodDrinkSelection = 4;
-    //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = FoodDrinkSelection;
-
-    private final int GuardiansMovie = 6;
-    private final int KongMovie = 7;
-    private final int GetOutMovie =8;
-    private final int ITMovie = 9;
-    private final int LegoBatmanMovie =10;
-    private final int ShooterMovie =11;
-    private final int StepBrothersMovie = 12;
-    private final int SpidermanMovie = 13;
-
-    /*/////////////////////////////////////////////////////////////////////////////////////
-    PImage img;
-    int imgIndex = 0;
-
-    String img_list[] =
-            {
-                    "SpidermanBackground.jpg",
-                    "GuardiansBackground.jpg",
-                    "KongBackground.jpg",
-                    "MovieSelectBackground.jpg",
-                    "StepBrothersBackground.jpg",
-                    "ITBackground.jpg",
-                    "ShooterBackground.jpg",
-                    "LegoBatmanBackground.jpg",
-                    "GetOutBackground.jpg"
-            };
-    ////////////////////////////////////////////////////////////////////////////////////////*/
+    final int GuardiansMovie = 2;
+    final int KongMovie = 3;
+    final int GetOutMovie = 4;
+    final int ITMovie = 5;
+    final int LegoBatmanMovie = 6;
+    final int ShooterMovie = 7;
+    final int StepBrothersMovie = 8;
+    final int SpidermanMovie = 9;
+    final int SeatSelection = 10;
+    final int FoodDrinkSelection = 11;
+    final int EndScreen = 12;
+    int ScreenState = WelcomeScreen;
 
     public void setup()
     {
@@ -79,7 +60,7 @@ public class Main extends PApplet{
         //Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
-         ticketCount = 0;
+        ticketCount = 0;
 
         Title = createFont("Title.ttf", 42);
         MovieFont = createFont("arial.ttf", 32);
@@ -97,11 +78,6 @@ public class Main extends PApplet{
         StepBrothers = loadImage("StepBrothers.jpg");
         Spiderman = loadImage("Spiderman.jpg");
 
-        /*//////////////////////////////////////////////////////////////////////////////////////
-        img = loadImage(img_list[imgIndex]);
-        img.resize(width,height);
-        /////////////////////////////////////////////////////////////////////////////////////*/
-
         //Background Images
         SpidermanBackground = loadImage("SpidermanBackground.jpg");
         GuardiansBackground = loadImage("GuardiansBackground.jpg");
@@ -113,6 +89,7 @@ public class Main extends PApplet{
         LegoBatmanBackground = loadImage("LegoBatmanBackground.jpg");
         GetOutBackground = loadImage("GetOutBackground.jpg");
         FoodBackground = loadImage("FoodBackground.jpg");
+        EndScreenBackground = loadImage("EndScreen.jpg");
 
         //Food Images
         DrinkLarge = loadImage("Drink.png");
@@ -137,27 +114,11 @@ public class Main extends PApplet{
         switch (ScreenState)
         {
             case WelcomeScreen:
-                /*/Timer();
-                image(img, 0, 0);
-                fill(0,0,0, 220);
-                rect(0,0, width , height);*/
                 WelcomeScreen();
                 break;
 
             case MovieSelectScreen:
-                /*Timer();
-                image(img, 0, 0);
-                fill(0,0,0, 220);
-                rect(0,0, width , height);*/
                 MovieSelect();
-                break;
-
-            case SeatSelection:
-                screenage.screenRender(1);
-                break;
-
-            case FoodDrinkSelection:
-                FoodDrinkSelection();
                 break;
 
             case GuardiansMovie:
@@ -174,7 +135,6 @@ public class Main extends PApplet{
 
             case ShooterMovie:
                 ShooterMovie();
-
                 break;
 
             case ITMovie:
@@ -192,31 +152,21 @@ public class Main extends PApplet{
             case SpidermanMovie:
                 SpidermanMovie();
                 break;
+
+            case FoodDrinkSelection:
+                FoodDrinkSelection();
+                break;
+
+            case SeatSelection:
+                screenage.screenRender(1);
+                break;
+
+            case EndScreen:
+                EndScreen();
+                break;
         }
 
     }
-
-
-
-    /*//////////////////////////////////////////////////////////////////////
-    public void Timer()
-    {
-        //20 seconds per Image
-        if(frameCount % 20 == 0)
-        {
-            imgIndex++;
-        }
-
-        if(imgIndex == 8)
-        {
-            imgIndex = 0;
-        }
-
-        img = loadImage(img_list[imgIndex]);
-        img.resize(width,height);
-
-    }
-    ///////////////////////////////////////////////////////////////////////*/
 
     public void WelcomeScreen()
     {
@@ -228,24 +178,7 @@ public class Main extends PApplet{
 
         Index.BackgroundCircles();
 
-        noStroke();
-        beginShape();
-        pushMatrix();
-        translate(width/2, height/2 - 60);
-        scale((float) 6);
-        fill(0, 0, 0, 150);
-        vertex(0, -50);
-        vertex(14, -20);
-        vertex(47, -15);
-        vertex(23, 7);
-        vertex(29, 40);
-        vertex(0, 25);
-        vertex(-29, 40);
-        vertex(-23, 7);
-        vertex(-47, -15);
-        vertex(-14, -20);
-        endShape(CLOSE);
-        popMatrix();
+        Index.Star(width/2, height/2 - 60, 6);
 
         Index.TitleText(MovieFont, Title);
 
@@ -633,9 +566,19 @@ public class Main extends PApplet{
         screenage.screenRender(1);
     }
 
+    public void EndScreen()
+    {
+        EndScreenBackground.resize(width , height);
+        image(EndScreenBackground,0,0);
+        fill(0,0,0, 100);
+        rect(0,0, width , height);
+
+        Index.Star(width/2, height/2 - 60, 6);
+    }
+
     public  void Back()
     {
-        Button back = new Button(this, 150,height - 185, 150, 50, MovieInfoScreen, MovieSelectScreen);
+        Button back = new Button(this, 150,height - 185, 150, 50, LegoBatmanMovie, MovieSelectScreen);
         back.Render();
         fill(255);
         text(" < Back", 220,  height - 150);
