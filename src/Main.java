@@ -62,45 +62,45 @@ public class Main extends PApplet{
         //Movie.getRating();
         ticketCount = 0;
 
-        Title = createFont("Title.ttf", 42);
-        MovieFont = createFont("arial.ttf", 32);
-        MovieText = createFont("cs_regular.ttf", 42);
+        Title = createFont("Fonts/Title.ttf", 42);
+        MovieFont = createFont("Fonts/arial.ttf", 32);
+        MovieText = createFont("Fonts/cs_regular.ttf", 42);
 
         //textFont(MovieFont, 18);
 
         //Movie Poster Images
-        Guardians = loadImage("Guardians.jpg");
-        Kong = loadImage("Kong.jpg");
-        GetOut = loadImage("GetOut.jpg");
-        IT = loadImage("IT.jpg");
-        LegoBatman = loadImage("LegoBatman.jpg");
-        Shooter = loadImage("Shooter.jpg");
-        StepBrothers = loadImage("StepBrothers.jpg");
-        Spiderman = loadImage("Spiderman.jpg");
+        Guardians = loadImage("Images/Guardians.jpg");
+        Kong = loadImage("Images/Kong.jpg");
+        GetOut = loadImage("Images/GetOut.jpg");
+        IT = loadImage("Images/IT.jpg");
+        LegoBatman = loadImage("Images/LegoBatman.jpg");
+        Shooter = loadImage("Images/Shooter.jpg");
+        StepBrothers = loadImage("Images/StepBrothers.jpg");
+        Spiderman = loadImage("Images/Spiderman.jpg");
 
         //Background Images
-        SpidermanBackground = loadImage("SpidermanBackground.jpg");
-        GuardiansBackground = loadImage("GuardiansBackground.jpg");
-        KongBackground = loadImage("KongBackground.jpg");
-        MovieSelectBackground = loadImage("MovieSelectBackground.jpg");
-        StepBrothersBackground = loadImage("StepBrothersBackground.jpg");
-        ITBackground = loadImage("ITBackground.jpg");
-        ShooterBackground = loadImage("ShooterBackground.jpg");
-        LegoBatmanBackground = loadImage("LegoBatmanBackground.jpg");
-        GetOutBackground = loadImage("GetOutBackground.jpg");
-        FoodBackground = loadImage("FoodBackground.jpg");
-        EndScreenBackground = loadImage("EndScreen.jpg");
+        SpidermanBackground = loadImage("Images/SpidermanBackground.jpg");
+        GuardiansBackground = loadImage("Images/GuardiansBackground.jpg");
+        KongBackground = loadImage("Images/KongBackground.jpg");
+        MovieSelectBackground = loadImage("Images/MovieSelectBackground.jpg");
+        StepBrothersBackground = loadImage("Images/StepBrothersBackground.jpg");
+        ITBackground = loadImage("Images/ITBackground.jpg");
+        ShooterBackground = loadImage("Images/ShooterBackground.jpg");
+        LegoBatmanBackground = loadImage("Images/LegoBatmanBackground.jpg");
+        GetOutBackground = loadImage("Images/GetOutBackground.jpg");
+        FoodBackground = loadImage("Images/FoodBackground.jpg");
+        EndScreenBackground = loadImage("Images/EndScreen.jpg");
 
         //Food Images
-        DrinkLarge = loadImage("Drink.png");
-        DrinkMedium = loadImage("Drink.png");
-        DrinkSmall = loadImage("Drink.png");
-        PopcornLarge = loadImage("Popcorn.png");
-        PopcornMedium = loadImage("Popcorn.png");
-        PopcornSmall = loadImage("Popcorn.png");
-        Haribo = loadImage("Haribo.png");
-        MandM = loadImage("MandM.png");
-        Maltesers = loadImage("Maltesers.png");
+        DrinkLarge = loadImage("Images/Drink.png");
+        DrinkMedium = loadImage("Images/Drink.png");
+        DrinkSmall = loadImage("Images/Drink.png");
+        PopcornLarge = loadImage("Images/Popcorn.png");
+        PopcornMedium = loadImage("Images/Popcorn.png");
+        PopcornSmall = loadImage("Images/Popcorn.png");
+        Haribo = loadImage("Images/Haribo.png");
+        MandM = loadImage("Images/MandM.png");
+        Maltesers = loadImage("Images/Maltesers.png");
     }
 
     public void settings()

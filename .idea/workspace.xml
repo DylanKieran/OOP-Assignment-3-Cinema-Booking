@@ -5,10 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="971da847-3271-4dc5-8610-83ace9872933" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CinemaAssignment/Main.class" afterPath="$PROJECT_DIR$/out/production/CinemaAssignment/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Index.java" afterPath="$PROJECT_DIR$/src/Index.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EndScreen.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FoodBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetOut.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetOutBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Guardians.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GuardiansBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Haribo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IT.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ITBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kong.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/KongBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LegoBatman.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LegoBatmanBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Maltesers.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MandM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MovieSelectBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Popcorn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Shooter.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ShooterBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Spiderman.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SpidermanBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/StepBrothers.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/StepBrothersBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Title.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/arial.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cs_regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ImageSlideshow.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,8 +52,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-337">
-              <caret line="171" column="4" lean-forward="false" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="4" />
+            <state relative-caret-position="377">
+              <caret line="66" column="38" lean-forward="false" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#WelcomeScreen#0;class#Main#0" expanded="false" />
@@ -698,16 +722,15 @@
       <workItem from="1492789528455" duration="1229000" />
       <workItem from="1492792291985" duration="123000" />
       <workItem from="1492793541164" duration="987000" />
-      <workItem from="1492794947712" duration="923000" />
+      <workItem from="1492794947712" duration="1509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73665000" />
+    <option name="totallyTimeSpent" value="74251000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -719,7 +742,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21443515" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21443515" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1210,8 +1233,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-337">
-          <caret line="171" column="4" lean-forward="false" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="4" />
+        <state relative-caret-position="377">
+          <caret line="66" column="38" lean-forward="false" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#WelcomeScreen#0;class#Main#0" expanded="false" />
