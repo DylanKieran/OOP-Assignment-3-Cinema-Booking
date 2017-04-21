@@ -342,23 +342,8 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == LegoBatmanMovie)
         {
-            Button back = new Button(this, 150,height - 185, 150, 50, LegoBatmanMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back", 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
-
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+            Back();
+            Food();
         }
         fill(255);
         textAlign(LEFT);
@@ -384,23 +369,8 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == ShooterMovie)
         {
-            Button back = new Button(this, 150,height - 185, 150, 50, ShooterMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back", 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
-
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+            Back();
+            Food();
         }
         fill(255);
         textAlign(LEFT);
@@ -430,23 +400,9 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == GetOutMovie)
         {
-            Button back = new Button(this, 150,height - 185, 150, 50, GetOutMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back", 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
 
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+            Back();
+            Food();
         }
         fill(255);
         textAlign(LEFT);
@@ -471,23 +427,9 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == StepBrothersMovie)
         {
-            Button back = new Button(this, 150,height - 185, 150, 50, StepBrothersMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back", 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
 
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+            Back();
+            Food();
         }
         fill(255);
         textAlign(LEFT);
@@ -520,23 +462,9 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == ITMovie)
         {
-            Button back = new Button(this, 150,height - 185, 150, 50, ITMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back", 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
 
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+            Back();
+            Food();
         }
         fill(255);
         textAlign(LEFT);
@@ -562,23 +490,9 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == SpidermanMovie)
         {
-            Button back = new Button(this, 150,height - 185, 150, 50, SpidermanMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back", 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
 
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+            Back();
+            Food();
         }
         fill(255);
         textAlign(LEFT);
@@ -602,23 +516,9 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == KongMovie)
         {
-            Button back = new Button(this, 150,height - 185, 150, 50, KongMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back" , 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
 
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+            Back();
+            Food();
         }
         fill(255);
         textAlign(LEFT);
@@ -644,46 +544,30 @@ public class Main extends PApplet{
         noLoop();
         Movie.loadMovies("Guardians of the Galaxy", MovieText);
         loop();
-        if(ScreenState == GuardiansMovie)
-        {
-            Button back = new Button(this, 150,height - 185, 150, 50, GuardiansMovie, MovieSelectScreen);
-            back.Render();
-            fill(255);
-            text(" < Back", 220,  height - 150);
-            if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-            {
-                ScreenState = MovieSelectScreen;
-            }
-
-            Button food = new Button(this, width - 300,height - 185, 150, 50, KongMovie, FoodDrinkSelection);
-            food.Render();
-            fill(255);
-            text(" Food >", width - 235,  height - 150);
-            if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
-            {
-                ScreenState = FoodDrinkSelection;
-            }
+        if(ScreenState == GuardiansMovie) {
+            Back();
+            Food();
         }
-        fill(255);
-        textAlign(LEFT);
-        textFont(MovieFont);
-        text("Description :" , width/4 + 30, height / 4 + 50);
-        textSize(18);
-        text("In 1988, on Earth, the boy Peter Quill is abducted by a spacecraft after losing his, " + "\n" +
-                "is a ravager searching a valuable orb on the surface of the dead planet Morag. " + "\n" +
-                "When Peter finds the orb, he is hunted down by the Kree warship The Dark Aster of the " + "\n" +
-                "powerful Ronan the Accuser but he flees. Peter also double crosses his partner Yondu Udonta " + "\n" +
-                "that puts m. Peter Quill arrives on the Xandar city Nova Empire and is chased by " + "\n" +
-                "Ronan's warrior Gamora and by the bounty hunters Rocket and The Groot. They are arrested " + "\n" +
-                "by the police officer Corpsman Dey and his men and sent to the prison end the strong Drax. " + "\n" +
-                "Soon they learn that Gamora wants to orb to a dealer for a huge amount while Drax wants to " + "\n" +
-                "kill Ronan, who killed his wife and daughter. They plot a plan to escape from The Kyln " + "\n" +
-                "to sell the orb and split the money. But soon they also learn that the orb keeps the " + "\n" +
-                "infinity stone that gives immensurable destructive power to the owner. They self-proclaim " + "\n" +
-                "Guardians of the Galaxy and decide to deliver the orb to the leader Nova Prime to keep " + "\n" +
-                "it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want " + "\n" +
-                "to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity " + "\n" +
-                "stone to make lots of money. Who will keep the powerful orb?", width/4 + 30 , height /3);
+            fill(255);
+            textAlign(LEFT);
+            textFont(MovieFont);
+            text("Description :", width / 4 + 30, height / 4 + 50);
+            textSize(18);
+            text("In 1988, on Earth, the boy Peter Quill is abducted by a spacecraft after losing his, " + "\n" +
+                    "is a ravager searching a valuable orb on the surface of the dead planet Morag. " + "\n" +
+                    "When Peter finds the orb, he is hunted down by the Kree warship The Dark Aster of the " + "\n" +
+                    "powerful Ronan the Accuser but he flees. Peter also double crosses his partner Yondu Udonta " + "\n" +
+                    "that puts m. Peter Quill arrives on the Xandar city Nova Empire and is chased by " + "\n" +
+                    "Ronan's warrior Gamora and by the bounty hunters Rocket and The Groot. They are arrested " + "\n" +
+                    "by the police officer Corpsman Dey and his men and sent to the prison end the strong Drax. " + "\n" +
+                    "Soon they learn that Gamora wants to orb to a dealer for a huge amount while Drax wants to " + "\n" +
+                    "kill Ronan, who killed his wife and daughter. They plot a plan to escape from The Kyln " + "\n" +
+                    "to sell the orb and split the money. But soon they also learn that the orb keeps the " + "\n" +
+                    "infinity stone that gives immensurable destructive power to the owner. They self-proclaim " + "\n" +
+                    "Guardians of the Galaxy and decide to deliver the orb to the leader Nova Prime to keep " + "\n" +
+                    "it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want " + "\n" +
+                    "to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity " + "\n" +
+                    "stone to make lots of money. Who will keep the powerful orb?", width / 4 + 30, height / 3);
 
 
     }
@@ -748,6 +632,30 @@ public class Main extends PApplet{
     {
         screenage.screenRender(1);
     }
+
+    public  void Back()
+    {
+        Button back = new Button(this, 150,height - 185, 150, 50, MovieInfoScreen, MovieSelectScreen);
+        back.Render();
+        fill(255);
+        text(" < Back", 220,  height - 150);
+        if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+        {
+            ScreenState = MovieSelectScreen;
+        }
+    }
+    public  void  Food()
+    {
+        Button food = new Button(this, width - 300,height - 185, 150, 50, GuardiansMovie, FoodDrinkSelection);
+        food.Render();
+        fill(255);
+        text(" Food >", width - 235,  height - 150);
+        if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+        {
+            ScreenState = FoodDrinkSelection;
+        }
+    }
+
 
     public static void main(String[] args)
     {
