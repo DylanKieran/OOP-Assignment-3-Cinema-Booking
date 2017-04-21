@@ -75,14 +75,14 @@ public class Index extends Main
         parent.loop();
     }
 
-    public void TitleText(PFont MovieFont, PFont Title)
+    public void TitleAndEndText(String Text, int WETextSize, PFont MovieFont, PFont Title)
     {
         parent.noStroke();
         parent.textAlign(CENTER);
         parent.textFont(MovieFont);
-        parent.textSize(90);
+        parent.textSize(WETextSize);
         parent.fill(169,169,169);
-        parent.text("Welcome to", parent.width/2, parent.height/3 + 30);
+        parent.text(Text, parent.width/2, parent.height/3 + 30);
         parent.textFont(Title);
         parent.textSize(140);
         parent.fill(255,20,147);
@@ -92,6 +92,7 @@ public class Index extends Main
         parent.fill(255);
         parent.text("Cinemas",parent.width/2, parent.height/2 + 80);
     }
+
 
     public void Star(int StarWidth, int StarHeight, int Scale)
     {

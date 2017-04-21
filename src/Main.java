@@ -45,7 +45,7 @@ public class Main extends PApplet{
     final int SeatSelection = 10;
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
-    int ScreenState = WelcomeScreen;
+    int ScreenState = EndScreen;
 
     public void setup()
     {
@@ -180,7 +180,7 @@ public class Main extends PApplet{
 
         Index.Star(width/2, height/2 - 60, 6);
 
-        Index.TitleText(MovieFont, Title);
+        Index.TitleAndEndText("Welcome to", 90, MovieFont, Title);
 
         Button TitleButton = new Button(this, width/3 + width/12 , height - height/4, width/6, 50, WelcomeScreen, MovieSelectScreen);
         ScreenState = TitleButton.onHoverMovie(MovieSelectScreen);
@@ -574,6 +574,8 @@ public class Main extends PApplet{
         rect(0,0, width , height);
 
         Index.Star(width/2, height/2 - 60, 6);
+
+        Index.TitleAndEndText("Thank You for Choosing", 60, MovieFont, Title);
     }
 
     public  void Back()
