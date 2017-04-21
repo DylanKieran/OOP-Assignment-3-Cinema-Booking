@@ -9,13 +9,15 @@ public class Docket extends Main {
     PApplet parent;
     int xPos;
     int yPos;
-    ArrayList<Seat> docketSeats;
+    int ticket;
+    int tickets;
+    int[] selectedSeats = new int[10];
     Docket(PApplet p, int x, int y)
     {
         parent = p;
         xPos = x;
         yPos = y;
-        docketSeats = new ArrayList<>();
+        this.ticket = 0;
     }
 
     public void Render()
@@ -28,13 +30,14 @@ public class Docket extends Main {
 
     public void Update()
     {
-        addItem();
         removeItem();
     }
 
-    public void addItem()
+    public void addSeat(int seat, int ticket)
     {
-
+        ticket++;
+        selectedSeats[ticket] = seat;
+        System.out.println("ticket" + ticket + "   " + selectedSeats[ticket]);
     }
 
     public void removeItem()

@@ -27,6 +27,7 @@ public class Main extends PApplet{
     Movie Movie1;
     SeatSelection screenage;
 
+
     //Screen State Variables
     final int WelcomeScreen = 0;
     final int MovieSelectScreen = 1;
@@ -34,7 +35,7 @@ public class Main extends PApplet{
     final int SeatSelection = 3;
     final int FoodDrinkSelection = 4;
     //final int EndScreen = 5; //Maybe Payment Screen
-    int ScreenState = WelcomeScreen;
+    int ScreenState = SeatSelection;
 
     private final int GuardiansMovie = 6;
     private final int KongMovie = 7;
@@ -65,7 +66,8 @@ public class Main extends PApplet{
 
     public void setup()
     {
-        screenage = new SeatSelection(this, 1);
+        Docket docket = new Docket(this, width / 40 * 32, height/13);
+        screenage = new SeatSelection(this, 1, docket);
         background(34,34,34);
         Index = new Index(this);
         //seat = new Seat(this, 100, 100, true, 1);

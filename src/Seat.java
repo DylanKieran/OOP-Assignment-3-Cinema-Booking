@@ -26,14 +26,20 @@ public class Seat extends Main
     int notTaken = color(0, 155, 0);
     int hover = color(255,255,100);
     boolean selected;
+    boolean checkedOut = false;
+    int tickets = 10;
+    int[] selectedSeats = new int[tickets];
+    int ticket;
+    Docket docket;
 
-    Seat(PApplet p,float x, float y, boolean available, int number)
+    Seat(PApplet p,float x, float y, boolean available, int number, Docket docket)
     {
         parent = p;
         this.xPos = x;
         this.yPos = y;
         this.num = number;
         this.available = available;
+        this.docket = docket;
 
     }
 
@@ -63,9 +69,15 @@ public class Seat extends Main
 
     public void Update()
     {
-        //System.out.println(parent.mouseX + " + " + parent.mouseY);
-        noLoop();
-        //onHover();
+        if(checkedOut == true)
+        {
+            updateDB(selectedSeats);
+        }
+    }
+
+    public void updateDB(int[] seats)
+    {
+
     }
 
     public ArrayList<Movie> Movies = new ArrayList<>();
@@ -79,15 +91,17 @@ public class Seat extends Main
     }
 
 
-
-
     public boolean onHover()
     {
         if(parent.mouseX > xPos && parent.mouseX < xPos + 20 && parent.mouseY > yPos && parent.mouseY < yPos + 20 && available)
         {
-            if(parent.mousePressed == true)
+            if(parent.mousePressed == true && selected == false && ticket < tickets)
             {
                 selected = true;
+                selectedSeats[ticket] = num;
+                System.out.println("ticket" + ticket + "   " + selectedSeats[ticket]);
+                docket.addSeat(num, ticket);
+                return true;
             }
             return true;
         }

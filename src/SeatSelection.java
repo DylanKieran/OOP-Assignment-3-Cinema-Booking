@@ -21,22 +21,20 @@ public class SeatSelection extends Main
     static String driver = "org.sqlite.JDBC";
     String url = "jdbc:sqlite:Movies.sqlite";
 
-    SeatSelection(PApplet p, int screenNumber)
+    SeatSelection(PApplet p, int screenNumber, Docket docket)
     {
         parent = p;
         screen = screenNumber;
-        docket = new Docket(parent, parent.width / 40 * 32, parent.height/13);
+        this.docket = docket;
     }
 
     public void screenRender(int screen)
     {
-
         if (screen == 1)
         {
             createSeat(created, 1);
             drawLayout();
             drawSeats(1);
-            docket.Render();
             created = true;
         }
         else if (screen == 2)
@@ -61,7 +59,7 @@ public class SeatSelection extends Main
                         seatIndex++;
                         rowCounter = j;
                         colCounter = i;
-                        seat = new Seat(parent, parent.width / 40 * i + 3 * parent.width / 40, parent.height / 25 * j + parent.height / 13, true, seatIndex);
+                        seat = new Seat(parent, parent.width / 40 * i + 3 * parent.width / 40, parent.height / 25 * j + parent.height / 13, true, seatIndex, docket);
                         //System.out.println(seatIndex);
                         seat.available = QueryDB(seatIndex);
                         seats.add(seat);
@@ -96,7 +94,7 @@ public class SeatSelection extends Main
             while(rs.next())
             {
                 int booked = rs.getInt("Booked");
-                System.out.println(booked);
+                //System.out.println(booked);
                 if(booked == 1)
                 {
                     return false;
@@ -114,6 +112,7 @@ public class SeatSelection extends Main
         }
         return true;
     }
+
     private char toChar(int u)
     {
         return (char)(u + 65);
@@ -139,4 +138,5 @@ public class SeatSelection extends Main
         parent.fill(255);
         parent.text("SCREEN",parent.width/11 * 5, parent.height - height/20 * 2);
     }
+
 }
