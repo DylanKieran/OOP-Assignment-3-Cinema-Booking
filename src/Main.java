@@ -1,8 +1,10 @@
+import jdk.nashorn.internal.objects.Global;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
 
+import javax.xml.bind.annotation.XmlElementDecl;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -27,7 +29,7 @@ public class Main extends PApplet{
     Movie Movie1;
     SeatSelection screenage;
 
-
+    public  static int ticketCount;
     //Screen State Variables
     final int WelcomeScreen = 0;
     final int MovieSelectScreen = 1;
@@ -77,6 +79,7 @@ public class Main extends PApplet{
         //Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
+         ticketCount = 0;
 
         Title = createFont("Title.ttf", 42);
         MovieFont = createFont("arial.ttf", 32);

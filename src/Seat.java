@@ -29,7 +29,6 @@ public class Seat extends Main
     boolean checkedOut = false;
     int tickets = 10;
     int[] selectedSeats = new int[tickets];
-    int ticket;
     Docket docket;
 
     Seat(PApplet p,float x, float y, boolean available, int number, Docket docket)
@@ -95,12 +94,13 @@ public class Seat extends Main
     {
         if(parent.mouseX > xPos && parent.mouseX < xPos + 20 && parent.mouseY > yPos && parent.mouseY < yPos + 20 && available)
         {
-            if(parent.mousePressed == true && selected == false && ticket < tickets)
+            if(parent.mousePressed == true && selected == false && ticketCount < tickets)
             {
                 selected = true;
-                selectedSeats[ticket] = num;
-                System.out.println("ticket" + ticket + "   " + selectedSeats[ticket]);
-                docket.addSeat(num, ticket);
+                selectedSeats[Main.ticketCount] = num;
+                System.out.println("ticket" + ticketCount + "   " + selectedSeats[ticketCount]);
+                docket.addSeat(num, ticketCount);
+                ticketCount++;
                 return true;
             }
             return true;

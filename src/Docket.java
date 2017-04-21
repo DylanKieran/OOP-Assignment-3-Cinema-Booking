@@ -35,7 +35,6 @@ public class Docket extends Main {
 
     public void addSeat(int seat, int ticket)
     {
-        ticket++;
         selectedSeats[ticket] = seat;
         System.out.println("ticket" + ticket + "   " + selectedSeats[ticket]);
     }
