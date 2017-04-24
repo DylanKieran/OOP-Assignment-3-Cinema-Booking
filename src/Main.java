@@ -19,6 +19,7 @@ public class Main extends PApplet{
     MovieSelection Movie;
     MovieInformation MovieInfo;
     Food Food;
+    Ticket ticket;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
@@ -48,11 +49,12 @@ public class Main extends PApplet{
     final int SeatSelection = 10;
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
-    int ScreenState = SeatSelection;
+    int ScreenState = WelcomeScreen;
 
     public void setup()
     {
         Docket docket = new Docket(this, width / 40 * 32, height/13);
+        ticket = new Ticket(this);
         screenage = new SeatSelection(this, 1, docket);
         background(34,34,34);
         Index = new Index(this);
@@ -236,32 +238,32 @@ public class Main extends PApplet{
             ScreenState = GetOutMovie;
         }
 
-        Button ITButton = new Button(this, width - width/4 , height/8, 210, 310, MovieSelectScreen, GetOutMovie);
+        Button ITButton = new Button(this, width - width/4 , height/8, 210, 310, MovieSelectScreen, ITMovie);
         if (ITButton.onHoverMovie(ITMovie) == ITMovie)
         {
             ScreenState = ITMovie;
         }
         //ITButton.Render();
 
-        Button ShooterButton = new Button(this, width/3 , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        Button ShooterButton = new Button(this, width/3 , height/2 + 20, 210, 310, MovieSelectScreen, ShooterMovie);
         if (ShooterButton.onHoverMovie(ShooterMovie) == ShooterMovie)
         {
             ScreenState = ShooterMovie;
         }
 
-        Button LegoBatmanButton = new Button(this, width/8 , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        Button LegoBatmanButton = new Button(this, width/8 , height/2 + 20, 210, 310, MovieSelectScreen, LegoBatmanMovie);
         if (LegoBatmanButton.onHoverMovie(LegoBatmanMovie) == LegoBatmanMovie)
         {
             ScreenState = LegoBatmanMovie;
         }
 
-        Button StepBrothersButton = new Button(this, width/2 + 100 , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        Button StepBrothersButton = new Button(this, width/2 + 100 , height/2 + 20, 210, 310, MovieSelectScreen, StepBrothersMovie);
         if (StepBrothersButton.onHoverMovie(StepBrothersMovie) == StepBrothersMovie)
         {
             ScreenState = StepBrothersMovie;
         }
 
-        Button SpidermanButton = new Button(this, width - width/4  , height/2 + 20, 210, 310, MovieSelectScreen, GetOutMovie);
+        Button SpidermanButton = new Button(this, width - width/4  , height/2 + 20, 210, 310, MovieSelectScreen, SpidermanMovie);
         if (SpidermanButton.onHoverMovie(SpidermanMovie) == SpidermanMovie)
         {
             ScreenState = SpidermanMovie;
@@ -283,6 +285,9 @@ public class Main extends PApplet{
         {
             Back();
             Food();
+            ticket.HoverTicket(width / 4 + 20,height - 185, 150, 50, 1);
+            ticket.HoverTicket(width / 2 - 75,height - 185, 150, 50, 2);
+            ticket.HoverTicket(width / 2 + 310,height - 185, 150, 50, 3);
         }
         fill(255);
         textAlign(LEFT);
