@@ -19,11 +19,15 @@ public class Food extends Main
     float Maltesers, Twizzlers, MandMs , BoostBites, Popcorn = 2;*/
 
     PApplet parent;
-    Food(PApplet p) {parent = p;}
+    Food(PApplet p)
+    {
+        parent = p;
+    }
 
     int PrimaryColour = color(255,20,147);
     int SecondaryColour = color(0,191,255);
     boolean circleOver = false;
+    int size;
 
     /*
     static
@@ -83,11 +87,52 @@ public class Food extends Main
         }
     }
 
-    void update(int Xpos, int Ypos)
+    void update(int Xpos, int Ypos, int index)
     {
         if(overCircle(Xpos, Ypos, 180))
         {
             circleOver = true;
+            if (parent.mousePressed == true)
+            {
+                System.out.println("cunt");
+                if (index == 1)
+                {
+                    popcorn[0]++;
+
+                }
+                else if (index == 2)
+                {
+                    popcorn[1]++;
+                }
+                else if (index == 3)
+                {
+                    popcorn[2]++;
+                }
+                else if (index == 4)
+                {
+                    drink[0]++;
+                }
+                else if (index == 5)
+                {
+                    drink[1]++;
+                }
+                else if (index == 6)
+                {
+                    drink[2]++;
+                }
+                else if (index == 7)
+                {
+                    haribo++;
+                }
+                else if (index == 8)
+                {
+                    MM++;
+                }
+                else if (index == 9)
+                {
+                    malteaser++;
+                }
+            }
         }
         else
         {

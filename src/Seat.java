@@ -110,6 +110,7 @@ public class Seat extends Main
             {
                 selected = false;
                 ticketCount--;
+                selectedSeats[ticketCount] = 0;
             }
             return true;
         }

@@ -19,7 +19,7 @@ public class Main extends PApplet{
     MovieSelection Movie;
     MovieInformation MovieInfo;
     Food Food;
-    Ticket ticket;
+	Ticket ticket;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
@@ -29,11 +29,18 @@ public class Main extends PApplet{
     PFont MovieFont, Title, MovieText;
     Movie Movie1;
     SeatSelection screenage;
+    Docket docket;
 
     public  static int ticketCount;
     public static int adultTickets;
     public static int childTickets;
     public static int studentTickets;
+
+    public static int[] popcorn = new int[3]; //[0] L, [1] M, [2] S
+    public static int[] drink = new int[3];
+    public static int MM;
+    public static int haribo;
+    public static int malteaser;
 
     //Screen State Variables
     final int WelcomeScreen = 0;
@@ -53,8 +60,8 @@ public class Main extends PApplet{
 
     public void setup()
     {
-        Docket docket = new Docket(this, width / 40 * 32, height/13);
-        ticket = new Ticket(this);
+        docket = new Docket(this, width / 40 * 32, height/13);
+		ticket = new Ticket(this);
         screenage = new SeatSelection(this, 1, docket);
         background(34,34,34);
         Index = new Index(this);
@@ -69,6 +76,14 @@ public class Main extends PApplet{
         adultTickets = 0;
         studentTickets = 0;
         childTickets = 0;
+
+        for (int i = 0; i < 3;i++) {
+            popcorn[i] = 0;
+            drink[i] = 0;
+        }
+        haribo = 0;
+        MM = 0;
+        malteaser = 0;
 
         Title = createFont("Fonts/Title.ttf", 42);
         MovieFont = createFont("Fonts/arial.ttf", 32);
@@ -123,6 +138,7 @@ public class Main extends PApplet{
         {
             case WelcomeScreen:
                 WelcomeScreen();
+                //docket.Render();
                 break;
 
             case MovieSelectScreen:
@@ -163,6 +179,7 @@ public class Main extends PApplet{
 
             case FoodDrinkSelection:
                 FoodDrinkSelection();
+                docket.Render();
                 break;
 
             case SeatSelection:
@@ -285,9 +302,9 @@ public class Main extends PApplet{
         {
             Back();
             Food();
-            ticket.HoverTicket(width / 4 + 20,height - 185, 150, 50, 1);
-            ticket.HoverTicket(width / 2 - 75,height - 185, 150, 50, 2);
-            ticket.HoverTicket(width / 2 + 310,height - 185, 150, 50, 3);
+			ticket.HoverTicket(width / 4 + 20, height - 185, 150, 50, 1);
+			ticket.HoverTicket(width / 2 - 75,height - 185, 150, 50, 2);
+			ticket.HoverTicket(width / 2 + 310,height - 185, 150, 50, 3);
         }
         fill(255);
         textAlign(LEFT);
@@ -524,25 +541,25 @@ public class Main extends PApplet{
         fill(0, 180);
         rect(0, height/5, width, height - height/3);
 
-        Food.update(width/8 + 70, height/4 + 60);
+        Food.update(width/8 + 70, height/4 + 60, 1); //Popcorn large
         Food.drawCircle(width/8 + 70, height/4 + 60);
-        Food.update(width/3 + 70, height/4 + 60);
+        Food.update(width/3 + 70, height/4 + 60, 2); //Popcorn medium
         Food.drawCircle(width/3 + 70, height/4 + 60);
-        Food.update(width/2 + 150, height/4 + 60);
+        Food.update(width/2 + 150, height/4 + 60, 3); //Popcorn small
         Food.drawCircle(width/2 + 150, height/4 + 60);
 
-        Food.update(width/8 + 70, height/3 + 210);
+        Food.update(width/8 + 70, height/3 + 210, 4); // Drinks large
         Food.drawCircle(width/8 + 70, height/3 + 210);
-        Food.update(width/3 + 70, height/3 + 210);
+        Food.update(width/3 + 70, height/3 + 210, 5); // Drinks medium
         Food.drawCircle(width/3 + 70, height/3 + 210);
-        Food.update(width/2 + 150, height/3 + 210);
+        Food.update(width/2 + 150, height/3 + 210, 6); // Drinks small
         Food.drawCircle(width/2 + 150, height/3 + 210);
 
-        Food.update(width/8 + 70, height/2 + 280);
+        Food.update(width/8 + 70, height/2 + 280, 7); // Haribo
         Food.drawCircle(width/8 + 70, height/2 + 280);
-        Food.update(width/3 + 70, height/2 + 280);
+        Food.update(width/3 + 70, height/2 + 280, 8); // Malteasers
         Food.drawCircle(width/3 + 70, height/2 + 280);
-        Food.update(width/2 + 150, height/2 + 280);
+        Food.update(width/2 + 150, height/2 + 280, 9); // M and M's
         Food.drawCircle(width/2 + 150, height/2 + 280);
 
         Food.render(PopcornLarge, 130, 130,width/8 + 5, height/4);
