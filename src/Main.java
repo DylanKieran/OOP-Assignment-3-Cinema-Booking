@@ -30,6 +30,9 @@ public class Main extends PApplet{
     SeatSelection screenage;
 
     public  static int ticketCount;
+    public static int adultTickets;
+    public static int childTickets;
+    public static int studentTickets;
 
     //Screen State Variables
     final int WelcomeScreen = 0;
@@ -45,7 +48,7 @@ public class Main extends PApplet{
     final int SeatSelection = 10;
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
-    int ScreenState = EndScreen;
+    int ScreenState = SeatSelection;
 
     public void setup()
     {
@@ -61,6 +64,9 @@ public class Main extends PApplet{
         //Movie.loadMovies();
         //Movie.getRating();
         ticketCount = 0;
+        adultTickets = 0;
+        studentTickets = 0;
+        childTickets = 0;
 
         Title = createFont("Fonts/Title.ttf", 42);
         MovieFont = createFont("Fonts/arial.ttf", 32);

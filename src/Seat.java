@@ -63,7 +63,10 @@ public class Seat extends Main
         {
             parent.fill(taken);
         }
+        parent.stroke(255);
+        parent.strokeWeight(1);
         parent.rect(xPos,yPos, 20, 20);
+        docket.Render();
     }
 
     public void Update()
@@ -102,6 +105,11 @@ public class Seat extends Main
                 docket.addSeat(num, ticketCount);
                 ticketCount++;
                 return true;
+            }
+            else if(parent.mousePressed == true && selected == true)
+            {
+                selected = false;
+                ticketCount--;
             }
             return true;
         }

@@ -26,6 +26,8 @@ public class Docket extends Main {
         parent.stroke(100);
         parent.fill(255,250,255);
         parent.rect(xPos, yPos, parent.width / 40 * 8, parent.height/25 * 12);
+        parent.fill(0);
+        parent.text("Tickets: " + ticketCount,xPos + 20, yPos + 40);
     }
 
     public void Update()
