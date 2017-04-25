@@ -11,12 +11,14 @@ import java.util.ArrayList;
  * which will be passed into the available boolean
  * The screen size will be used in the creation of the seat layout which
  * will be controlled  in the seatLayout class.
-lmao
+ lmao
  */
 public class Seat extends Main
 {
     PApplet parent;
 
+    static String driver = "org.sqlite.JDBC";
+    String DBurl = "jdbc:sqlite:Movies.sqlite";
 
     float xPos;
     float yPos;
@@ -28,8 +30,9 @@ public class Seat extends Main
     boolean selected;
     boolean checkedOut = false;
     int tickets = 0;
-    int[] selectedSeats = new int[tickets];
+    int[] selectedSeats = new int[100];
     Docket docket;
+    Statement stmt;
 
     Seat(PApplet p,float x, float y, boolean available, int number, Docket docket)
     {
@@ -54,6 +57,7 @@ public class Seat extends Main
             else if (selected)
             {
                 parent.fill(hover);
+                checkedOut = true;
             }
             else {
                 parent.fill(notTaken);
@@ -66,20 +70,43 @@ public class Seat extends Main
         parent.stroke(255);
         parent.strokeWeight(1);
         parent.rect(xPos,yPos, 20, 20);
-        parent.noStroke();
+        Update();
     }
 
     public void Update()
     {
         if(checkedOut == true)
         {
-            updateDB(selectedSeats);
+            updateDB(num);
         }
     }
 
-    public void updateDB(int[] seats)
+    static
     {
+        try
+        {
+            Class.forName(driver);
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
+    public void updateDB(int seatIndex)
+    {
+        System.out.println("SWAG" + seatIndex);
+        try(Connection conn = DriverManager.getConnection(DBurl);
+            PreparedStatement ps = conn.prepareStatement("UPDATE Screen " + " SET Booked = 1 WHERE Seat = ?;"))
+        {
+            ps.setInt(1, seatIndex);
+            ps.executeUpdate();
+        }
+        catch(SQLException e)
+        {
+            System.out.println("SQL Exception");
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<Movie> Movies = new ArrayList<>();
@@ -105,6 +132,7 @@ public class Seat extends Main
                 //System.out.println("ticket" + ticketCount + "   " + selectedSeats[ticketCount]);
                 //docket.addSeat(num, ticketCount);
                 screenage.ticketCounter++;
+                selectedSeats[ticketCounter] = num;
                 return true;
             }
             else if(parent.mousePressed == true && selected == true)

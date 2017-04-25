@@ -75,7 +75,7 @@ public class Main extends PApplet{
     final int SeatSelection = 10;
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
-    int ScreenState = SeatSelection;
+    int ScreenState = WelcomeScreen;
 
     public void setup()
     {
@@ -653,7 +653,7 @@ public class Main extends PApplet{
     {
         if (ScreenState == FoodDrinkSelection) {
             next = new Button(this, width / 40 * 32 + 10, height / 13 + 400, width / 40 * 4, 50, MovieSelectScreen, SeatSelection);
-            //next.Render();
+            next.Render();
             if (next.onHoverMovie(SeatSelection) == SeatSelection) {
                 ScreenState = SeatSelection;
             }
