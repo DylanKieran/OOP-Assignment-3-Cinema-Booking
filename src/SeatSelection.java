@@ -58,7 +58,7 @@ public class SeatSelection extends Main
                         rowCounter = j;
                         colCounter = i;
                         seat = new Seat(parent, parent.width / 40 * i + 3 * parent.width / 40, parent.height / 25 * j + parent.height / 13, true, seatIndex, docket);
-                        System.out.println(parent.frameRate);
+                        //System.out.println(parent.frameRate);
                         seat.available = QueryDB(seatIndex);
                         seats.add(seat);
                     }

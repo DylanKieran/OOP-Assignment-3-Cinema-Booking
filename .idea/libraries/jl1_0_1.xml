@@ -1,11 +1,8 @@
 <component name="libraryTable">
-  <library name="Libraries">
+  <library name="jl1.0.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Libraries/sqlite-jdbc-3.16.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/Libraries/core.jar!/" />
-      <root url="jar://$PROJECT_DIR$/Libraries/minim.jar!/" />
-      <root url="jar://$PROJECT_DIR$/Libraries/jsminim.jar!/" />
       <root url="jar://$PROJECT_DIR$/Libraries/jl1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libraries/jsminim.jar!/" />
       <root url="jar://$PROJECT_DIR$/Libraries/mp3spi1.9.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/Libraries/tritonus_aos.jar!/" />
       <root url="jar://$PROJECT_DIR$/Libraries/tritonus_share.jar!/" />

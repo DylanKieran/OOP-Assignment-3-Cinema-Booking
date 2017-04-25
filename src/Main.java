@@ -2,18 +2,31 @@ import jdk.nashorn.internal.objects.Global;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
+import ddf.minim.AudioInput;
+import ddf.minim.AudioSample;
+import ddf.minim.Minim;
+import ddf.minim.analysis.FFT;
+import processing.sound.*;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 
-
-import javax.xml.bind.annotation.XmlElementDecl;
-import java.awt.*;
-import java.util.ArrayList;
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 
 public class Main extends PApplet{
 
     //Create new Object
+    //SoundFile file;
+    //Minim etherwood;
+    //AudioSample audioInput;
+
+    static final int FRAME_SIZE = 2048;
+
     Index Index;
     Seat seat;
     MovieSelection Movie;
@@ -66,6 +79,10 @@ public class Main extends PApplet{
 
     public void setup()
     {
+        //file = new SoundFile(this, "sample.mp3");
+        //file.play();
+        //etherwood = new Minim(this);
+        //audioInput = etherwood.loadSample("etherwood.wav", FRAME_SIZE);
 
         docket = new Docket(this, width / 40 * 32, height/13);
         ticket = new Ticket(this);
@@ -147,6 +164,7 @@ public class Main extends PApplet{
         {
             case WelcomeScreen:
                 WelcomeScreen();
+                audioInput.trigger();
                 //docket.Render();
                 break;
 
@@ -722,6 +740,4 @@ public class Main extends PApplet{
         //app.insert("IT", "Horror", 12, 4);
         //app.insert("Alien", "Horror", 13, 9);
     }
-
 }
-
