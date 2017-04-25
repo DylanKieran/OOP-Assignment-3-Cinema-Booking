@@ -32,7 +32,7 @@ public class SeatSelection extends Main
     {
         if (screen == 1)
         {
-            parent.background(0);
+            //parent.background(0);
             drawLayout();
             drawSeats(1);
             created = true;

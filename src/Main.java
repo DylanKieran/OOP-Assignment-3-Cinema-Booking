@@ -36,7 +36,7 @@ public class Main extends PApplet{
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
-            LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground, FoodBackground, EndScreenBackground;
+            LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground, FoodBackground, EndScreenBackground, SeatSelectionBackground;
     PImage PopcornLarge, PopcornMedium, PopcornSmall, DrinkLarge, DrinkMedium, DrinkSmall, Haribo, MandM, Maltesers;
     double price;
     public static PFont MovieFont, Title, MovieText;
@@ -75,7 +75,7 @@ public class Main extends PApplet{
     final int SeatSelection = 10;
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
-    int ScreenState = WelcomeScreen;
+    int ScreenState = SeatSelection;
 
     public void setup()
     {
@@ -140,6 +140,7 @@ public class Main extends PApplet{
         GetOutBackground = loadImage("Images/GetOutBackground.jpg");
         FoodBackground = loadImage("Images/FoodBackground.jpg");
         EndScreenBackground = loadImage("Images/EndScreen.jpg");
+        SeatSelectionBackground  = loadImage("Images/SeatSelection.jpg");
 
         //Food Images
         DrinkLarge = loadImage("Images/Drink.png");
@@ -227,6 +228,11 @@ public class Main extends PApplet{
                 break;
 
             case SeatSelection:
+                SeatSelectionBackground.resize(width , height);
+                image(SeatSelectionBackground,0,0);
+                fill(0,0,0, 220);
+                rect(0,0, width , height);
+
                 screenage.screenRender(1);
                 docket.Render();
                 //docketButtons();
