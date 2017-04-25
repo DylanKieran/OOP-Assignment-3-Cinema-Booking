@@ -19,7 +19,7 @@ public class Main extends PApplet{
     MovieSelection Movie;
     MovieInformation MovieInfo;
     Food Food;
-	Ticket ticket;
+    Ticket ticket;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
@@ -30,14 +30,14 @@ public class Main extends PApplet{
     Movie Movie1;
     SeatSelection screenage;
     Docket docket;
-    Button next;
+    Button next, reset;
 
-    public static int ticketCounter;
-
-    public  static int ticketCount;
+    public static double total;
+    public static int ticketCount;
     public static int adultTickets;
     public static int childTickets;
     public static int studentTickets;
+    public static int ticketCounter;
 
     public static int[] popcorn = new int[3]; //[0] L, [1] M, [2] S
     public static int[] drink = new int[3];
@@ -63,8 +63,9 @@ public class Main extends PApplet{
 
     public void setup()
     {
+
         docket = new Docket(this, width / 40 * 32, height/13);
-		ticket = new Ticket(this);
+        ticket = new Ticket(this);
         screenage = new SeatSelection(this, 1, docket);
         background(34,34,34);
         Index = new Index(this);
@@ -72,7 +73,6 @@ public class Main extends PApplet{
         Movie = new MovieSelection(this);
         MovieInfo = new MovieInformation(this);
         Food = new Food(this);
-        next = new Button(this, width / 40 * 32 + 10,  height/13 + 400, width / 40 * 8, 50, FoodDrinkSelection, SeatSelection);
         screenage.createSeat(1);
 
         //Movie1 = new Movie();
@@ -154,50 +154,61 @@ public class Main extends PApplet{
             case GuardiansMovie:
                 GuardiansMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case KongMovie:
                 KongMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case GetOutMovie:
                 GetOutMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case ShooterMovie:
                 ShooterMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case ITMovie:
                 ItMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case LegoBatmanMovie:
                 LegoBatmanMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case StepBrothersMovie:
                 StepBrothersMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case SpidermanMovie:
                 SpidermanMovie();
                 docket.Render();
+                docketButtons();
                 break;
 
             case FoodDrinkSelection:
                 FoodDrinkSelection();
                 docket.Render();
+                docketButtons();
                 break;
 
             case SeatSelection:
                 screenage.screenRender(1);
+                docket.Render();
+                docketButtons();
                 break;
 
             case EndScreen:
@@ -527,26 +538,26 @@ public class Main extends PApplet{
             Food();
             buttons();
         }
-            fill(255);
-            textAlign(LEFT);
-            textFont(MovieFont);
-            text("Description :", width / 4 + 30, height / 4 + 50);
-            textSize(18);
-            text("In 1988, on Earth, the boy Peter Quill is abducted by a spacecraft after losing his, " + "\n" +
-                    "is a ravager searching a valuable orb on the surface of the dead planet Morag. " + "\n" +
-                    "When Peter finds the orb, he is hunted down by the Kree warship The Dark Aster of the " + "\n" +
-                    "powerful Ronan the Accuser but he flees. Peter also double crosses his partner Yondu Udonta " + "\n" +
-                    "that puts m. Peter Quill arrives on the Xandar city Nova Empire and is chased by " + "\n" +
-                    "Ronan's warrior Gamora and by the bounty hunters Rocket and The Groot. They are arrested " + "\n" +
-                    "by the police officer Corpsman Dey and his men and sent to the prison end the strong Drax. " + "\n" +
-                    "Soon they learn that Gamora wants to orb to a dealer for a huge amount while Drax wants to " + "\n" +
-                    "kill Ronan, who killed his wife and daughter. They plot a plan to escape from The Kyln " + "\n" +
-                    "to sell the orb and split the money. But soon they also learn that the orb keeps the " + "\n" +
-                    "infinity stone that gives immensurable destructive power to the owner. They self-proclaim " + "\n" +
-                    "Guardians of the Galaxy and decide to deliver the orb to the leader Nova Prime to keep " + "\n" +
-                    "it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want " + "\n" +
-                    "to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity " + "\n" +
-                    "stone to make lots of money. Who will keep the powerful orb?", width / 4 + 30, height / 3);
+        fill(255);
+        textAlign(LEFT);
+        textFont(MovieFont);
+        text("Description :", width / 4 + 30, height / 4 + 50);
+        textSize(18);
+        text("In 1988, on Earth, the boy Peter Quill is abducted by a spacecraft after losing his, " + "\n" +
+                "is a ravager searching a valuable orb on the surface of the dead planet Morag. " + "\n" +
+                "When Peter finds the orb, he is hunted down by the Kree warship The Dark Aster of the " + "\n" +
+                "powerful Ronan the Accuser but he flees. Peter also double crosses his partner Yondu Udonta " + "\n" +
+                "that puts m. Peter Quill arrives on the Xandar city Nova Empire and is chased by " + "\n" +
+                "Ronan's warrior Gamora and by the bounty hunters Rocket and The Groot. They are arrested " + "\n" +
+                "by the police officer Corpsman Dey and his men and sent to the prison end the strong Drax. " + "\n" +
+                "Soon they learn that Gamora wants to orb to a dealer for a huge amount while Drax wants to " + "\n" +
+                "kill Ronan, who killed his wife and daughter. They plot a plan to escape from The Kyln " + "\n" +
+                "to sell the orb and split the money. But soon they also learn that the orb keeps the " + "\n" +
+                "infinity stone that gives immensurable destructive power to the owner. They self-proclaim " + "\n" +
+                "Guardians of the Galaxy and decide to deliver the orb to the leader Nova Prime to keep " + "\n" +
+                "it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want " + "\n" +
+                "to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity " + "\n" +
+                "stone to make lots of money. Who will keep the powerful orb?", width / 4 + 30, height / 3);
 
 
     }
@@ -604,17 +615,46 @@ public class Main extends PApplet{
         {
             ScreenState = MovieSelectScreen;
         }
-        //docket.Render();
-        next.Render();
-        if (next.onHoverMovie(SeatSelection) == SeatSelection)
-        {
-            ScreenState = SeatSelection;
-        }
     }
 
     public void SeatSelection()
     {
         screenage.screenRender(1);
+    }
+
+    public void docketButtons()
+    {
+        if (ScreenState == FoodDrinkSelection) {
+            next = new Button(this, width / 40 * 32 + 10, height / 13 + 400, width / 40 * 4, 50, MovieSelectScreen, SeatSelection);
+            next.Render();
+            if (next.onHoverMovie(SeatSelection) == SeatSelection) {
+                ScreenState = SeatSelection;
+            }
+        }
+
+        reset = new Button(this, width / 32 + 10, height/13 + 300, width / 40 * 4, 50, GuardiansMovie, MovieSelectScreen);
+        reset.Render();
+        if(reset.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+        {
+            reset();
+        }
+    }
+
+    public void reset()
+    {
+        ticketCount = 0;
+        adultTickets = 0;
+        studentTickets = 0;
+        childTickets = 0;
+        malteaser = 0;
+        MM = 0;
+        haribo = 0;
+        total =0;
+        for( int i = 0; i < 3; i ++)
+        {
+            drink[i] = 0;
+            popcorn[i] = 0;
+        }
     }
 
     public void EndScreen()

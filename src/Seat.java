@@ -98,6 +98,7 @@ public class Seat extends Main
         {
             if(parent.mousePressed == true && selected == false && ticketCounter < ticketCount)
             {
+                parent.mousePressed = false;
                 selected = true;
                 //selectedSeats[ticketCount] = num;
                 //System.out.println("ticket" + ticketCount + "   " + selectedSeats[ticketCount]);
@@ -107,6 +108,7 @@ public class Seat extends Main
             }
             else if(parent.mousePressed == true && selected == true)
             {
+                parent.mousePressed = false;
                 selected = false;
                 ticketCounter--;
                 //selectedSeats[ticketCount] = 0;

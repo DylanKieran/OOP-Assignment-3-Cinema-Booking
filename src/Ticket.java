@@ -25,18 +25,22 @@ public class Ticket extends Main{
 
         if(parent.mouseX >= xPos && parent.mouseX <= xPos + rectWidth && parent.mouseY >= yPos && parent.mouseY <= yPos + rectHeight) {
 
-            if (parent.mousePressed == true) {
+            if(parent.mousePressed == true) {
 
+                parent.mousePressed = false;
                 if (type == "Adult") {
                     adultTickets++;
+                    total += 10;
+                    System.out.print("adults");
                     //System.out.print(adultTickets);
                 } else if (type == "Student") {
                     studentTickets++;
+                    total += 7.50;
                 } else {
                     childTickets++;
+                    total += 5;
                 }
                 ticketCount++;
             }
-        }
-    }
+        }    }
 }

@@ -94,42 +94,51 @@ public class Food extends Main
             circleOver = true;
             if (parent.mousePressed == true)
             {
+                parent.mousePressed = false;
                 if (index == 1)
                 {
                     popcorn[0]++;
-
+                    total += 5.50;
                 }
                 else if (index == 2)
                 {
                     popcorn[1]++;
+                    total += 4.20;
                 }
                 else if (index == 3)
                 {
                     popcorn[2]++;
+                    total += 3.79;
                 }
                 else if (index == 4)
                 {
                     drink[0]++;
+                    total += 4;
                 }
                 else if (index == 5)
                 {
                     drink[1]++;
+                    total += 3;
                 }
                 else if (index == 6)
                 {
                     drink[2]++;
+                    total += 2.50;
                 }
                 else if (index == 7)
                 {
                     haribo++;
+                    total += 3.50;
                 }
                 else if (index == 8)
                 {
                     MM++;
+                    total += 3.50;
                 }
                 else if (index == 9)
                 {
                     malteaser++;
+                    total += 3.50;
                 }
             }
         }
@@ -138,62 +147,4 @@ public class Food extends Main
             circleOver = false;
         }
     }
-
-
-    /*double size(String size, double price)
-    {
-
-        if ( size == "Large")
-        {
-            price = price * 2;
-        }
-
-        if ( size == "Medium")
-        {
-            price = price * 1.5;
-        }
-
-        return price;
-    }
-
-    public void printTunes(ArrayList<Food> food)
-    {
-        for(Food t:food)
-        {
-            System.out.println(t);
-        }
-    }
-
-    public ArrayList<Food> Products = new ArrayList<>();
-
-    /*
-    void getProduct() {
-
-        Scanner reader = new Scanner(System.in);  // Reading from System.in
-        System.out.println("Enter a food: ");
-        String user = reader.nextLine(); // Scans the next token of the input as an int.
-
-        ResultSet rs;
-        Products.clear();
-        try(Connection c = DriverManager.getConnection(url);
-            PreparedStatement ps = c.prepareStatement("select * from FoodIndex where Foods like ?"))
-        {
-            ps.setString(1, user);
-
-            rs = ps.executeQuery();
-            while(rs.next())
-            {
-                Food food = new Food(rs);
-                Food.add(food);
-            }
-            printTunes(Food);
-        }
-        catch(SQLException e)
-        {
-            System.out.println("SQL Exception");
-            e.printStackTrace();
-        }
-        //return rating;
-    }
-    */
 }
