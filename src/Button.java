@@ -47,6 +47,7 @@ public class Button extends Main
 
             if(parent.mousePressed == true)
             {
+                parent.mousePressed = false;
                 return  nextScreen;
             }
             else

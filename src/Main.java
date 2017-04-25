@@ -29,7 +29,7 @@ public class Main extends PApplet{
     Movie Movie1;
     SeatSelection screenage;
     Docket docket;
-    Button next, reset;
+    Button SelectSeats, reset;
 
     public static float total;
     public static float ticketTotal;
@@ -104,8 +104,6 @@ public class Main extends PApplet{
         MovieFont = createFont("Fonts/arial.ttf", 32);
         MovieText = createFont("Fonts/cs_regular.ttf", 42);
 
-        //textFont(MovieFont, 18);
-
         //Movie Poster Images
         Guardians = loadImage("Images/Guardians.jpg");
         Kong = loadImage("Images/Kong.jpg");
@@ -153,7 +151,6 @@ public class Main extends PApplet{
         {
             case WelcomeScreen:
                 WelcomeScreen();
-                //docket.Render();
                 break;
 
             case MovieSelectScreen:
@@ -626,10 +623,13 @@ public class Main extends PApplet{
         Food.drawLabel("Drinks", 0 + width/50, height/3 + 190, Title);
         Food.drawLabel("Snacks", 0 + width/50, height/2 + 260, Title);
 
-        Button back = new Button(this, 150,height - 100, 150, 50, FoodDrinkSelection, MovieSelectScreen);
+        Button back = new Button(this, 80,height - 80, 130, 35, FoodDrinkSelection, MovieSelectScreen);
         back.Render();
+
         fill(255);
-        text(" < Back", 155,  height - 68);
+        textFont(MovieText, 28);
+        text("< Back", 100,  height - 55);
+
         if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
         {
             ScreenState = MovieSelectScreen;
@@ -639,24 +639,6 @@ public class Main extends PApplet{
     public void SeatSelection()
     {
         screenage.screenRender(1);
-    }
-
-    public void docketButtons()
-    {
-        if (ScreenState == FoodDrinkSelection) {
-            next = new Button(this, width / 40 * 32 + 10, height / 13 + 400, width / 40 * 4, 50, MovieSelectScreen, SeatSelection);
-            next.Render();
-            if (next.onHoverMovie(SeatSelection) == SeatSelection) {
-                ScreenState = SeatSelection;
-            }
-        }
-
-        reset = new Button(this, width / 32 + 10, height/13 + 300, width / 40 * 4, 50, GuardiansMovie, MovieSelectScreen);
-        reset.Render();
-        if(reset.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
-        {
-            reset();
-        }
     }
 
     public void reset()
@@ -698,11 +680,13 @@ public class Main extends PApplet{
 
     public  void Back()
     {
-        Button back = new Button(this, 150,height - 120, 150, 40, LegoBatmanMovie, MovieSelectScreen);
+        Button back = new Button(this, 80,height - 80, 130, 35, LegoBatmanMovie, MovieSelectScreen);
         back.Render();
+
         fill(255);
-        textSize(32);
-        text(" < Back", 225,  height - 92);
+        textFont(MovieText, 28);
+        text("< Back", 145,  height - 55);
+
         if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
         {
             ScreenState = MovieSelectScreen;
@@ -711,14 +695,46 @@ public class Main extends PApplet{
 
     public  void  Food()
     {
-        Button food = new Button(this, width - 300,height - 120, 150, 40, GuardiansMovie, FoodDrinkSelection);
+        Button food = new Button(this, width - 210,height - 250, 120, 30, GuardiansMovie, FoodDrinkSelection);
         food.Render();
+
         fill(255);
-        textSize(32);
-        text(" Food >", width - 225,  height - 92);
+        textFont(Title, 18);
+        text("Select Food", width - 150,  height - 230);
+
         if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
         {
             ScreenState = FoodDrinkSelection;
+        }
+    }
+
+    public void docketButtons()
+    {
+        if (ScreenState == FoodDrinkSelection)
+        {
+            SelectSeats = new Button(this, width - 210,height - 250, 120, 30, MovieSelectScreen, SeatSelection);
+            SelectSeats.Render();
+
+            fill(255);
+            textFont(Title, 18);
+            text("Select Seats", width - 205,  height - 230);
+
+            if (SelectSeats.onHoverMovie(SeatSelection) == SeatSelection)
+            {
+                ScreenState = SeatSelection;
+            }
+        }
+
+        reset = new Button(this, width - 360, height - 250, 120, 30, GuardiansMovie, MovieSelectScreen);
+        reset.Render();
+
+        fill(255);
+        textFont(Title, 18);
+        text("Reset Items", width - 350,  height - 230);
+
+        if(reset.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
+        {
+            reset();
         }
     }
 

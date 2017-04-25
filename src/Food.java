@@ -7,7 +7,6 @@ import processing.core.PFont;
 import processing.core.PImage;
 
 
-
 public class Food extends Main
 {
 
@@ -83,12 +82,12 @@ public class Food extends Main
                 else if (index == 2)
                 {
                     popcorn[1]++;
-                    foodTotal += 4.20;
+                    foodTotal += 4.00;
                 }
                 else if (index == 3)
                 {
                     popcorn[2]++;
-                    foodTotal += 3.79;
+                    foodTotal += 3.50;
                 }
                 else if (index == 4)
                 {

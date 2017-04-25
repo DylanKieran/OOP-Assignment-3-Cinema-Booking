@@ -23,10 +23,10 @@ public class Docket extends Main {
     public void Render()
     {
         parent.fill(0,0,0, 100);
-        parent.rect(xPos, yPos, parent.width/6, parent.height/3 + 200, 6, 6, 6, 6);
+        parent.rect(xPos, yPos, parent.width/6, parent.height/3 + 150, 6, 6, 6, 6);
         parent.stroke(PrimaryColour);
         parent.strokeWeight(2);
-        parent.rect(xPos + 10, yPos + 10, parent.width/6 - 20, parent.height/3 + 180);
+        parent.rect(xPos + 10, yPos + 10, parent.width/6 - 20, parent.height/3 + 130);
         parent.noStroke();
 
         display();
@@ -77,7 +77,6 @@ public class Docket extends Main {
 
         parent.textSize(20);
         parent.text("Total: " + total, xPos + 180, yPos + 485);
-
 
         //parent.text("Total : " + total, xPos + 10, yPos + 300);
     }
