@@ -27,11 +27,8 @@ public class Docket extends Main {
         parent.fill(255,250,255, 100);
         parent.rect(xPos, yPos, parent.width / 40 * 8, parent.height/25 * 12);
         parent.noStroke();
-        parent.fill(0);
-        parent.textSize(18);
-        parent.text("Tickets: " + ticketCount,xPos + 10, yPos + 40);
         System.out.println(haribo);
-        displayFood();
+        display();
 
     }
 
@@ -46,8 +43,11 @@ public class Docket extends Main {
         System.out.println("ticket" + ticket + "   " + selectedSeats[ticket]);
     }
 
-    public void displayFood()
+    public void display()
     {
-        parent.text("Drinks: \n   Large(" + drink[0] + "),\n   Medium(" + drink[1] + "),\n    Small(" + drink[2] + ")", xPos + 10, yPos + 80 );
+        parent.fill(0);
+        parent.textSize(18);
+        parent.text("Tickets: " + ticketCount + "\n  Adult(" + adultTickets +") \n  Student(" + studentTickets + ")\n  Child(" + childTickets + ")",xPos + 10, yPos + 40);
+        parent.text("Drinks: \n   Large(" + drink[0] + "),\n   Medium(" + drink[1] + "),\n    Small(" + drink[2] + ")", xPos + 10, yPos + 160 );
     }
 }

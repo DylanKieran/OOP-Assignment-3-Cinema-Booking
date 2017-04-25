@@ -24,16 +24,16 @@ public class Ticket extends Main{
             if(mousePressed == true)
             {
                 if(type == 1) {
-                        Main.adultTickets++;
+                        adultTickets++;
                         System.out.print(adultTickets);
                 }
                 else if(type == 2) {
-                    Main.studentTickets ++;
+                    studentTickets ++;
                 }
                 else{
-                    Main.childTickets ++;
+                    childTickets ++;
                 }
-                Main.ticketCount ++;
+                ticketCount ++;
             }
         }
     }

@@ -94,7 +94,6 @@ public class Food extends Main
             circleOver = true;
             if (parent.mousePressed == true)
             {
-                System.out.println("cunt");
                 if (index == 1)
                 {
                     popcorn[0]++;

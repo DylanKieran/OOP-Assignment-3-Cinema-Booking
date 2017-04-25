@@ -7,8 +7,7 @@
     <list default="true" id="971da847-3271-4dc5-8610-83ace9872933" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Docket.java" afterPath="$PROJECT_DIR$/src/Docket.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Food.java" afterPath="$PROJECT_DIR$/src/Food.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Seat.java" afterPath="$PROJECT_DIR$/src/Seat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ticket.java" afterPath="$PROJECT_DIR$/src/Ticket.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,12 +26,29 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
+            <state relative-caret-position="4301">
               <caret line="543" column="12" lean-forward="false" selection-start-line="543" selection-start-column="12" selection-end-line="543" selection-end-column="12" />
-              <folding>
-                <element signature="e#4629#4630#0" expanded="true" />
-                <element signature="e#4657#4658#0" expanded="true" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Food.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Food.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="95" column="13" lean-forward="false" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ticket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ticket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -40,10 +56,10 @@
       <file leaf-file-name="Docket.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Docket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="279">
+              <caret line="50" column="140" lean-forward="false" selection-start-line="50" selection-start-column="140" selection-end-line="50" selection-end-column="140" />
               <folding>
-                <marker date="1493047671260" expanded="true" signature="1222:1228" ph="{...}" />
+                <marker date="1493113179350" expanded="true" signature="1317:1323" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -52,9 +68,12 @@
       <file leaf-file-name="MovieSelection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MovieSelection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
+            <state relative-caret-position="412">
               <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-              <folding />
+              <folding>
+                <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
+                <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,7 +81,7 @@
       <file leaf-file-name="Seat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Seat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1921">
+            <state relative-caret-position="412">
               <caret line="118" column="5" lean-forward="false" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
               <folding />
             </state>
@@ -72,7 +91,7 @@
       <file leaf-file-name="Button.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
+            <state relative-caret-position="412">
               <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
               <folding />
             </state>
@@ -107,6 +126,7 @@
       <find>Movie</find>
       <find>MovieText</find>
       <find>MovieInfoScreen</find>
+      <find>cunt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,13 +146,13 @@
         <option value="$PROJECT_DIR$/../Algorithms/PrimList/PrimLists.java" />
         <option value="$PROJECT_DIR$/src/Button.java" />
         <option value="$PROJECT_DIR$/src/SeatSelection.java" />
-        <option value="$PROJECT_DIR$/src/Food.java" />
         <option value="$PROJECT_DIR$/src/Index.java" />
-        <option value="$PROJECT_DIR$/src/Docket.java" />
         <option value="$PROJECT_DIR$/src/Seat.java" />
         <option value="$PROJECT_DIR$/src/MovieInformation.java" />
-        <option value="$PROJECT_DIR$/src/Ticket.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Docket.java" />
+        <option value="$PROJECT_DIR$/src/Food.java" />
+        <option value="$PROJECT_DIR$/src/Ticket.java" />
       </list>
     </option>
   </component>
@@ -163,6 +183,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -191,9 +214,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -678,11 +698,12 @@
       <workItem from="1493032483069" duration="825000" />
       <workItem from="1493037838532" duration="4477000" />
       <workItem from="1493048015575" duration="787000" />
+      <workItem from="1493112561193" duration="826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80927000" />
+    <option name="totallyTimeSpent" value="81753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -798,7 +819,7 @@
         <state relative-caret-position="85">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <marker date="1493047671260" expanded="true" signature="1222:1228" ph="{...}" />
+            <marker date="1493113179350" expanded="true" signature="1317:1323" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -807,7 +828,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
+            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -831,10 +855,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1853">
           <caret line="120" column="46" lean-forward="false" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
-          <folding>
-            <element signature="e#4629#4630#0" expanded="true" />
-            <element signature="e#4657#4658#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -865,10 +886,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding>
-            <element signature="e#4629#4630#0" expanded="true" />
-            <element signature="e#4657#4658#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +902,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
+            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -931,10 +952,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding>
-            <element signature="e#4629#4630#0" expanded="true" />
-            <element signature="e#4657#4658#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +968,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
+            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -998,10 +1019,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#4629#4630#0" expanded="true" />
-            <element signature="e#4657#4658#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +1035,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
+            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1079,67 +1100,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Food.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1891">
-          <caret line="154" column="1" lean-forward="false" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Index.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Docket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <marker date="1493047671260" expanded="true" signature="1222:1228" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Seat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="118" column="5" lean-forward="false" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieSelection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="543" column="12" lean-forward="false" selection-start-line="543" selection-start-column="12" selection-end-line="543" selection-end-column="12" />
-          <folding>
-            <element signature="e#4629#4630#0" expanded="true" />
-            <element signature="e#4657#4658#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1154,7 +1119,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ticket.java" />
+    <entry file="file://$PROJECT_DIR$/src/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Docket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="50" column="140" lean-forward="false" selection-start-line="50" selection-start-column="140" selection-end-line="50" selection-end-column="140" />
+          <folding>
+            <marker date="1493113179350" expanded="true" signature="1317:1323" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Seat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="118" column="5" lean-forward="false" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieSelection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
+            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="95" column="13" lean-forward="false" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4301">
+          <caret line="543" column="12" lean-forward="false" selection-start-line="543" selection-start-column="12" selection-end-line="543" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
