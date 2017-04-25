@@ -1,0 +1,741 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(128,128,128); }
+.s3 { color: rgb(104,151,187); }
+.s4 { color: rgb(106,135,89); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Main.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">import </span><span class="s1">processing.core.PApplet</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">processing.core.PFont</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">processing.core.PImage</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">public class </span><span class="s1">Main </span><span class="s0">extends </span><span class="s1">PApplet{ 
+ 
+    </span><span class="s2">//Create new Object</span><span class="s1"> 
+    Index Index</span><span class="s0">;</span><span class="s1"> 
+    Seat seat</span><span class="s0">;</span><span class="s1"> 
+    MovieSelection Movie</span><span class="s0">;</span><span class="s1"> 
+    MovieInformation MovieInfo</span><span class="s0">;</span><span class="s1"> 
+    Food Food</span><span class="s0">;</span><span class="s1"> 
+    Ticket ticket</span><span class="s0">;</span><span class="s1"> 
+ 
+    PImage Guardians</span><span class="s0">, </span><span class="s1">Kong</span><span class="s0">, </span><span class="s1">GetOut</span><span class="s0">, </span><span class="s1">IT</span><span class="s0">, </span><span class="s1">LegoBatman</span><span class="s0">, </span><span class="s1">Shooter</span><span class="s0">, </span><span class="s1">StepBrothers</span><span class="s0">, </span><span class="s1">Spiderman</span><span class="s0">;</span><span class="s1"> 
+    PImage GuardiansBackground</span><span class="s0">, </span><span class="s1">KongBackground</span><span class="s0">,</span><span class="s1">SpidermanBackground</span><span class="s0">, </span><span class="s1">MovieSelectBackground</span><span class="s0">, </span><span class="s1">GetOutBackground</span><span class="s0">,</span><span class="s1"> 
+            LegoBatmanBackground</span><span class="s0">, </span><span class="s1">ShooterBackground</span><span class="s0">, </span><span class="s1">ITBackground</span><span class="s0">, </span><span class="s1">StepBrothersBackground</span><span class="s0">, </span><span class="s1">FoodBackground</span><span class="s0">, </span><span class="s1">EndScreenBackground</span><span class="s0">;</span><span class="s1"> 
+    PImage PopcornLarge</span><span class="s0">, </span><span class="s1">PopcornMedium</span><span class="s0">, </span><span class="s1">PopcornSmall</span><span class="s0">, </span><span class="s1">DrinkLarge</span><span class="s0">, </span><span class="s1">DrinkMedium</span><span class="s0">, </span><span class="s1">DrinkSmall</span><span class="s0">, </span><span class="s1">Haribo</span><span class="s0">, </span><span class="s1">MandM</span><span class="s0">, </span><span class="s1">Maltesers</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">double </span><span class="s1">price</span><span class="s0">;</span><span class="s1"> 
+    PFont MovieFont</span><span class="s0">, </span><span class="s1">Title</span><span class="s0">, </span><span class="s1">MovieText</span><span class="s0">;</span><span class="s1"> 
+    Movie Movie1</span><span class="s0">;</span><span class="s1"> 
+    SeatSelection screenage</span><span class="s0">;</span><span class="s1"> 
+    Docket docket</span><span class="s0">;</span><span class="s1"> 
+    Button next</span><span class="s0">, </span><span class="s1">reset</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s0">public static float </span><span class="s1">total</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static float </span><span class="s1">ticketTotal</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static float </span><span class="s1">foodTotal</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s0">public static int </span><span class="s1">ticketCount</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static int </span><span class="s1">adultTickets</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static int </span><span class="s1">childTickets</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static int </span><span class="s1">studentTickets</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static int </span><span class="s1">ticketCounter</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s0">public static int</span><span class="s1">[] popcorn = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">3</span><span class="s1">]</span><span class="s0">; </span><span class="s2">//[0] L, [1] M, [2] S</span><span class="s1"> 
+    </span><span class="s0">public static int</span><span class="s1">[] drink = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">3</span><span class="s1">]</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static int </span><span class="s1">MM</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static int </span><span class="s1">haribo</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">public static int </span><span class="s1">malteaser</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s2">//Screen State Variables</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">WelcomeScreen = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">MovieSelectScreen = </span><span class="s3">1</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">GuardiansMovie = </span><span class="s3">2</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">KongMovie = </span><span class="s3">3</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">GetOutMovie = </span><span class="s3">4</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">ITMovie = </span><span class="s3">5</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">LegoBatmanMovie = </span><span class="s3">6</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">ShooterMovie = </span><span class="s3">7</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">StepBrothersMovie = </span><span class="s3">8</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">SpidermanMovie = </span><span class="s3">9</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">SeatSelection = </span><span class="s3">10</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">FoodDrinkSelection = </span><span class="s3">11</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final int </span><span class="s1">EndScreen = </span><span class="s3">12</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">int </span><span class="s1">ScreenState = WelcomeScreen</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s0">public void </span><span class="s1">setup() 
+    { 
+ 
+        docket = </span><span class="s0">new </span><span class="s1">Docket(</span><span class="s0">this, </span><span class="s1">width / </span><span class="s3">40 </span><span class="s1">* </span><span class="s3">32</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">13</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        ticket = </span><span class="s0">new </span><span class="s1">Ticket(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        screenage = </span><span class="s0">new </span><span class="s1">SeatSelection(</span><span class="s0">this, </span><span class="s3">1</span><span class="s0">, </span><span class="s1">docket)</span><span class="s0">;</span><span class="s1"> 
+        background(</span><span class="s3">34</span><span class="s0">,</span><span class="s3">34</span><span class="s0">,</span><span class="s3">34</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index = </span><span class="s0">new </span><span class="s1">Index(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s2">//seat = new Seat(this, 100, 100, true, 1);</span><span class="s1"> 
+        Movie = </span><span class="s0">new </span><span class="s1">MovieSelection(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        MovieInfo = </span><span class="s0">new </span><span class="s1">MovieInformation(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food = </span><span class="s0">new </span><span class="s1">Food(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        screenage.createSeat(</span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s2">//Movie1 = new Movie();</span><span class="s1"> 
+        </span><span class="s2">//Movie.loadMovies();</span><span class="s1"> 
+        </span><span class="s2">//Movie.getRating();</span><span class="s1"> 
+        ticketCounter = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        ticketCount = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        adultTickets = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        studentTickets = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        childTickets = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s3">3</span><span class="s0">;</span><span class="s1">i++) { 
+            popcorn[i] = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            drink[i] = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        } 
+        haribo = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        MM = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        malteaser = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+ 
+        Title = createFont(</span><span class="s4">&quot;Fonts/Title.ttf&quot;</span><span class="s0">, </span><span class="s3">42</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        MovieFont = createFont(</span><span class="s4">&quot;Fonts/arial.ttf&quot;</span><span class="s0">, </span><span class="s3">32</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        MovieText = createFont(</span><span class="s4">&quot;Fonts/cs_regular.ttf&quot;</span><span class="s0">, </span><span class="s3">42</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s2">//textFont(MovieFont, 18);</span><span class="s1"> 
+ 
+        </span><span class="s2">//Movie Poster Images</span><span class="s1"> 
+        Guardians = loadImage(</span><span class="s4">&quot;Images/Guardians.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Kong = loadImage(</span><span class="s4">&quot;Images/Kong.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        GetOut = loadImage(</span><span class="s4">&quot;Images/GetOut.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        IT = loadImage(</span><span class="s4">&quot;Images/IT.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        LegoBatman = loadImage(</span><span class="s4">&quot;Images/LegoBatman.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Shooter = loadImage(</span><span class="s4">&quot;Images/Shooter.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        StepBrothers = loadImage(</span><span class="s4">&quot;Images/StepBrothers.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Spiderman = loadImage(</span><span class="s4">&quot;Images/Spiderman.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s2">//Background Images</span><span class="s1"> 
+        SpidermanBackground = loadImage(</span><span class="s4">&quot;Images/SpidermanBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        GuardiansBackground = loadImage(</span><span class="s4">&quot;Images/GuardiansBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        KongBackground = loadImage(</span><span class="s4">&quot;Images/KongBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        MovieSelectBackground = loadImage(</span><span class="s4">&quot;Images/MovieSelectBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        StepBrothersBackground = loadImage(</span><span class="s4">&quot;Images/StepBrothersBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        ITBackground = loadImage(</span><span class="s4">&quot;Images/ITBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        ShooterBackground = loadImage(</span><span class="s4">&quot;Images/ShooterBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        LegoBatmanBackground = loadImage(</span><span class="s4">&quot;Images/LegoBatmanBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        GetOutBackground = loadImage(</span><span class="s4">&quot;Images/GetOutBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        FoodBackground = loadImage(</span><span class="s4">&quot;Images/FoodBackground.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        EndScreenBackground = loadImage(</span><span class="s4">&quot;Images/EndScreen.jpg&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s2">//Food Images</span><span class="s1"> 
+        DrinkLarge = loadImage(</span><span class="s4">&quot;Images/Drink.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        DrinkMedium = loadImage(</span><span class="s4">&quot;Images/Drink.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        DrinkSmall = loadImage(</span><span class="s4">&quot;Images/Drink.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        PopcornLarge = loadImage(</span><span class="s4">&quot;Images/Popcorn.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        PopcornMedium = loadImage(</span><span class="s4">&quot;Images/Popcorn.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        PopcornSmall = loadImage(</span><span class="s4">&quot;Images/Popcorn.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Haribo = loadImage(</span><span class="s4">&quot;Images/Haribo.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        MandM = loadImage(</span><span class="s4">&quot;Images/MandM.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Maltesers = loadImage(</span><span class="s4">&quot;Images/Maltesers.png&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">settings() 
+    { 
+        fullScreen()</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">draw() 
+    { 
+        </span><span class="s0">switch </span><span class="s1">(ScreenState) 
+        { 
+            </span><span class="s0">case </span><span class="s1">WelcomeScreen: 
+                WelcomeScreen()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s2">//docket.Render();</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">MovieSelectScreen: 
+                MovieSelect()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">GuardiansMovie: 
+                GuardiansMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">KongMovie: 
+                KongMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">GetOutMovie: 
+                GetOutMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">ShooterMovie: 
+                ShooterMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">ITMovie: 
+                ItMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">LegoBatmanMovie: 
+                LegoBatmanMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">StepBrothersMovie: 
+                StepBrothersMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">SpidermanMovie: 
+                SpidermanMovie()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">FoodDrinkSelection: 
+                FoodDrinkSelection()</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                docketButtons()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">SeatSelection: 
+                screenage.screenRender(</span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                docket.Render()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s2">//docketButtons();</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">EndScreen: 
+                EndScreen()</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">break;</span><span class="s1"> 
+        } 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">WelcomeScreen() 
+    { 
+ 
+        SpidermanBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(SpidermanBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">220</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s1">width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Index.BackgroundCircles()</span><span class="s0">;</span><span class="s1"> 
+ 
+        Index.Star(width/</span><span class="s3">2</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">- </span><span class="s3">60</span><span class="s0">, </span><span class="s3">6</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Index.TitleAndEndText(</span><span class="s4">&quot;Welcome to&quot;</span><span class="s0">, </span><span class="s3">90</span><span class="s0">, </span><span class="s1">MovieFont</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Button TitleButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width/</span><span class="s3">3 </span><span class="s1">+ width/</span><span class="s3">12 </span><span class="s0">, </span><span class="s1">height - height/</span><span class="s3">4</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">6</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s1">WelcomeScreen</span><span class="s0">, </span><span class="s1">MovieSelectScreen)</span><span class="s0">;</span><span class="s1"> 
+        ScreenState = TitleButton.onHoverMovie(MovieSelectScreen)</span><span class="s0">;</span><span class="s1"> 
+        TitleButton.Render()</span><span class="s0">;</span><span class="s1"> 
+        TitleButton.renderText(Title</span><span class="s0">, </span><span class="s3">32</span><span class="s0">, </span><span class="s4">&quot;Book Now&quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">2</span><span class="s0">, </span><span class="s1">height - height/</span><span class="s3">5 </span><span class="s1">- </span><span class="s3">15</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">MovieSelect() 
+    { 
+        MovieSelectBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(MovieSelectBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">220</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s1">width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s2">//Change this shit not hard coded values</span><span class="s1"> 
+        Index.MovieImagePlaceholder(Guardians</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">8</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index.MovieImagePlaceholder(Kong</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">3</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index.MovieImagePlaceholder(GetOut</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">100</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index.MovieImagePlaceholder(IT</span><span class="s0">, </span><span class="s1">width - width/</span><span class="s3">4</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index.MovieImagePlaceholder(LegoBatman</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">8</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index.MovieImagePlaceholder(Shooter</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">3</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index.MovieImagePlaceholder(StepBrothers</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">100</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Index.MovieImagePlaceholder(Spiderman</span><span class="s0">, </span><span class="s1">width - width/</span><span class="s3">4</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+        Button GuardiansButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width/</span><span class="s3">8 </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">GuardiansMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(GuardiansButton.onHoverMovie(GuardiansMovie) == GuardiansMovie) 
+        { 
+            ScreenState = GuardiansMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        </span><span class="s2">//GuardiansButton.Render();</span><span class="s1"> 
+        </span><span class="s2">//GuardiansButton.renderText(Title, 32, &quot;Book Now&quot;, width/8, height/8);</span><span class="s1"> 
+ 
+        Button KongButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width/</span><span class="s3">3 </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">KongMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(KongButton.onHoverMovie(KongMovie) == KongMovie) 
+        { 
+            ScreenState = KongMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+        </span><span class="s2">//KongButton.Render();</span><span class="s1"> 
+ 
+        Button GetOutButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">100 </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">GetOutMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(GetOutButton.onHoverMovie(GetOutMovie) == GetOutMovie) 
+        { 
+            ScreenState = GetOutMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        Button ITButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width - width/</span><span class="s3">4 </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">8</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">ITMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(ITButton.onHoverMovie(ITMovie) == ITMovie) 
+        { 
+            ScreenState = ITMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+        </span><span class="s2">//ITButton.Render();</span><span class="s1"> 
+ 
+        Button ShooterButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width/</span><span class="s3">3 </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">ShooterMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(ShooterButton.onHoverMovie(ShooterMovie) == ShooterMovie) 
+        { 
+            ScreenState = ShooterMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        Button LegoBatmanButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width/</span><span class="s3">8 </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">LegoBatmanMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(LegoBatmanButton.onHoverMovie(LegoBatmanMovie) == LegoBatmanMovie) 
+        { 
+            ScreenState = LegoBatmanMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        Button StepBrothersButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">100 </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">StepBrothersMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(StepBrothersButton.onHoverMovie(StepBrothersMovie) == StepBrothersMovie) 
+        { 
+            ScreenState = StepBrothersMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        Button SpidermanButton = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width - width/</span><span class="s3">4  </span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">20</span><span class="s0">, </span><span class="s3">210</span><span class="s0">, </span><span class="s3">310</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">SpidermanMovie)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(SpidermanButton.onHoverMovie(SpidermanMovie) == SpidermanMovie) 
+        { 
+            ScreenState = SpidermanMovie</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">LegoBatmanMovie() 
+    { 
+        LegoBatmanBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(LegoBatmanBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;Lego Batman&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == LegoBatmanMovie) 
+        { 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot; </span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Bruce Wayne(Batman) is scared of having a family and he has to deal with &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;it when he accidentally adopted Dick Grayson (Robin). After The Joker &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;gets sent to the Phantom Zone, Batman soon finds out it was The Joker's plan &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;to get sent there and get all the villains in there out. It is Batman and his &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;friend's job to stop The Joker.&quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30  </span><span class="s0">, </span><span class="s1">height /</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">ShooterMovie() 
+    { 
+        ShooterBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(ShooterBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;Shooter&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == ShooterMovie) 
+        { 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot; </span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Bob Lee Swagger, one of the world's great marksmen and the son of a &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;Congressional Medal of Honoree, is a loner living in the Rockies. He's left the &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;military, having been hung out to dry in a secret Ethiopian mission a few years &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;before, when he's recruited by a colonel to help find a way that the President of &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;the US might be assassinated in one of three cities in the next two weeks. &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;He does his work, but the shot is fired notwithstanding and Bob Lee is quickly &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;the fall guy: wounded and hunted by thousands, he goes to ground and, aided by &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;two unlikely allies, searches for the truth and for those who double-crossed &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;him. All roads lead back to Ethiopia.&quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30  </span><span class="s0">, </span><span class="s1">height /</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">GetOutMovie() 
+    { 
+        GetOutBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(GetOutBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;Get Out&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == GetOutMovie) 
+        { 
+ 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot; </span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;A young black man visits his white girlfriend's family estate where he learns&quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot; that many of its residents, who are black, have gone missing, and &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;he soon learns the horrible truth when a fellow black man on the estate warns&quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot; him to </span><span class="s0">\&quot;</span><span class="s4">get out</span><span class="s0">\&quot;</span><span class="s4">. He soon learns this is easier said than done.&quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30  </span><span class="s0">, </span><span class="s1">height /</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">StepBrothersMovie() 
+    { 
+        StepBrothersBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(StepBrothersBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;Step Brothers&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == StepBrothersMovie) 
+        { 
+ 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot; </span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Two unemployed, 40 year old Los Angeles area slackers - Brennen Huff and Dale Doback - &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;are brought together when Brennen's mom falls for and marries Dale's dad. As the two &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;get used to living together, tensions between Brennen and Dale grow incredibly &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;intense. However, at family gatherings, Brennen is always overshadowed by his &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;wealthy, successful, and obnoxious brother Derek - who drives a luxury car, has a &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;beautiful (but lonely) wife and two kids. As Brennan and Dale both quickly learn &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;they share the same hatred for Derek, they quickly find out they both have more in &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;common than once thought. They soon decide that they both have the ultimate business &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;idea, combine Brennan's singing abilities with Dale's drumming abilities to form a &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;rock and roll karaoke company. However, Dale's father's dream of sailing around the &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;world hinders their plans, along with a series of incidents that constantly shoot &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;themselves in the foot. Can they pull it off without driving each other completely crazy?&quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30  </span><span class="s0">, </span><span class="s1">height /</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">ItMovie() 
+    { 
+        ITBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(ITBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;IT&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == ITMovie) 
+        { 
+ 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot; </span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Mike Regan has everything he could ever want, a beautiful family and a top of &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;the line smart house. The company he owns is on the verge of changing flight &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;leasing forever. That is, until the relationship with his I.T. advisor turns nasty, &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;to the point where his teenage daughter is being stalked and his family is under &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;attack through every technological facet of their lives.&quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30  </span><span class="s0">, </span><span class="s1">height /</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">SpidermanMovie() 
+    { 
+        SpidermanBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(SpidermanBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;Spiderman&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == SpidermanMovie) 
+        { 
+ 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot; </span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;It was announced by Marvel that a new ongoing series titled Peter Parker, &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;The Spectacular Spider-Man will begin publication in June 2017. The series is being &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;written by Chip Zdarsky with Adam Kubert providing the artwork.&quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30 </span><span class="s0">, </span><span class="s1">height /</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">KongMovie() 
+    { 
+        KongBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(KongBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;Kong&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == KongMovie) 
+        { 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot; </span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;It's 1971, a team of explorers with a company of soldiers are following myth&quot; </span><span class="s1">+  </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;and legend in the Pacific amidst rumors of an island where creatures both &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;prehistoric and monstrous are supposed to live. Soon they come across Skull Island,&quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;the very island of lore and legend. The creatures they soon come across make the &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;soldiers and explorers running for their very lives. Soon Kong shows up to let all &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;know that he is the King of Skull Island and top of the food chain. Will they survive &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;to tell their story? Will beauty win the heart of the beast? &quot;</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30  </span><span class="s0">, </span><span class="s1">height /</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">GuardiansMovie() 
+    { 
+        GuardiansBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(GuardiansBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(width /</span><span class="s3">4</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,  </span><span class="s1">width / </span><span class="s3">2 </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        noLoop()</span><span class="s0">;</span><span class="s1"> 
+        Movie.loadMovies(</span><span class="s4">&quot;Guardians of the Galaxy&quot;</span><span class="s0">, </span><span class="s1">MovieText)</span><span class="s0">;</span><span class="s1"> 
+        loop()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(ScreenState == GuardiansMovie) { 
+            Back()</span><span class="s0">;</span><span class="s1"> 
+            Food()</span><span class="s0">;</span><span class="s1"> 
+            buttons()</span><span class="s0">;</span><span class="s1"> 
+        } 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textAlign(LEFT)</span><span class="s0">;</span><span class="s1"> 
+        textFont(MovieFont)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;Description :&quot;</span><span class="s0">, </span><span class="s1">width / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        textSize(</span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot;In 1988, on Earth, the boy Peter Quill is abducted by a spacecraft after losing his, &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;is a ravager searching a valuable orb on the surface of the dead planet Morag. &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;When Peter finds the orb, he is hunted down by the Kree warship The Dark Aster of the &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;powerful Ronan the Accuser but he flees. Peter also double crosses his partner Yondu Udonta &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;that puts m. Peter Quill arrives on the Xandar city Nova Empire and is chased by &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;Ronan's warrior Gamora and by the bounty hunters Rocket and The Groot. They are arrested &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;by the police officer Corpsman Dey and his men and sent to the prison end the strong Drax. &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;Soon they learn that Gamora wants to orb to a dealer for a huge amount while Drax wants to &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;kill Ronan, who killed his wife and daughter. They plot a plan to escape from The Kyln &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;to sell the orb and split the money. But soon they also learn that the orb keeps the &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;infinity stone that gives immensurable destructive power to the owner. They self-proclaim &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;Guardians of the Galaxy and decide to deliver the orb to the leader Nova Prime to keep &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity &quot; </span><span class="s1">+ </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s1">+ 
+                </span><span class="s4">&quot;stone to make lots of money. Who will keep the powerful orb?&quot;</span><span class="s0">, </span><span class="s1">width / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">30</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">FoodDrinkSelection() 
+    { 
+        FoodBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(FoodBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        fill(</span><span class="s3">0</span><span class="s0">, </span><span class="s3">180</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(</span><span class="s3">0</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">5</span><span class="s0">, </span><span class="s1">width</span><span class="s0">, </span><span class="s1">height - height/</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Food.update(width/</span><span class="s3">8 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">60</span><span class="s0">, </span><span class="s3">1</span><span class="s1">)</span><span class="s0">; </span><span class="s2">//Popcorn large</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">8 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">60</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.update(width/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">60</span><span class="s0">, </span><span class="s3">2</span><span class="s1">)</span><span class="s0">; </span><span class="s2">//Popcorn medium</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">60</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.update(width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">150</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">60</span><span class="s0">, </span><span class="s3">3</span><span class="s1">)</span><span class="s0">; </span><span class="s2">//Popcorn small</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">150</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">60</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Food.update(width/</span><span class="s3">8 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">210</span><span class="s0">, </span><span class="s3">4</span><span class="s1">)</span><span class="s0">; </span><span class="s2">// Drinks large</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">8 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.update(width/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">210</span><span class="s0">, </span><span class="s3">5</span><span class="s1">)</span><span class="s0">; </span><span class="s2">// Drinks medium</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.update(width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">150</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">210</span><span class="s0">, </span><span class="s3">6</span><span class="s1">)</span><span class="s0">; </span><span class="s2">// Drinks small</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">150</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">210</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Food.update(width/</span><span class="s3">8 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">280</span><span class="s0">, </span><span class="s3">7</span><span class="s1">)</span><span class="s0">; </span><span class="s2">// Haribo</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">8 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">280</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.update(width/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">280</span><span class="s0">, </span><span class="s3">8</span><span class="s1">)</span><span class="s0">; </span><span class="s2">// Malteasers</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">70</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">280</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.update(width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">150</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">280</span><span class="s0">, </span><span class="s3">9</span><span class="s1">)</span><span class="s0">; </span><span class="s2">// M and M's</span><span class="s1"> 
+        Food.drawCircle(width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">150</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">280</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Food.render(PopcornLarge</span><span class="s0">, </span><span class="s3">130</span><span class="s0">, </span><span class="s3">130</span><span class="s0">,</span><span class="s1">width/</span><span class="s3">8 </span><span class="s1">+ </span><span class="s3">5</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.render(PopcornMedium</span><span class="s0">, </span><span class="s3">110</span><span class="s0">, </span><span class="s3">110</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">15</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">10</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.render(PopcornSmall</span><span class="s0">, </span><span class="s3">90</span><span class="s0">, </span><span class="s3">90</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">105</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">18</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Food.render(DrinkLarge</span><span class="s0">,</span><span class="s3">160</span><span class="s0">, </span><span class="s3">160</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">8 </span><span class="s1">- </span><span class="s3">10</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">- </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.render(DrinkMedium</span><span class="s0">, </span><span class="s3">140</span><span class="s0">, </span><span class="s3">140</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">3</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">- </span><span class="s3">40</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.render(DrinkSmall</span><span class="s0">, </span><span class="s3">120</span><span class="s0">, </span><span class="s3">120</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">90</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">- </span><span class="s3">30</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Food.render(Haribo</span><span class="s0">, </span><span class="s3">140</span><span class="s0">, </span><span class="s3">40</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">8</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">260</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.render(Maltesers</span><span class="s0">,  </span><span class="s3">180</span><span class="s0">, </span><span class="s3">130</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">3 </span><span class="s1">- </span><span class="s3">20</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">230</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Food.render(MandM</span><span class="s0">,  </span><span class="s3">180</span><span class="s0">, </span><span class="s3">180</span><span class="s0">, </span><span class="s1">width/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">60</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">190</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Food.drawLabel(</span><span class="s4">&quot;Popcorn&quot;</span><span class="s0">, </span><span class="s3">0 </span><span class="s1">+ width/</span><span class="s3">50</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">40</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+        Food.drawLabel(</span><span class="s4">&quot;Drinks&quot;</span><span class="s0">, </span><span class="s3">0 </span><span class="s1">+ width/</span><span class="s3">50</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">3 </span><span class="s1">+ </span><span class="s3">190</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+        Food.drawLabel(</span><span class="s4">&quot;Snacks&quot;</span><span class="s0">, </span><span class="s3">0 </span><span class="s1">+ width/</span><span class="s3">50</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">260</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Button back = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s3">150</span><span class="s0">,</span><span class="s1">height - </span><span class="s3">100</span><span class="s0">, </span><span class="s3">150</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s1">FoodDrinkSelection</span><span class="s0">, </span><span class="s1">MovieSelectScreen)</span><span class="s0">;</span><span class="s1"> 
+        back.Render()</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot; &lt; Back&quot;</span><span class="s0">, </span><span class="s3">155</span><span class="s0">,  </span><span class="s1">height - </span><span class="s3">68</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen) 
+        { 
+            ScreenState = MovieSelectScreen</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">SeatSelection() 
+    { 
+        screenage.screenRender(</span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">docketButtons() 
+    { 
+        </span><span class="s0">if </span><span class="s1">(ScreenState == FoodDrinkSelection) { 
+            next = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width / </span><span class="s3">40 </span><span class="s1">* </span><span class="s3">32 </span><span class="s1">+ </span><span class="s3">10</span><span class="s0">, </span><span class="s1">height / </span><span class="s3">13 </span><span class="s1">+ </span><span class="s3">400</span><span class="s0">, </span><span class="s1">width / </span><span class="s3">40 </span><span class="s1">* </span><span class="s3">4</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s1">MovieSelectScreen</span><span class="s0">, </span><span class="s1">SeatSelection)</span><span class="s0">;</span><span class="s1"> 
+            next.Render()</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">if </span><span class="s1">(next.onHoverMovie(SeatSelection) == SeatSelection) { 
+                ScreenState = SeatSelection</span><span class="s0">;</span><span class="s1"> 
+            } 
+        } 
+ 
+        reset = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width / </span><span class="s3">32 </span><span class="s1">+ </span><span class="s3">10</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">13 </span><span class="s1">+ </span><span class="s3">300</span><span class="s0">, </span><span class="s1">width / </span><span class="s3">40 </span><span class="s1">* </span><span class="s3">4</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s1">GuardiansMovie</span><span class="s0">, </span><span class="s1">MovieSelectScreen)</span><span class="s0">;</span><span class="s1"> 
+        reset.Render()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(reset.onHoverMovie(MovieSelectScreen) == MovieSelectScreen) 
+        { 
+            reset()</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">reset() 
+    { 
+        </span><span class="s0">if </span><span class="s1">(ScreenState == FoodDrinkSelection) { 
+            malteaser = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            MM = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            haribo = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            foodTotal = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            total -= foodTotal</span><span class="s0">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">else</span><span class="s1"> 
+        { 
+            ticketCount = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            adultTickets = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            studentTickets = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            childTickets = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            ticketTotal = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            total = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        } 
+        </span><span class="s0">for</span><span class="s1">( </span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s3">3</span><span class="s0">; </span><span class="s1">i ++) 
+        { 
+            drink[i] = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+            popcorn[i] = </span><span class="s3">0</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">EndScreen() 
+    { 
+        EndScreenBackground.resize(width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+        image(EndScreenBackground</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s3">100</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        rect(</span><span class="s3">0</span><span class="s0">,</span><span class="s3">0</span><span class="s0">, </span><span class="s1">width </span><span class="s0">, </span><span class="s1">height)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Index.Star(width/</span><span class="s3">2</span><span class="s0">, </span><span class="s1">height/</span><span class="s3">2 </span><span class="s1">- </span><span class="s3">60</span><span class="s0">, </span><span class="s3">6</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+ 
+        Index.TitleAndEndText(</span><span class="s4">&quot;Thank You for Choosing&quot;</span><span class="s0">, </span><span class="s3">60</span><span class="s0">, </span><span class="s1">MovieFont</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    </span><span class="s0">public  void </span><span class="s1">Back() 
+    { 
+        Button back = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s3">150</span><span class="s0">,</span><span class="s1">height - </span><span class="s3">185</span><span class="s0">, </span><span class="s3">150</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s1">LegoBatmanMovie</span><span class="s0">, </span><span class="s1">MovieSelectScreen)</span><span class="s0">;</span><span class="s1"> 
+        back.Render()</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot; &lt; Back&quot;</span><span class="s0">, </span><span class="s3">220</span><span class="s0">,  </span><span class="s1">height - </span><span class="s3">150</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen) 
+        { 
+            ScreenState = MovieSelectScreen</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+    </span><span class="s0">public  void  </span><span class="s1">Food() 
+    { 
+        Button food = </span><span class="s0">new </span><span class="s1">Button(</span><span class="s0">this, </span><span class="s1">width - </span><span class="s3">300</span><span class="s0">,</span><span class="s1">height - </span><span class="s3">185</span><span class="s0">, </span><span class="s3">150</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s1">GuardiansMovie</span><span class="s0">, </span><span class="s1">FoodDrinkSelection)</span><span class="s0">;</span><span class="s1"> 
+        food.Render()</span><span class="s0">;</span><span class="s1"> 
+        fill(</span><span class="s3">255</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        text(</span><span class="s4">&quot; Food &gt;&quot;</span><span class="s0">, </span><span class="s1">width - </span><span class="s3">235</span><span class="s0">,  </span><span class="s1">height - </span><span class="s3">150</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection) 
+        { 
+            ScreenState = FoodDrinkSelection</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+ 
+    </span><span class="s0">void </span><span class="s1">buttons() 
+    { 
+        ticket.HoverTicket(width / </span><span class="s3">4 </span><span class="s1">+ </span><span class="s3">60</span><span class="s0">, </span><span class="s1">height - </span><span class="s3">180</span><span class="s0">, </span><span class="s3">150</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s4">&quot;Adult&quot;</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+        ticket.HoverTicket(width / </span><span class="s3">2 </span><span class="s1">- </span><span class="s3">75</span><span class="s0">,</span><span class="s1">height - </span><span class="s3">180</span><span class="s0">, </span><span class="s3">150</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s4">&quot;Student&quot;</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+        ticket.HoverTicket(width / </span><span class="s3">2 </span><span class="s1">+ </span><span class="s3">250</span><span class="s0">,</span><span class="s1">height - </span><span class="s3">180</span><span class="s0">, </span><span class="s3">150</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s4">&quot;Child&quot;</span><span class="s0">, </span><span class="s1">Title)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+ 
+    </span><span class="s0">public static void </span><span class="s1">main(String[] args) 
+    { 
+        String[] a = {</span><span class="s4">&quot;MAIN&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+        PApplet.runSketch( a</span><span class="s0">, new </span><span class="s1">Main())</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+        InsertData app = </span><span class="s0">new </span><span class="s1">InsertData()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s2">// insert three new rows</span><span class="s1"> 
+        </span><span class="s2">//app.insert(&quot;IT&quot;, &quot;Horror&quot;, 12, 4);</span><span class="s1"> 
+        </span><span class="s2">//app.insert(&quot;Alien&quot;, &quot;Horror&quot;, 13, 9);</span><span class="s1"> 
+    } 
+ 
+} 
+ 
+</span></pre>
+</body>
+</html>

@@ -1,29 +1,15 @@
-import jdk.nashorn.internal.objects.Global;
+import ddf.minim.AudioSample;
+import ddf.minim.Minim;
+
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
-import ddf.minim.AudioInput;
-import ddf.minim.AudioSample;
-import ddf.minim.Minim;
-import ddf.minim.analysis.FFT;
-//import processing.sound.*;
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 
 
 public class Main extends PApplet{
 
-    //Create new Object
-    //SoundFile file;
-    //Minim etherwood;
-    //AudioSample audioInput;
+    Minim etherwood;
+    AudioSample audioInput;
 
     static final int FRAME_SIZE = 2048;
 
@@ -79,11 +65,10 @@ public class Main extends PApplet{
 
     public void setup()
     {
-        //file = new SoundFile(this, "sample.mp3");
-        //file.play();
-        //etherwood = new Minim(this);
-        //audioInput = etherwood.loadSample("etherwood.wav", FRAME_SIZE);
+        etherwood = new Minim(this);
+        audioInput = etherwood.loadSample("Etherwood - Cast Away.mp3", FRAME_SIZE);
 
+        audioInput.trigger();
         docket = new Docket(this, width - width/5, height/4 + 30);
         ticket = new Ticket(this);
         screenage = new SeatSelection(this, 1, docket);
@@ -129,6 +114,7 @@ public class Main extends PApplet{
         Spiderman = loadImage("Images/Spiderman.jpg");
 
         //Background Images
+        SeatSelectionBackground  = loadImage("Images/SeatSelection.jpg");
         SpidermanBackground = loadImage("Images/SpidermanBackground.jpg");
         GuardiansBackground = loadImage("Images/GuardiansBackground.jpg");
         KongBackground = loadImage("Images/KongBackground.jpg");
@@ -140,7 +126,6 @@ public class Main extends PApplet{
         GetOutBackground = loadImage("Images/GetOutBackground.jpg");
         FoodBackground = loadImage("Images/FoodBackground.jpg");
         EndScreenBackground = loadImage("Images/EndScreen.jpg");
-        SeatSelectionBackground  = loadImage("Images/SeatSelection.jpg");
 
         //Food Images
         DrinkLarge = loadImage("Images/Drink.png");
@@ -165,7 +150,6 @@ public class Main extends PApplet{
         {
             case WelcomeScreen:
                 WelcomeScreen();
-                //audioInput.trigger();
                 //docket.Render();
                 break;
 
@@ -750,3 +734,4 @@ public class Main extends PApplet{
         //app.insert("Alien", "Horror", 13, 9);
     }
 }
+
