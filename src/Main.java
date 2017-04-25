@@ -30,6 +30,7 @@ public class Main extends PApplet{
     Movie Movie1;
     SeatSelection screenage;
     Docket docket;
+    Button next;
 
     public  static int ticketCount;
     public static int adultTickets;
@@ -69,6 +70,9 @@ public class Main extends PApplet{
         Movie = new MovieSelection(this);
         MovieInfo = new MovieInformation(this);
         Food = new Food(this);
+        next = new Button(this, width / 40 * 32 + 10,  height/13 + 400, width / 40 * 8, 50, FoodDrinkSelection, SeatSelection);
+        screenage.createSeat(1);
+
         //Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
@@ -133,7 +137,6 @@ public class Main extends PApplet{
 
     public void draw()
     {
-
         switch (ScreenState)
         {
             case WelcomeScreen:
@@ -586,7 +589,12 @@ public class Main extends PApplet{
         {
             ScreenState = MovieSelectScreen;
         }
-
+        //docket.Render();
+        next.Render();
+        if (next.onHoverMovie(SeatSelection) == SeatSelection)
+        {
+            ScreenState = SeatSelection;
+        }
     }
 
     public void SeatSelection()

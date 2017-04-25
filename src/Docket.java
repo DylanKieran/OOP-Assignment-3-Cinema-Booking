@@ -50,4 +50,10 @@ public class Docket extends Main {
         parent.text("Tickets: " + ticketCount + "\n  Adult(" + adultTickets +") \n  Student(" + studentTickets + ")\n  Child(" + childTickets + ")",xPos + 10, yPos + 40);
         parent.text("Drinks: \n   Large(" + drink[0] + "),\n   Medium(" + drink[1] + "),\n    Small(" + drink[2] + ")", xPos + 10, yPos + 160 );
     }
+
+
+    public void checkout()
+    {
+
+    }
 }

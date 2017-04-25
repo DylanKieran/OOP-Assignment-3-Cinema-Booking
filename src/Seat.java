@@ -66,7 +66,6 @@ public class Seat extends Main
         parent.stroke(255);
         parent.strokeWeight(1);
         parent.rect(xPos,yPos, 20, 20);
-        docket.Render();
     }
 
     public void Update()
@@ -100,17 +99,17 @@ public class Seat extends Main
             if(parent.mousePressed == true && selected == false && ticketCount < tickets)
             {
                 selected = true;
-                selectedSeats[Main.ticketCount] = num;
-                System.out.println("ticket" + ticketCount + "   " + selectedSeats[ticketCount]);
-                docket.addSeat(num, ticketCount);
-                ticketCount++;
+                //selectedSeats[ticketCount] = num;
+                //System.out.println("ticket" + ticketCount + "   " + selectedSeats[ticketCount]);
+                //docket.addSeat(num, ticketCount);
+                //ticketCount++;
                 return true;
             }
             else if(parent.mousePressed == true && selected == true)
             {
                 selected = false;
-                ticketCount--;
-                selectedSeats[ticketCount] = 0;
+                //ticketCount--;
+                //selectedSeats[ticketCount] = 0;
             }
             return true;
         }

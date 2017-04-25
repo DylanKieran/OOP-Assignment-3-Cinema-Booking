@@ -32,14 +32,10 @@ public class SeatSelection extends Main
     {
         if (screen == 1)
         {
-            createSeat(created, 1);
+            parent.background(0);
             drawLayout();
             drawSeats(1);
             created = true;
-        }
-        else if (screen == 2)
-        {
-
         }
         else
         {
@@ -47,24 +43,23 @@ public class SeatSelection extends Main
             exit();
         }
     }
-    public  void createSeat(boolean check, int screen)
+    public  void createSeat(int screen)
     {
-        if (screen == 1 && check == false)
+        if (screen == 1)
         {
             for(int i = 0; i < 29; i++)
             {
                 for (int j = 0; j < 20; j++)
                 {
+                    parent.background(0);
                     if(j != 10 && j != 11 && i != 8 && i != 9 && i != 24 && i != 25) {
                         seatIndex++;
                         rowCounter = j;
                         colCounter = i;
                         seat = new Seat(parent, parent.width / 40 * i + 3 * parent.width / 40, parent.height / 25 * j + parent.height / 13, true, seatIndex, docket);
-                        //System.out.println(seatIndex);
+                        System.out.println(parent.frameRate);
                         seat.available = QueryDB(seatIndex);
                         seats.add(seat);
-                        parent.text(toChar(rowCounter), 2 * parent.width / 33, parent.height/25 * j +  parent.height / 10);
-                        parent.text(colCounter, parent.width / 40 * i + 3 * parent.width / 39, parent.height/15);
                     }
                 }
             }
