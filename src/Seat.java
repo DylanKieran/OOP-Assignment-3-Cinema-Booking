@@ -27,7 +27,7 @@ public class Seat extends Main
     int hover = color(255,255,100);
     boolean selected;
     boolean checkedOut = false;
-    int tickets = 10;
+    int tickets = 0;
     int[] selectedSeats = new int[tickets];
     Docket docket;
 
@@ -96,19 +96,19 @@ public class Seat extends Main
     {
         if(parent.mouseX > xPos && parent.mouseX < xPos + 20 && parent.mouseY > yPos && parent.mouseY < yPos + 20 && available)
         {
-            if(parent.mousePressed == true && selected == false && ticketCount < tickets)
+            if(parent.mousePressed == true && selected == false && ticketCounter < ticketCount)
             {
                 selected = true;
                 //selectedSeats[ticketCount] = num;
                 //System.out.println("ticket" + ticketCount + "   " + selectedSeats[ticketCount]);
                 //docket.addSeat(num, ticketCount);
-                //ticketCount++;
+                screenage.ticketCounter++;
                 return true;
             }
             else if(parent.mousePressed == true && selected == true)
             {
                 selected = false;
-                //ticketCount--;
+                ticketCounter--;
                 //selectedSeats[ticketCount] = 0;
             }
             return true;

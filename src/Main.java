@@ -32,6 +32,8 @@ public class Main extends PApplet{
     Docket docket;
     Button next;
 
+    public static int ticketCounter;
+
     public  static int ticketCount;
     public static int adultTickets;
     public static int childTickets;
@@ -76,6 +78,7 @@ public class Main extends PApplet{
         //Movie1 = new Movie();
         //Movie.loadMovies();
         //Movie.getRating();
+        ticketCounter = 0;
         ticketCount = 0;
         adultTickets = 0;
         studentTickets = 0;

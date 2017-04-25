@@ -36,6 +36,7 @@ public class SeatSelection extends Main
             drawLayout();
             drawSeats(1);
             created = true;
+            System.out.println("Tickets available" + ticketCount + " Seats selected" + ticketCounter);
         }
         else
         {
