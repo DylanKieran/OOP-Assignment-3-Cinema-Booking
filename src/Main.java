@@ -18,6 +18,7 @@ public class Main extends PApplet{
     MovieSelection Movie;
     Food Food;
     Ticket ticket;
+    Checkout checkout;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
@@ -39,6 +40,7 @@ public class Main extends PApplet{
     public static int childTickets;
     public static int studentTickets;
     public static int ticketCounter;
+    public static boolean checkedOut;
 
     public static int[] popcorn = new int[3]; //[0] L, [1] M, [2] S
     public static int[] drink = new int[3];
@@ -60,6 +62,7 @@ public class Main extends PApplet{
     final int SeatSelection = 10;
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
+
     int ScreenState = WelcomeScreen;
 
     public void setup()
@@ -67,7 +70,7 @@ public class Main extends PApplet{
         etherwood = new Minim(this);
         audioInput = etherwood.loadSample("Etherwood - Cast Away.mp3", FRAME_SIZE);
 
-        //audioInput.trigger();
+        audioInput.trigger();
         docket = new Docket(this, width - width/5, height/4 + 30);
         ticket = new Ticket(this);
         screenage = new SeatSelection(this, 1, docket);
@@ -77,6 +80,7 @@ public class Main extends PApplet{
         Movie = new MovieSelection(this);
         Food = new Food(this);
         screenage.createSeat(1);
+        checkout = new Checkout(this);
 
         //Movie1 = new Movie();
         //Movie.loadMovies();
@@ -86,6 +90,7 @@ public class Main extends PApplet{
         adultTickets = 0;
         studentTickets = 0;
         childTickets = 0;
+        checkedOut = false;
 
         for (int i = 0; i < 3;i++) {
             popcorn[i] = 0;
@@ -217,11 +222,16 @@ public class Main extends PApplet{
 
                 screenage.screenRender(1);
                 docket.Render();
+                checkout();
+
                 //docketButtons();
                 break;
 
             case EndScreen:
                 EndScreen();
+                if(checkedOut == true)
+                    screenage.updateSeats();
+                checkedOut = false;
                 break;
         }
 
@@ -567,6 +577,8 @@ public class Main extends PApplet{
                 "it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want " + "\n" +
                 "to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity " + "\n" +
                 "stone to make lots of money. Who will keep the powerful orb?", width / 4 + 30, height / 3);
+
+
     }
 
     public void FoodDrinkSelection()
@@ -722,6 +734,11 @@ public class Main extends PApplet{
         ticket.HoverTicket(width / 2 + 250,height - 180, 150, 50, "Child", Title);
     }
 
+    public void checkout()
+    {
+        checkout.Render();
+        ScreenState = checkout.Update();
+    }
 
     public static void main(String[] args)
     {
@@ -731,6 +748,7 @@ public class Main extends PApplet{
 
         InsertData app = new InsertData();
         // insert three new rows
+        //app.insert("IT", "Horror", 12, 4);
         //app.insert("Alien", "Horror", 13, 9);
     }
 }

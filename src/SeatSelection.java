@@ -118,9 +118,14 @@ public class SeatSelection extends Main
     {
         for(Seat seat : seats)
         {
-            seat.Update();
+            updateSeats();
             seat.Render();
         }
+    }
+
+    public void updateSeats()
+    {
+        seat.Update();
     }
 
     public void drawLayout()

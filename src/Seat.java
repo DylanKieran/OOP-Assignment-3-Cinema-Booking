@@ -28,7 +28,7 @@ public class Seat extends Main
     int notTaken = color(0, 155, 0);
     int hover = color(255,255,100);
     boolean selected;
-    boolean checkedOut = false;
+    boolean yolo = false;
     int tickets = 0;
     int[] selectedSeats = new int[100];
     Docket docket;
@@ -42,7 +42,6 @@ public class Seat extends Main
         this.num = number;
         this.available = available;
         this.docket = docket;
-
     }
 
 
@@ -57,7 +56,7 @@ public class Seat extends Main
             else if (selected)
             {
                 parent.fill(hover);
-                checkedOut = true;
+                yolo = true;
             }
             else {
                 parent.fill(notTaken);
@@ -70,15 +69,14 @@ public class Seat extends Main
         parent.stroke(255);
         parent.strokeWeight(1);
         parent.rect(xPos,yPos, 20, 20);
+        parent.noStroke();
         Update();
     }
 
     public void Update()
     {
-        if(checkedOut == true)
-        {
+        if(yolo == true && checkedOut == true)
             updateDB(num);
-        }
     }
 
     static
@@ -95,7 +93,7 @@ public class Seat extends Main
 
     public void updateDB(int seatIndex)
     {
-        System.out.println("SWAG" + seatIndex);
+        //System.out.println("SWAG" + seatIndex);
         try(Connection conn = DriverManager.getConnection(DBurl);
             PreparedStatement ps = conn.prepareStatement("UPDATE Screen " + " SET Booked = 1 WHERE Seat = ?;"))
         {
