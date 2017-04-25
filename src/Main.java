@@ -150,34 +150,42 @@ public class Main extends PApplet{
 
             case GuardiansMovie:
                 GuardiansMovie();
+                docket.Render();
                 break;
 
             case KongMovie:
                 KongMovie();
+                docket.Render();
                 break;
 
             case GetOutMovie:
                 GetOutMovie();
+                docket.Render();
                 break;
 
             case ShooterMovie:
                 ShooterMovie();
+                docket.Render();
                 break;
 
             case ITMovie:
                 ItMovie();
+                docket.Render();
                 break;
 
             case LegoBatmanMovie:
                 LegoBatmanMovie();
+                docket.Render();
                 break;
 
             case StepBrothersMovie:
                 StepBrothersMovie();
+                docket.Render();
                 break;
 
             case SpidermanMovie:
                 SpidermanMovie();
+                docket.Render();
                 break;
 
             case FoodDrinkSelection:
@@ -305,9 +313,7 @@ public class Main extends PApplet{
         {
             Back();
             Food();
-			ticket.HoverTicket(width / 4 + 20, height - 185, 150, 50, 1);
-			ticket.HoverTicket(width / 2 - 75,height - 185, 150, 50, 2);
-			ticket.HoverTicket(width / 2 + 310,height - 185, 150, 50, 3);
+            buttons();
         }
         fill(255);
         textAlign(LEFT);
@@ -335,6 +341,7 @@ public class Main extends PApplet{
         {
             Back();
             Food();
+            buttons();
         }
         fill(255);
         textAlign(LEFT);
@@ -367,6 +374,7 @@ public class Main extends PApplet{
 
             Back();
             Food();
+            buttons();
         }
         fill(255);
         textAlign(LEFT);
@@ -394,6 +402,7 @@ public class Main extends PApplet{
 
             Back();
             Food();
+            buttons();
         }
         fill(255);
         textAlign(LEFT);
@@ -429,6 +438,7 @@ public class Main extends PApplet{
 
             Back();
             Food();
+            buttons();
         }
         fill(255);
         textAlign(LEFT);
@@ -457,6 +467,7 @@ public class Main extends PApplet{
 
             Back();
             Food();
+            buttons();
         }
         fill(255);
         textAlign(LEFT);
@@ -480,9 +491,9 @@ public class Main extends PApplet{
         loop();
         if(ScreenState == KongMovie)
         {
-
             Back();
             Food();
+            buttons();
         }
         fill(255);
         textAlign(LEFT);
@@ -511,6 +522,7 @@ public class Main extends PApplet{
         if(ScreenState == GuardiansMovie) {
             Back();
             Food();
+            buttons();
         }
             fill(255);
             textAlign(LEFT);
@@ -635,6 +647,13 @@ public class Main extends PApplet{
         {
             ScreenState = FoodDrinkSelection;
         }
+    }
+
+    void buttons()
+    {
+        ticket.HoverTicket(width / 4 + 60, height - 180, 150, 50, "Adult", Title);
+        ticket.HoverTicket(width / 2 - 75,height - 180, 150, 50, "Student", Title);
+        ticket.HoverTicket(width / 2 + 250,height - 180, 150, 50, "Child", Title);
     }
 
 

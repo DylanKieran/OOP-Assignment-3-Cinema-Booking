@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="971da847-3271-4dc5-8610-83ace9872933" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CinemaAssignment/Docket.class" afterPath="$PROJECT_DIR$/out/production/CinemaAssignment/Docket.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CinemaAssignment/Main.class" afterPath="$PROJECT_DIR$/out/production/CinemaAssignment/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CinemaAssignment/Seat.class" afterPath="$PROJECT_DIR$/out/production/CinemaAssignment/Seat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CinemaAssignment/SeatSelection.class" afterPath="$PROJECT_DIR$/out/production/CinemaAssignment/SeatSelection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Docket.java" afterPath="$PROJECT_DIR$/src/Docket.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Seat.java" afterPath="$PROJECT_DIR$/src/Seat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SeatSelection.java" afterPath="$PROJECT_DIR$/src/SeatSelection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ticket.java" afterPath="$PROJECT_DIR$/src/Ticket.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,24 +23,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="591" column="16" lean-forward="false" selection-start-line="591" selection-start-column="10" selection-end-line="591" selection-end-column="16" />
-              <folding>
-                <element signature="method#MovieSelect#0;class#Main#0" expanded="false" />
-                <element signature="method#LegoBatmanMovie#0;class#Main#0" expanded="false" />
-                <element signature="method#ShooterMovie#0;class#Main#0" expanded="false" />
-                <element signature="method#GetOutMovie#0;class#Main#0" expanded="false" />
-                <element signature="method#StepBrothersMovie#0;class#Main#0" expanded="false" />
-                <element signature="method#ItMovie#0;class#Main#0" expanded="false" />
-                <element signature="method#SpidermanMovie#0;class#Main#0" expanded="false" />
-                <element signature="method#KongMovie#0;class#Main#0" expanded="false" />
-                <element signature="method#GuardiansMovie#0;class#Main#0" expanded="false" />
-                <element signature="e#23817#23818#0" expanded="true" />
-                <element signature="e#23858#23859#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="54">
+              <caret line="182" column="32" lean-forward="false" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,11 +36,9 @@
       <file leaf-file-name="SeatSelection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SeatSelection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2032">
-              <caret line="133" column="81" lean-forward="false" selection-start-line="133" selection-start-column="81" selection-end-line="133" selection-end-column="81" />
-              <folding>
-                <marker date="1493127349747" expanded="true" signature="2163:2201" ph="select * fro... Screen" />
-              </folding>
+            <state relative-caret-position="2684">
+              <caret line="128" column="81" lean-forward="false" selection-start-line="128" selection-start-column="81" selection-end-line="128" selection-end-column="81" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +46,7 @@
       <file leaf-file-name="Food.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Food.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="1848">
               <caret line="95" column="13" lean-forward="false" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
               <folding />
             </state>
@@ -76,9 +56,13 @@
       <file leaf-file-name="Ticket.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ticket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="472">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#232#233#0" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,11 +70,9 @@
       <file leaf-file-name="Docket.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Docket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding>
-                <marker date="1493115537120" expanded="true" signature="1317:1323" ph="{...}" />
-              </folding>
+            <state relative-caret-position="1232">
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,17 +80,14 @@
       <file leaf-file-name="MovieSelection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MovieSelection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="858">
               <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-              <folding>
-                <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
-                <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Seat.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Seat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Seat.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
@@ -121,7 +100,7 @@
       <file leaf-file-name="Button.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="1276">
               <caret line="59" column="7" lean-forward="false" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
               <folding />
             </state>
@@ -131,13 +110,9 @@
       <file leaf-file-name="MovieInformation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MovieInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="242">
               <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#205#206#0" expanded="false" />
-                <element signature="e#231#232#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,11 +160,11 @@
         <option value="$PROJECT_DIR$/src/Index.java" />
         <option value="$PROJECT_DIR$/src/MovieInformation.java" />
         <option value="$PROJECT_DIR$/src/Food.java" />
-        <option value="$PROJECT_DIR$/src/Ticket.java" />
         <option value="$PROJECT_DIR$/src/Docket.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Seat.java" />
         <option value="$PROJECT_DIR$/src/SeatSelection.java" />
+        <option value="$PROJECT_DIR$/src/Seat.java" />
+        <option value="$PROJECT_DIR$/src/Ticket.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -200,10 +175,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-9" />
+    <option name="width" value="1926" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -220,8 +194,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,7 +225,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -740,14 +714,15 @@
       <workItem from="1493114344017" duration="2392000" />
       <workItem from="1493116852289" duration="754000" />
       <workItem from="1493118281342" duration="1710000" />
+      <workItem from="1493128037292" duration="281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86609000" />
+    <option name="totallyTimeSpent" value="86890000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-9" y="0" width="1926" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -760,12 +735,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21135646" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2107574" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13250366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13207547" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -840,11 +815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#205#206#0" expanded="false" />
-            <element signature="e#231#232#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -860,9 +831,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <marker date="1493115537120" expanded="true" signature="1317:1323" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -870,10 +839,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
-            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -889,9 +855,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding>
-            <marker date="1493127349747" expanded="true" signature="2163:2201" ph="select * fro... Screen" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -899,19 +863,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1853">
           <caret line="120" column="46" lean-forward="false" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
-          <folding>
-            <element signature="method#MovieSelect#0;class#Main#0" expanded="false" />
-            <element signature="method#LegoBatmanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ShooterMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GetOutMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#StepBrothersMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ItMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#SpidermanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#KongMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GuardiansMovie#0;class#Main#0" expanded="false" />
-            <element signature="e#23817#23818#0" expanded="true" />
-            <element signature="e#23858#23859#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -942,19 +894,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding>
-            <element signature="method#MovieSelect#0;class#Main#0" expanded="false" />
-            <element signature="method#LegoBatmanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ShooterMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GetOutMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#StepBrothersMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ItMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#SpidermanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#KongMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GuardiansMovie#0;class#Main#0" expanded="false" />
-            <element signature="e#23817#23818#0" expanded="true" />
-            <element signature="e#23858#23859#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -970,10 +910,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-          <folding>
-            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
-            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -989,9 +926,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <marker date="1493127349747" expanded="true" signature="2163:2201" ph="select * fro... Screen" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,19 +957,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding>
-            <element signature="method#MovieSelect#0;class#Main#0" expanded="false" />
-            <element signature="method#LegoBatmanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ShooterMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GetOutMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#StepBrothersMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ItMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#SpidermanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#KongMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GuardiansMovie#0;class#Main#0" expanded="false" />
-            <element signature="e#23817#23818#0" expanded="true" />
-            <element signature="e#23858#23859#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,10 +973,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-          <folding>
-            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
-            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,9 +989,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1493127349747" expanded="true" signature="2163:2201" ph="select * fro... Screen" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1103,19 +1021,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#MovieSelect#0;class#Main#0" expanded="false" />
-            <element signature="method#LegoBatmanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ShooterMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GetOutMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#StepBrothersMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ItMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#SpidermanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#KongMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GuardiansMovie#0;class#Main#0" expanded="false" />
-            <element signature="e#23817#23818#0" expanded="true" />
-            <element signature="e#23858#23859#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,10 +1037,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
-            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,9 +1053,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <marker date="1493127349747" expanded="true" signature="2163:2201" ph="select * fro... Screen" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,65 +1093,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieInformation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="242">
           <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#205#206#0" expanded="false" />
-            <element signature="e#231#232#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="591" column="16" lean-forward="false" selection-start-line="591" selection-start-column="10" selection-end-line="591" selection-end-column="16" />
-          <folding>
-            <element signature="method#MovieSelect#0;class#Main#0" expanded="false" />
-            <element signature="method#LegoBatmanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ShooterMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GetOutMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#StepBrothersMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#ItMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#SpidermanMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#KongMovie#0;class#Main#0" expanded="false" />
-            <element signature="method#GuardiansMovie#0;class#Main#0" expanded="false" />
-            <element signature="e#23817#23818#0" expanded="true" />
-            <element signature="e#23858#23859#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Food.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
+        <state relative-caret-position="1848">
           <caret line="95" column="13" lean-forward="false" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ticket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Docket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <marker date="1493115537120" expanded="true" signature="1317:1323" ph="{...}" />
-          </folding>
+        <state relative-caret-position="1232">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
+        <state relative-caret-position="1276">
           <caret line="59" column="7" lean-forward="false" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
           <folding />
         </state>
@@ -1266,22 +1133,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
+        <state relative-caret-position="858">
           <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding>
-            <marker date="1492617158578" expanded="true" signature="1419:1462" ph="select * fro... MovieIndex" />
-            <marker date="1492617158578" expanded="true" signature="2803:2846" ph="select * fro... MovieIndex" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SeatSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2032">
-          <caret line="133" column="81" lean-forward="false" selection-start-line="133" selection-start-column="81" selection-end-line="133" selection-end-column="81" />
-          <folding>
-            <marker date="1493127349747" expanded="true" signature="2163:2201" ph="select * fro... Screen" />
-          </folding>
+        <state relative-caret-position="2684">
+          <caret line="128" column="81" lean-forward="false" selection-start-line="128" selection-start-column="81" selection-end-line="128" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,6 +1151,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="182" column="32" lean-forward="false" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
           <folding />
         </state>
       </provider>
