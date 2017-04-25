@@ -98,47 +98,47 @@ public class Food extends Main
                 if (index == 1)
                 {
                     popcorn[0]++;
-                    total += 5.50;
+                    foodTotal += 5.50;
                 }
                 else if (index == 2)
                 {
                     popcorn[1]++;
-                    total += 4.20;
+                    foodTotal += 4.20;
                 }
                 else if (index == 3)
                 {
                     popcorn[2]++;
-                    total += 3.79;
+                    foodTotal += 3.79;
                 }
                 else if (index == 4)
                 {
                     drink[0]++;
-                    total += 4;
+                    foodTotal += 4;
                 }
                 else if (index == 5)
                 {
                     drink[1]++;
-                    total += 3;
+                    foodTotal += 3;
                 }
                 else if (index == 6)
                 {
                     drink[2]++;
-                    total += 2.50;
+                    foodTotal += 2.50;
                 }
                 else if (index == 7)
                 {
                     haribo++;
-                    total += 3.50;
+                    foodTotal += 3.50;
                 }
                 else if (index == 8)
                 {
                     MM++;
-                    total += 3.50;
+                    foodTotal += 3.50;
                 }
                 else if (index == 9)
                 {
                     malteaser++;
-                    total += 3.50;
+                    foodTotal += 3.50;
                 }
             }
         }

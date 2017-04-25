@@ -30,15 +30,15 @@ public class Ticket extends Main{
                 parent.mousePressed = false;
                 if (type == "Adult") {
                     adultTickets++;
-                    total += 10;
+                    ticketTotal += 10;
                     System.out.print("adults");
                     //System.out.print(adultTickets);
                 } else if (type == "Student") {
                     studentTickets++;
-                    total += 7.50;
+                    ticketTotal += 7.50;
                 } else {
                     childTickets++;
-                    total += 5;
+                    ticketTotal += 5;
                 }
                 ticketCount++;
             }

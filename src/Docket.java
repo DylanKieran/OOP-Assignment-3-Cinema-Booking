@@ -29,6 +29,7 @@ public class Docket extends Main {
         parent.noStroke();
         System.out.println(haribo);
         display();
+        total = ticketTotal + foodTotal;
 
     }
 

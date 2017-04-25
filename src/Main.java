@@ -32,7 +32,10 @@ public class Main extends PApplet{
     Docket docket;
     Button next, reset;
 
-    public static double total;
+    public static float total;
+    public static float ticketTotal;
+    public static float foodTotal;
+
     public static int ticketCount;
     public static int adultTickets;
     public static int childTickets;
@@ -208,7 +211,7 @@ public class Main extends PApplet{
             case SeatSelection:
                 screenage.screenRender(1);
                 docket.Render();
-                docketButtons();
+                //docketButtons();
                 break;
 
             case EndScreen:
@@ -642,14 +645,22 @@ public class Main extends PApplet{
 
     public void reset()
     {
-        ticketCount = 0;
-        adultTickets = 0;
-        studentTickets = 0;
-        childTickets = 0;
-        malteaser = 0;
-        MM = 0;
-        haribo = 0;
-        total =0;
+        if (ScreenState == FoodDrinkSelection) {
+            malteaser = 0;
+            MM = 0;
+            haribo = 0;
+            foodTotal = 0;
+            total -= foodTotal;
+        }
+        else
+        {
+            ticketCount = 0;
+            adultTickets = 0;
+            studentTickets = 0;
+            childTickets = 0;
+            ticketTotal = 0;
+            total = 0;
+        }
         for( int i = 0; i < 3; i ++)
         {
             drink[i] = 0;
