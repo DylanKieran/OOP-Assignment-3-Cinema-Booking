@@ -133,6 +133,7 @@ public class SeatSelection extends Main
         parent.textSize(32);
         parent.fill(255);
         parent.text("SCREEN",parent.width/11 * 5, parent.height - height/20 * 2);
+        parent.noStroke();
     }
 
 }

@@ -66,6 +66,7 @@ public class Seat extends Main
         parent.stroke(255);
         parent.strokeWeight(1);
         parent.rect(xPos,yPos, 20, 20);
+        parent.noStroke();
     }
 
     public void Update()

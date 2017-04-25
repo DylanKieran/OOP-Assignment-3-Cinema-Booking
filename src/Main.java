@@ -6,7 +6,7 @@ import ddf.minim.AudioInput;
 import ddf.minim.AudioSample;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
-import processing.sound.*;
+//import processing.sound.*;
 import sun.audio.AudioData;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
@@ -39,7 +39,7 @@ public class Main extends PApplet{
             LegoBatmanBackground, ShooterBackground, ITBackground, StepBrothersBackground, FoodBackground, EndScreenBackground;
     PImage PopcornLarge, PopcornMedium, PopcornSmall, DrinkLarge, DrinkMedium, DrinkSmall, Haribo, MandM, Maltesers;
     double price;
-    PFont MovieFont, Title, MovieText;
+    public static PFont MovieFont, Title, MovieText;
     Movie Movie1;
     SeatSelection screenage;
     Docket docket;
@@ -84,7 +84,7 @@ public class Main extends PApplet{
         //etherwood = new Minim(this);
         //audioInput = etherwood.loadSample("etherwood.wav", FRAME_SIZE);
 
-        docket = new Docket(this, width / 40 * 32, height/13);
+        docket = new Docket(this, width - width/5, height/4 + 30);
         ticket = new Ticket(this);
         screenage = new SeatSelection(this, 1, docket);
         background(34,34,34);
@@ -164,7 +164,7 @@ public class Main extends PApplet{
         {
             case WelcomeScreen:
                 WelcomeScreen();
-                audioInput.trigger();
+                //audioInput.trigger();
                 //docket.Render();
                 break;
 
@@ -647,7 +647,7 @@ public class Main extends PApplet{
     {
         if (ScreenState == FoodDrinkSelection) {
             next = new Button(this, width / 40 * 32 + 10, height / 13 + 400, width / 40 * 4, 50, MovieSelectScreen, SeatSelection);
-            next.Render();
+            //next.Render();
             if (next.onHoverMovie(SeatSelection) == SeatSelection) {
                 ScreenState = SeatSelection;
             }
@@ -700,21 +700,24 @@ public class Main extends PApplet{
 
     public  void Back()
     {
-        Button back = new Button(this, 150,height - 185, 150, 50, LegoBatmanMovie, MovieSelectScreen);
+        Button back = new Button(this, 150,height - 120, 150, 40, LegoBatmanMovie, MovieSelectScreen);
         back.Render();
         fill(255);
-        text(" < Back", 220,  height - 150);
+        textSize(32);
+        text(" < Back", 225,  height - 92);
         if (back.onHoverMovie(MovieSelectScreen) == MovieSelectScreen)
         {
             ScreenState = MovieSelectScreen;
         }
     }
+
     public  void  Food()
     {
-        Button food = new Button(this, width - 300,height - 185, 150, 50, GuardiansMovie, FoodDrinkSelection);
+        Button food = new Button(this, width - 300,height - 120, 150, 40, GuardiansMovie, FoodDrinkSelection);
         food.Render();
         fill(255);
-        text(" Food >", width - 235,  height - 150);
+        textSize(32);
+        text(" Food >", width - 225,  height - 92);
         if (food.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
         {
             ScreenState = FoodDrinkSelection;

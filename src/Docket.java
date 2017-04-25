@@ -10,8 +10,9 @@ public class Docket extends Main {
     int xPos;
     int yPos;
     int ticket;
-    int tickets;
     int[] selectedSeats = new int[10];
+    int PrimaryColour = color(255,20,147);
+
     Docket(PApplet p, int x, int y)
     {
         parent = p;
@@ -22,15 +23,15 @@ public class Docket extends Main {
 
     public void Render()
     {
+        parent.fill(0,0,0, 100);
+        parent.rect(xPos, yPos, parent.width/6, parent.height/3 + 200, 6, 6, 6, 6);
+        parent.stroke(PrimaryColour);
         parent.strokeWeight(2);
-        parent.stroke(100);
-        parent.fill(255,250,255, 100);
-        parent.rect(xPos, yPos, parent.width / 40 * 8, parent.height/25 * 12);
+        parent.rect(xPos + 10, yPos + 10, parent.width/6 - 20, parent.height/3 + 180);
         parent.noStroke();
-        System.out.println(haribo);
+
         display();
         total = ticketTotal + foodTotal;
-
     }
 
     public void Update()
@@ -46,11 +47,40 @@ public class Docket extends Main {
 
     public void display()
     {
-        parent.fill(0);
+        parent.textFont(Title, 24);
+        parent.fill(PrimaryColour);
+        parent.text("Receipt", xPos + 120, yPos + 45);
+
+        parent.textFont(Title, 18);
+        parent.fill(255);
+        parent.text("Tickets: ",xPos + 30, yPos + 80);
+
+        parent.textSize(16);
+        parent.text("Adult (" + adultTickets + ")\nStudent (" + studentTickets +")\nChild (" + childTickets + ")",xPos + 120, yPos + 80);
+
         parent.textSize(18);
-        parent.text("Tickets: " + ticketCount + "\n  Adult(" + adultTickets +") \n  Student(" + studentTickets + ")\n  Child(" + childTickets + ")",xPos + 10, yPos + 40);
-        parent.text("Drinks: \n   Large(" + drink[0] + "),\n   Medium(" + drink[1] + "),\n    Small(" + drink[2] + ")", xPos + 10, yPos + 160 );
-        parent.text("Total : " + total, xPos + 10, yPos + 300);
+        parent.text("Drinks: ", xPos + 30, yPos + 180);
+
+        parent.textSize(16);
+        parent.text("Large(" + drink[0] + "),\nMedium(" + drink[1] + "),\nSmall(" + drink[2] + ")", xPos + 120, yPos + 180);
+
+        parent.textSize(18);
+        parent.text("Popcorn: ", xPos + 30, yPos + 280);
+
+        parent.textSize(16);
+        parent.text("Large(" + popcorn[0] + "),\nMedium(" + popcorn[1] + "),\nSmall(" + popcorn[2] + ")", xPos + 120, yPos + 280);
+
+        parent.textSize(18);
+        parent.text("Snacks: ", xPos + 30, yPos + 380);
+
+        parent.textSize(16);
+        parent.text("Haribos(" + haribo + "),\nMaltesers(" + malteaser + "),\nM & M's(" + MM + ")", xPos + 120, yPos + 380);
+
+        parent.textSize(20);
+        parent.text("Total: " + total, xPos + 180, yPos + 485);
+
+
+        //parent.text("Total : " + total, xPos + 10, yPos + 300);
     }
 
     public void checkout()
