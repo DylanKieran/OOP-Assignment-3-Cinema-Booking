@@ -1,6 +1,5 @@
 import processing.core.PApplet;
 
-import java.util.ArrayList;
 
 /**
  * Created by steve on 12/04/2017.

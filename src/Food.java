@@ -6,17 +6,10 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Food extends Main
 {
-    /*static String driver = "org.sqlite.JDBC";
-    String url = "jdbc:sqlite:Movies.sqlite";
-    PImage Item, Background;
-    float Coke, Fanta, Sprite = 2;
-    float Maltesers, Twizzlers, MandMs , BoostBites, Popcorn = 2;*/
 
     PApplet parent;
     Food(PApplet p)
@@ -28,19 +21,6 @@ public class Food extends Main
     int SecondaryColour = color(0,191,255);
     boolean circleOver = false;
     int size;
-
-    /*
-    static
-    {
-        try
-        {
-            Class.forName(driver);
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-    }*/
 
 
     void render(PImage Item, int ImageWidth, int ImageHeight, int Xpos, int Ypos)

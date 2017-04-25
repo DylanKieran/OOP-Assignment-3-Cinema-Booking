@@ -35,29 +35,8 @@ public class Button extends Main
         {
             parent.fill(PrimaryColour);
         }
-        parent.rect(xPos, yPos, rectWidth, rectHeight);
+        parent.rect(xPos, yPos, rectWidth, rectHeight, 5);
     }
-
-    /*public int onHover()
-    {
-        if(parent.mouseX >= xPos && parent.mouseX <= xPos + rectWidth && parent.mouseY >= yPos && parent.mouseY <= yPos + rectHeight)
-        {
-            Hover = true;
-
-            if(parent.mousePressed == true)
-            {
-                return NextScreen;
-            }
-            else
-            {
-                return CurrentScreen;
-            }
-        }
-        else
-        {
-            return CurrentScreen;
-        }
-    }*/
 
     public int onHoverMovie(int nextScreen)
     {

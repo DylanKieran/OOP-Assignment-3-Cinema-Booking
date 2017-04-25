@@ -18,7 +18,7 @@ public class Ticket extends Main{
     public void HoverTicket(int xPos, int yPos, int rectWidth, int rectHeight, String type, PFont title)
     {
         parent.fill(PrimaryColour);
-        parent.rect(xPos,yPos, rectWidth, rectHeight);
+        parent.rect(xPos,yPos, rectWidth, rectHeight, 5);
         parent.fill(255);
         parent.textFont(title, 22);
         parent.text(type, xPos+ 65, yPos + 30);

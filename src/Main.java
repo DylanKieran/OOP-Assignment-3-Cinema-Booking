@@ -16,7 +16,6 @@ public class Main extends PApplet{
     Index Index;
     Seat seat;
     MovieSelection Movie;
-    MovieInformation MovieInfo;
     Food Food;
     Ticket ticket;
 
@@ -68,7 +67,7 @@ public class Main extends PApplet{
         etherwood = new Minim(this);
         audioInput = etherwood.loadSample("Etherwood - Cast Away.mp3", FRAME_SIZE);
 
-        audioInput.trigger();
+        //audioInput.trigger();
         docket = new Docket(this, width - width/5, height/4 + 30);
         ticket = new Ticket(this);
         screenage = new SeatSelection(this, 1, docket);
@@ -76,7 +75,6 @@ public class Main extends PApplet{
         Index = new Index(this);
         //seat = new Seat(this, 100, 100, true, 1);
         Movie = new MovieSelection(this);
-        MovieInfo = new MovieInformation(this);
         Food = new Food(this);
         screenage.createSeat(1);
 
@@ -569,8 +567,6 @@ public class Main extends PApplet{
                 "it safe from Ronan. But they are hunted down by Ronan and his right-arm Nebula that want " + "\n" +
                 "to destroy Xandar and also by Yondu Udonta and the Ravagers that want to sell the infinity " + "\n" +
                 "stone to make lots of money. Who will keep the powerful orb?", width / 4 + 30, height / 3);
-
-
     }
 
     public void FoodDrinkSelection()
@@ -716,6 +712,11 @@ public class Main extends PApplet{
 
     void buttons()
     {
+        fill(255,20,147);
+        rect(width/ 3, height - 300 , 640 , 50, 5);
+        fill(255);
+        textSize(40);
+        text("Select Movie Below!", width/ 2 , height - 265);
         ticket.HoverTicket(width / 4 + 60, height - 180, 150, 50, "Adult", Title);
         ticket.HoverTicket(width / 2 - 75,height - 180, 150, 50, "Student", Title);
         ticket.HoverTicket(width / 2 + 250,height - 180, 150, 50, "Child", Title);
@@ -730,7 +731,6 @@ public class Main extends PApplet{
 
         InsertData app = new InsertData();
         // insert three new rows
-        //app.insert("IT", "Horror", 12, 4);
         //app.insert("Alien", "Horror", 13, 9);
     }
 }
