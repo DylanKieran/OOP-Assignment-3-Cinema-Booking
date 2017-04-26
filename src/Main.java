@@ -67,7 +67,7 @@ public class Main extends PApplet{
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
 
-    int ScreenState = EndScreen;
+    int ScreenState = WelcomeScreen;
 
     public void setup()
     {
