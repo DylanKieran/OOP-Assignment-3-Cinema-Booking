@@ -31,11 +31,13 @@ In this screen you have to pick your food and drinks. When you select you chosen
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-3-Cinema-Booking/blob/master/ScreenShots/FoodAndDrinkSelection.PNG "Food Screen")
 
 ### Seat Selection Screen
+This screen is where the user selects the seat they want. When the seat objects are being created it queries a database to check if the seats have already been booked. Only when the user checks out it updates the selected seats to booked in the database. The user is only able to  select the amount of seats that they have requested as well as are unable to checkout until the user has selected the correct number of seats. The layout for this screen was also calculated to fit any resolution.
 
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-3-Cinema-Booking/blob/master/ScreenShots/ScreenSelectionScreen.PNG "Seat Selection Screen")
 
 ### End Screen
 In the final screen you are greeted with a thank you and a button that brings you back to the welcome screen for the next customer to book their tickets.
+
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-3-Cinema-Booking/blob/master/ScreenShots/EndScreen.PNG " EndScreen")
 
 ### Youtube Video
