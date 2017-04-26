@@ -22,6 +22,7 @@ public class Main extends PApplet{
     Food Food;
     Ticket ticket;
     Checkout checkout;
+    String selectedMovie;
 
     PImage Guardians, Kong, GetOut, IT, LegoBatman, Shooter, StepBrothers, Spiderman;
     PImage GuardiansBackground, KongBackground,SpidermanBackground, MovieSelectBackground, GetOutBackground,
@@ -163,48 +164,56 @@ public class Main extends PApplet{
             case GuardiansMovie:
                 GuardiansMovie();
                 docket.Render();
+                selectedMovie = "Guardians of the Galaxy";
                 docketButtons();
                 break;
 
             case KongMovie:
                 KongMovie();
                 docket.Render();
+                selectedMovie = "Kong Island";
                 docketButtons();
                 break;
 
             case GetOutMovie:
                 GetOutMovie();
                 docket.Render();
+                selectedMovie = "Get Out";
                 docketButtons();
                 break;
 
             case ShooterMovie:
                 ShooterMovie();
                 docket.Render();
+                selectedMovie = "Shooter";
                 docketButtons();
                 break;
 
             case ITMovie:
                 ItMovie();
                 docket.Render();
+                selectedMovie = "IT";
                 docketButtons();
                 break;
 
             case LegoBatmanMovie:
                 LegoBatmanMovie();
                 docket.Render();
+                selectedMovie = "Lego Batman Movie";
                 docketButtons();
                 break;
 
             case StepBrothersMovie:
                 StepBrothersMovie();
                 docket.Render();
+                selectedMovie = "Step Brothers";
                 docketButtons();
                 break;
 
             case SpidermanMovie:
                 SpidermanMovie();
                 docket.Render();
+                selectedMovie = "Spiderman Movie";
                 docketButtons();
                 break;
 
@@ -795,6 +804,7 @@ public class Main extends PApplet{
         try{
             PrintWriter writer = new PrintWriter("Receipt.txt", "UTF-8");
             writer.println("Thank you for choosing Empire");
+            writer.println("Movie: " + selectedMovie);
             writer.println("Tickets:");
             writer.println("\tAdult: " + adultTickets);
             writer.println("\tStudent:" + studentTickets);
