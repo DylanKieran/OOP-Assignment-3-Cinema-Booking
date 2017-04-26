@@ -33,7 +33,7 @@ public class Main extends PApplet{
     Movie Movie1;
     SeatSelection screenage;
     Docket docket;
-    Button SelectSeats, reset;
+    Button SelectSeats, reset, Restart;
 
     public static float total;
     public static float ticketTotal;
@@ -67,7 +67,7 @@ public class Main extends PApplet{
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
 
-    int ScreenState = FoodDrinkSelection;
+    int ScreenState = EndScreen;
 
     public void setup()
     {
@@ -677,6 +677,19 @@ public class Main extends PApplet{
             foodTotal = 0;
             total -= foodTotal;
         }
+        else if(ScreenState == EndScreen)
+        {
+            malteaser = 0;
+            MM = 0;
+            haribo = 0;
+            foodTotal = 0;
+            ticketCount = 0;
+            adultTickets = 0;
+            studentTickets = 0;
+            childTickets = 0;
+            ticketTotal = 0;
+            total = 0;
+        }
         else
         {
             ticketCount = 0;
@@ -703,6 +716,19 @@ public class Main extends PApplet{
         Index.Star(width/2, height/2 - 60, 6);
 
         Index.TitleAndEndText("Thank You for Choosing", 60, MovieFont, Title);
+
+        Restart = new Button(this, width/3 + width/12 , height - height/4, width/6, 50, EndScreen, WelcomeScreen);
+        Restart.Render();
+        
+        fill(255);
+        textFont(Title, 32);
+        text("Book Again", width/2, height - height/5 - 15);
+
+        if(Restart.onHoverMovie(WelcomeScreen) == WelcomeScreen)
+        {
+            reset();
+            ScreenState = WelcomeScreen;
+        }
     }
 
     public  void Back()
