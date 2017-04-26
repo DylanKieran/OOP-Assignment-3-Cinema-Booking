@@ -1,0 +1,12 @@
+Thank you for choosing Empire
+Tickets:
+	Adult: 1
+	Student:2
+	Child:3
+Food:
+	Popcorn: 1 x L, 2 x M, 3 x S
+	Drinks: 1 x L, 2 x M, 3 x S
+	M and M: 3
+	Haribo:1
+	Malteser:5
+Total to Pay: €113.0

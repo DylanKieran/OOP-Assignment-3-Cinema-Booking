@@ -111,12 +111,12 @@ public class Food extends Main
                 }
                 else if (index == 8)
                 {
-                    MM++;
+                    malteaser++;
                     foodTotal += 3.50;
                 }
                 else if (index == 9)
                 {
-                    malteaser++;
+                    MM++;
                     foodTotal += 3.50;
                 }
             }

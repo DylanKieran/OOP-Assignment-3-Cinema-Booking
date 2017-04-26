@@ -5,6 +5,9 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 
 public class Main extends PApplet{
 
@@ -12,7 +15,7 @@ public class Main extends PApplet{
     AudioSample audioInput;
 
     static final int FRAME_SIZE = 2048;
-
+    PrintWriter writer;
     Index Index;
     Seat seat;
     MovieSelection Movie;
@@ -754,6 +757,29 @@ public class Main extends PApplet{
     {
         checkout.Render();
         ScreenState = checkout.Update();
+        writeReceipt();
+    }
+
+    public void writeReceipt()
+    {
+        try{
+            PrintWriter writer = new PrintWriter("Receipt.txt", "UTF-8");
+            writer.println("Thank you for choosing Empire");
+            writer.println("Tickets:");
+            writer.println("\tAdult: " + adultTickets);
+            writer.println("\tStudent:" + studentTickets);
+            writer.println("\tChild:" + childTickets);
+            writer.println("Food:");
+            writer.println("\tPopcorn: " + popcorn[0] + " x L, " + popcorn[1] + " x M, " + popcorn[2] + " x S");
+            writer.println("\tDrinks: " + drink[0] + " x L, " + drink[1] + " x M, " + drink[2] + " x S");
+            writer.println("\tM and M: " + MM);
+            writer.println("\tHaribo:" + haribo);
+            writer.println("\tMalteser:" + malteaser);
+            writer.println("Total to Pay: €" + total);
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
     public static void main(String[] args)
