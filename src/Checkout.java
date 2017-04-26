@@ -10,7 +10,8 @@ public class Checkout extends Main{
     Checkout(PApplet p)
     {
         this.parent = p;
-        finalise = new Button(parent,parent.width - parent.width/5, height/4 + 30, 100, 50, SeatSelection, EndScreen);
+        finalise = new Button(parent, parent.width - 280,parent.height - 250, 120, 30, SeatSelection, EndScreen);
+        finalise.Render();
     }
 
     public void Render()

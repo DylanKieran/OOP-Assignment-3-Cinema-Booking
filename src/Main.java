@@ -66,7 +66,7 @@ public class Main extends PApplet{
     final int FoodDrinkSelection = 11;
     final int EndScreen = 12;
 
-    int ScreenState = WelcomeScreen;
+    int ScreenState = FoodDrinkSelection;
 
     public void setup()
     {
@@ -217,7 +217,7 @@ public class Main extends PApplet{
             case SeatSelection:
                 SeatSelectionBackground.resize(width , height);
                 image(SeatSelectionBackground,0,0);
-                fill(0,0,0, 220);
+                fill(0,0,0, 120);
                 rect(0,0, width , height);
 
                 screenage.screenRender(1);
@@ -591,24 +591,39 @@ public class Main extends PApplet{
 
         Food.update(width/8 + 70, height/4 + 60, 1); //Popcorn large
         Food.drawCircle(width/8 + 70, height/4 + 60);
+        Food.Pricing("Large : €5.50",width/8 + 160, height/4 + 130);
+
         Food.update(width/3 + 70, height/4 + 60, 2); //Popcorn medium
         Food.drawCircle(width/3 + 70, height/4 + 60);
+        Food.Pricing("Medium : €4",width/3 + 160, height/4 + 130);
+
         Food.update(width/2 + 150, height/4 + 60, 3); //Popcorn small
         Food.drawCircle(width/2 + 150, height/4 + 60);
+        Food.Pricing("Small : €3.50",width/2 + 240, height/4 + 130);
 
         Food.update(width/8 + 70, height/3 + 210, 4); // Drinks large
         Food.drawCircle(width/8 + 70, height/3 + 210);
+        Food.Pricing("Large : €5",width/8 + 160, height/3 + 280);
+
         Food.update(width/3 + 70, height/3 + 210, 5); // Drinks medium
         Food.drawCircle(width/3 + 70, height/3 + 210);
+        Food.Pricing("Medium : €3",width/3 + 160, height/3 + 280);
+
         Food.update(width/2 + 150, height/3 + 210, 6); // Drinks small
         Food.drawCircle(width/2 + 150, height/3 + 210);
+        Food.Pricing("Small : €2.50",width/2 + 240, height/3 + 280);
 
         Food.update(width/8 + 70, height/2 + 280, 7); // Haribo
         Food.drawCircle(width/8 + 70, height/2 + 280);
-        Food.update(width/3 + 70, height/2 + 280, 8); // Malteasers
+        Food.Pricing("Haribo's : €3.50",width/8 + 160, height/2 + 350);
+
+        Food.update(width/3 + 70, height/2 + 280, 8); // Maltesers
         Food.drawCircle(width/3 + 70, height/2 + 280);
+        Food.Pricing("Melteser : €3.50",width/3 + 160, height/2 + 350);
+
         Food.update(width/2 + 150, height/2 + 280, 9); // M and M's
         Food.drawCircle(width/2 + 150, height/2 + 280);
+        Food.Pricing("M & M's : €3.50",width/2 + 240, height/2 + 350);
 
         Food.render(PopcornLarge, 130, 130,width/8 + 5, height/4);
         Food.render(PopcornMedium, 110, 110, width/3 + 15, height/4 + 10);
@@ -747,7 +762,7 @@ public class Main extends PApplet{
         rect(width/ 3, height - 300 , 640 , 50, 5);
         fill(255);
         textSize(40);
-        text("Select Movie Below!", width/ 2 , height - 265);
+        text("Select Ticket Below!", width/ 2 , height - 265);
         ticket.HoverTicket(width / 4 + 60, height - 180, 150, 50, "Adult", Title);
         ticket.HoverTicket(width / 2 - 75,height - 180, 150, 50, "Student", Title);
         ticket.HoverTicket(width / 2 + 250,height - 180, 150, 50, "Child", Title);
@@ -758,6 +773,21 @@ public class Main extends PApplet{
         checkout.Render();
         ScreenState = checkout.Update();
         writeReceipt();
+
+        fill(255);
+        textFont(Title, 18);
+        text("Checkout", width - 265,  height - 228);
+
+        Button back = new Button(this, 80,height - 80, 130, 35, SeatSelection, FoodDrinkSelection);
+        back.Render();
+        fill(255);
+        textFont(MovieText, 28);
+        text("< Back", 100,  height - 55);
+
+        if (back.onHoverMovie(FoodDrinkSelection) == FoodDrinkSelection)
+        {
+            ScreenState = FoodDrinkSelection;
+        }
     }
 
     public void writeReceipt()

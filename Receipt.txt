@@ -1,12 +1,12 @@
 Thank you for choosing Empire
 Tickets:
-	Adult: 1
-	Student:2
-	Child:3
+	Adult: 0
+	Student:0
+	Child:0
 Food:
-	Popcorn: 1 x L, 2 x M, 3 x S
-	Drinks: 1 x L, 2 x M, 3 x S
-	M and M: 3
-	Haribo:1
-	Malteser:5
-Total to Pay: €113.0
+	Popcorn: 0 x L, 0 x M, 0 x S
+	Drinks: 0 x L, 0 x M, 0 x S
+	M and M: 0
+	Haribo:0
+	Malteser:0
+Total to Pay: €0.0

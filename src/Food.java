@@ -56,6 +56,13 @@ public class Food extends Main
         parent.text(text, Xpos + 15, Ypos + 25);
     }
 
+    void Pricing(String text, int Xpos, int Ypos)
+    {
+        parent.fill(255);
+        parent.textFont(Title, 16);
+        parent.text(text, Xpos, Ypos);
+    }
+
     boolean overCircle(int x, int y, int diameter) {
         float disX = x - parent.mouseX;
         float disY = y - parent.mouseY;
