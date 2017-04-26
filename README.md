@@ -11,7 +11,7 @@ This is a github repository for my Object Orientated Programming assignment 3 fo
 Our concept was to have a touch screens located in a movie theater where customers can go in and self book what movie they want to see, tickets, food and drink, and seating. They would then checkout and it will print the reciept out for them and if they ordered food they would simply go up to the food stalls and retrieve their order. 
 
 ### Welcome Screen
-This screen has a clean and simple layout to be appealing to the users. It's designed to catch the users eye to persuade the users into trying them. As this screen appears it loads an appropriate tune and begins playing it throughout the users time using it. Song used - Etherwood - Cast Away.
+This screen has a clean and simple layout to be appealing to the users. It's designed to catch the users eye to persuade the users into booking through the application. When we load into the application it starts playing Cast Away by Etherwood. We included this music to appeal to all senses to attract the customer in. When the Book Now button is pressed the screen changes to the Movie Selection Screen.
 
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-3-Cinema-Booking/blob/master/ScreenShots/WelcomeScreen.PNG "Welcome Screen")
 
@@ -35,5 +35,5 @@ In this screen you have to pick your food and drinks. When you select you chosen
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-3-Cinema-Booking/blob/master/ScreenShots/ScreenSelectionScreen.PNG "Seat Selection Screen")
 
 ### End Screen
-
+In the final screen you are greeted with a thank you and a button that brings you back to the welcome screen for the next customer to book their tickets.
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-3-Cinema-Booking/blob/master/ScreenShots/EndScreen.PNG " EndScreen")
